@@ -1,0 +1,23 @@
+{
+  "name": "purescript-web-html",
+  "homepage": "https://github.com/purescript-web/purescript-web-html",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript-web/purescript-web-html.git"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-js-date": "#compiler/0.12",
+    "purescript-web-dom": "#compiler/0.12",
+    "purescript-web-file": "#compiler/0.12",
+    "purescript-web-storage": "purescript-web/purescript-web-storage#compiler/0.12"
+  }
+}
