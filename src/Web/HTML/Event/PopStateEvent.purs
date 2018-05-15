@@ -1,15 +1,17 @@
 module Web.HTML.Event.PopStateEvent where
 
-import Foreign (F, Foreign, unsafeReadTagged)
+import Data.Maybe (Maybe)
+import Foreign (Foreign)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.Event (Event)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data PopStateEvent :: Type
 
+fromEvent :: Event -> Maybe PopStateEvent
+fromEvent = unsafeReadProtoTagged "PopStateEvent"
+
 toEvent :: PopStateEvent -> Event
 toEvent = unsafeCoerce
-
-read :: Foreign -> F PopStateEvent
-read = unsafeReadTagged "PopStateEvent"
 
 foreign import state :: PopStateEvent -> Foreign

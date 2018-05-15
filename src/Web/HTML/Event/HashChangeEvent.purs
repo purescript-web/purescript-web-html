@@ -1,16 +1,17 @@
 module Web.HTML.Event.HashChangeEvent where
 
-import Foreign (F, Foreign, unsafeReadTagged)
+import Data.Maybe (Maybe)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.Event (Event)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HashChangeEvent :: Type
 
+fromEvent :: Event -> Maybe HashChangeEvent
+fromEvent = unsafeReadProtoTagged "HashChangeEvent"
+
 toEvent :: HashChangeEvent -> Event
 toEvent = unsafeCoerce
-
-read :: Foreign -> F HashChangeEvent
-read = unsafeReadTagged "HashChangeEvent"
 
 foreign import oldURL :: HashChangeEvent -> String
 

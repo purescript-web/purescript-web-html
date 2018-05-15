@@ -1,16 +1,17 @@
 module Web.HTML.Event.DragEvent where
 
-import Foreign (Foreign, F, unsafeReadTagged)
+import Data.Maybe (Maybe)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.Event (Event)
 import Web.HTML.Event.DataTransfer (DataTransfer)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data DragEvent :: Type
 
-dragEventToEvent :: DragEvent -> Event
-dragEventToEvent = unsafeCoerce
+fromEvent :: Event -> Maybe DragEvent
+fromEvent = unsafeReadProtoTagged "DragEvent"
 
-readDragEvent :: Foreign -> F DragEvent
-readDragEvent = unsafeReadTagged "DragEvent"
+toEvent :: DragEvent -> Event
+toEvent = unsafeCoerce
 
 foreign import dataTransfer :: DragEvent -> DataTransfer
