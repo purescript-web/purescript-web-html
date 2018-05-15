@@ -2,7 +2,7 @@ module Web.HTML.Event.PageTransitionEvent where
 
 import Foreign (F, Foreign, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
-import Web.Event.Types (Event)
+import Web.Event.Event (Event)
 
 foreign import data PageTransitionEvent :: Type
 

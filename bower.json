@@ -18,6 +18,6 @@
     "purescript-js-date": "#compiler/0.12",
     "purescript-web-dom": "#compiler/0.12",
     "purescript-web-file": "#compiler/0.12",
-    "purescript-web-storage": "purescript-web/purescript-web-storage#compiler/0.12"
+    "purescript-web-storage": "#compiler/0.12"
   }
 }

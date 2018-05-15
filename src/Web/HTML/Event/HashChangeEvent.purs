@@ -2,7 +2,7 @@ module Web.HTML.Event.HashChangeEvent where
 
 import Foreign (F, Foreign, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
-import Web.Event.Types (Event)
+import Web.Event.Event (Event)
 
 foreign import data HashChangeEvent :: Type
 

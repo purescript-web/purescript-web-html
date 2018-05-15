@@ -24,7 +24,7 @@ import Web.DOM.Document (Document)
 import Web.DOM.Internal.Types (Node)
 import Web.DOM.NonElementParentNode (NonElementParentNode)
 import Web.DOM.ParentNode (ParentNode)
-import Web.Event.Types (EventTarget)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLDocument.ReadyState (ReadyState(..)) as Exports
 import Web.HTML.HTMLDocument.ReadyState (ReadyState, parseReadyState)
 import Web.HTML.HTMLElement (HTMLElement)

@@ -52,7 +52,7 @@ import Web.DOM.Element (Element)
 import Web.DOM.Internal.Types (Node)
 import Web.DOM.NonDocumentTypeChildNode (NonDocumentTypeChildNode)
 import Web.DOM.ParentNode (ParentNode)
-import Web.Event.Types (EventTarget)
+import Web.Event.EventTarget (EventTarget)
 
 foreign import data HTMLElement :: Type
 
