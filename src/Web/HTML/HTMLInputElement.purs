@@ -1,7 +1,19 @@
 module Web.HTML.HTMLInputElement
   ( HTMLInputElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
   , toHTMLElement
-  , read
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
   , accept
   , setAccept
   , alt
@@ -99,22 +111,61 @@ import Data.JSDate (JSDate)
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.NodeList (NodeList)
+import Web.Event.EventTarget (EventTarget)
 import Web.File.FileList (FileList)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLFormElement (HTMLFormElement)
 import Web.HTML.SelectionMode (SelectionMode)
 import Web.HTML.ValidityState (ValidityState)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLInputElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLInputElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLInputElement"
+
+fromElement :: Element -> Maybe HTMLInputElement
+fromElement = unsafeReadProtoTagged "HTMLInputElement"
+
+fromNode :: Node -> Maybe HTMLInputElement
+fromNode = unsafeReadProtoTagged "HTMLInputElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLInputElement
+fromChildNode = unsafeReadProtoTagged "HTMLInputElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLInputElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLInputElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLInputElement
+fromParentNode = unsafeReadProtoTagged "HTMLInputElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLInputElement
+fromEventTarget = unsafeReadProtoTagged "HTMLInputElement"
 
 toHTMLElement :: HTMLInputElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLInputElement
-read = unsafeReadTagged "HTMLInputElement"
+toElement :: HTMLInputElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLInputElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLInputElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLInputElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLInputElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLInputElement -> EventTarget
+toEventTarget = unsafeCoerce
+
 
 foreign import accept :: HTMLInputElement -> Effect Boolean
 foreign import setAccept :: Boolean -> HTMLInputElement -> Effect Unit

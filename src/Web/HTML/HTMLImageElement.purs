@@ -1,18 +1,58 @@
 module Web.HTML.HTMLImageElement where
 
+import Data.Maybe (Maybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLImageElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLImageElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLImageElement"
+
+fromElement :: Element -> Maybe HTMLImageElement
+fromElement = unsafeReadProtoTagged "HTMLImageElement"
+
+fromNode :: Node -> Maybe HTMLImageElement
+fromNode = unsafeReadProtoTagged "HTMLImageElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLImageElement
+fromChildNode = unsafeReadProtoTagged "HTMLImageElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLImageElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLImageElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLImageElement
+fromParentNode = unsafeReadProtoTagged "HTMLImageElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLImageElement
+fromEventTarget = unsafeReadProtoTagged "HTMLImageElement"
 
 toHTMLElement :: HTMLImageElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLImageElement
-read = unsafeReadTagged "HTMLImageElement"
+toElement :: HTMLImageElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLImageElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLImageElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLImageElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLImageElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLImageElement -> EventTarget
+toEventTarget = unsafeCoerce
+
 
 foreign import create :: Unit -> Effect HTMLImageElement
 foreign import create' :: Int -> Int -> Effect HTMLImageElement

@@ -1,7 +1,19 @@
 module Web.HTML.HTMLObjectElement
   ( HTMLObjectElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
   , toHTMLElement
-  , read
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
   , data_
   , setData
   , type_
@@ -29,20 +41,58 @@ import Prelude
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.Document (Document)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLFormElement (HTMLFormElement)
 import Web.HTML.ValidityState (ValidityState)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLObjectElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLObjectElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLObjectElement"
+
+fromElement :: Element -> Maybe HTMLObjectElement
+fromElement = unsafeReadProtoTagged "HTMLObjectElement"
+
+fromNode :: Node -> Maybe HTMLObjectElement
+fromNode = unsafeReadProtoTagged "HTMLObjectElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLObjectElement
+fromChildNode = unsafeReadProtoTagged "HTMLObjectElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLObjectElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLObjectElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLObjectElement
+fromParentNode = unsafeReadProtoTagged "HTMLObjectElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLObjectElement
+fromEventTarget = unsafeReadProtoTagged "HTMLObjectElement"
 
 toHTMLElement :: HTMLObjectElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLObjectElement
-read = unsafeReadTagged "HTMLObjectElement"
+toElement :: HTMLObjectElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLObjectElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLObjectElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLObjectElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLObjectElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLObjectElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 foreign import data_ :: HTMLObjectElement -> Effect String
 foreign import setData :: String -> HTMLObjectElement -> Effect Unit

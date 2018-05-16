@@ -1,18 +1,58 @@
 module Web.HTML.HTMLCanvasElement where
 
+import Data.Maybe (Maybe)
 import Effect (Effect)
-import Foreign (Foreign, F, unsafeReadTagged)
 import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLCanvasElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLCanvasElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLCanvasElement"
+
+fromElement :: Element -> Maybe HTMLCanvasElement
+fromElement = unsafeReadProtoTagged "HTMLCanvasElement"
+
+fromNode :: Node -> Maybe HTMLCanvasElement
+fromNode = unsafeReadProtoTagged "HTMLCanvasElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLCanvasElement
+fromChildNode = unsafeReadProtoTagged "HTMLCanvasElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLCanvasElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLCanvasElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLCanvasElement
+fromParentNode = unsafeReadProtoTagged "HTMLCanvasElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLCanvasElement
+fromEventTarget = unsafeReadProtoTagged "HTMLCanvasElement"
 
 toHTMLElement :: HTMLCanvasElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLCanvasElement
-read = unsafeReadTagged "HTMLCanvasElement"
+toElement :: HTMLCanvasElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLCanvasElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLCanvasElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLCanvasElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLCanvasElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLCanvasElement -> EventTarget
+toEventTarget = unsafeCoerce
+
 
 -- typedef (CanvasRenderingContext2D or WebGLRenderingContext) RenderingContext;
 

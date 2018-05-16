@@ -4,22 +4,60 @@ import Prelude
 
 import Data.Enum (toEnum)
 import Data.JSDate (JSDate)
-import Data.Maybe (fromJust)
+import Data.Maybe (Maybe, fromJust)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLMediaElement.CanPlayType (CanPlayType)
 import Web.HTML.HTMLMediaElement.NetworkState (NetworkState)
 import Web.HTML.HTMLMediaElement.ReadyState (ReadyState)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLMediaElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLMediaElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLMediaElement"
+
+fromElement :: Element -> Maybe HTMLMediaElement
+fromElement = unsafeReadProtoTagged "HTMLMediaElement"
+
+fromNode :: Node -> Maybe HTMLMediaElement
+fromNode = unsafeReadProtoTagged "HTMLMediaElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLMediaElement
+fromChildNode = unsafeReadProtoTagged "HTMLMediaElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLMediaElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLMediaElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLMediaElement
+fromParentNode = unsafeReadProtoTagged "HTMLMediaElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLMediaElement
+fromEventTarget = unsafeReadProtoTagged "HTMLMediaElement"
 
 toHTMLElement :: HTMLMediaElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLMediaElement
-read = unsafeReadTagged "HTMLMediaElement"
+toElement :: HTMLMediaElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLMediaElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLMediaElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLMediaElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLMediaElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLMediaElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 --   readonly attribute MediaError? error;
 

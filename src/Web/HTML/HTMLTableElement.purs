@@ -1,7 +1,19 @@
 module Web.HTML.HTMLTableElement
   ( HTMLTableElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
   , toHTMLElement
-  , read
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
   , caption
   , setCaption
   , createCaption
@@ -29,20 +41,58 @@ import Prelude
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe, toNullable)
 import Effect (Effect)
-import Foreign (Foreign, F, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.HTMLCollection (HTMLCollection)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLTableCaptionElement (HTMLTableCaptionElement)
 import Web.HTML.HTMLTableSectionElement (HTMLTableSectionElement)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLTableElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLTableElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLTableElement"
+
+fromElement :: Element -> Maybe HTMLTableElement
+fromElement = unsafeReadProtoTagged "HTMLTableElement"
+
+fromNode :: Node -> Maybe HTMLTableElement
+fromNode = unsafeReadProtoTagged "HTMLTableElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLTableElement
+fromChildNode = unsafeReadProtoTagged "HTMLTableElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLTableElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLTableElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLTableElement
+fromParentNode = unsafeReadProtoTagged "HTMLTableElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLTableElement
+fromEventTarget = unsafeReadProtoTagged "HTMLTableElement"
 
 toHTMLElement :: HTMLTableElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLTableElement
-read = unsafeReadTagged "HTMLTableElement"
+toElement :: HTMLTableElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLTableElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLTableElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLTableElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLTableElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLTableElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 caption :: HTMLTableElement -> Effect (Maybe HTMLTableCaptionElement)
 caption = map toMaybe <<< _caption

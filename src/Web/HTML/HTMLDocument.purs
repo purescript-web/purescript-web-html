@@ -1,11 +1,15 @@
 module Web.HTML.HTMLDocument
   ( HTMLDocument
+  , fromDocument
+  , fromNode
+  , fromParentNode
+  , fromNonElementParentNode
+  , fromEventTarget
   , toDocument
-  , toNonElementParentNode
-  , toParentNode
   , toNode
+  , toParentNode
+  , toNonElementParentNode
   , toEventTarget
-  , read
   , body
   , readyState
   , activeElement
@@ -17,7 +21,6 @@ import Prelude
 import Data.Maybe (Maybe, fromJust)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Partial.Unsafe (unsafePartial)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM.Document (Document)
@@ -28,26 +31,39 @@ import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLDocument.ReadyState (ReadyState(..)) as Exports
 import Web.HTML.HTMLDocument.ReadyState (ReadyState, parseReadyState)
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLDocument :: Type
+
+fromDocument :: Node -> Maybe Document
+fromDocument = unsafeReadProtoTagged "HTMLDocument"
+
+fromNode :: Node -> Maybe HTMLDocument
+fromNode = unsafeReadProtoTagged "HTMLDocument"
+
+fromParentNode :: ParentNode -> Maybe HTMLDocument
+fromParentNode = unsafeReadProtoTagged "HTMLDocument"
+
+fromNonElementParentNode :: NonElementParentNode -> Maybe HTMLDocument
+fromNonElementParentNode = unsafeReadProtoTagged "HTMLDocument"
+
+fromEventTarget :: EventTarget -> Maybe HTMLDocument
+fromEventTarget = unsafeReadProtoTagged "HTMLDocument"
 
 toDocument :: HTMLDocument -> Document
 toDocument = unsafeCoerce
 
-toNonElementParentNode :: HTMLDocument -> NonElementParentNode
-toNonElementParentNode = unsafeCoerce
+toNode :: HTMLDocument -> Node
+toNode = unsafeCoerce
 
 toParentNode :: HTMLDocument -> ParentNode
 toParentNode = unsafeCoerce
 
-toNode :: HTMLDocument -> Node
-toNode = unsafeCoerce
+toNonElementParentNode :: HTMLDocument -> NonElementParentNode
+toNonElementParentNode = unsafeCoerce
 
 toEventTarget :: HTMLDocument -> EventTarget
 toEventTarget = unsafeCoerce
-
-read :: Foreign -> F HTMLDocument
-read = unsafeReadTagged "HTMLDocument"
 
 foreign import _body :: HTMLDocument -> Effect (Nullable HTMLElement)
 

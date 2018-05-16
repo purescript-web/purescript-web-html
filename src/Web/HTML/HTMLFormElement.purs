@@ -1,18 +1,57 @@
 module Web.HTML.HTMLFormElement where
 
+import Data.Maybe (Maybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLFormElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLFormElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLFormElement"
+
+fromElement :: Element -> Maybe HTMLFormElement
+fromElement = unsafeReadProtoTagged "HTMLFormElement"
+
+fromNode :: Node -> Maybe HTMLFormElement
+fromNode = unsafeReadProtoTagged "HTMLFormElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLFormElement
+fromChildNode = unsafeReadProtoTagged "HTMLFormElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLFormElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLFormElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLFormElement
+fromParentNode = unsafeReadProtoTagged "HTMLFormElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLFormElement
+fromEventTarget = unsafeReadProtoTagged "HTMLFormElement"
 
 toHTMLElement :: HTMLFormElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLFormElement
-read = unsafeReadTagged "HTMLFormElement"
+toElement :: HTMLFormElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLFormElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLFormElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLFormElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLFormElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLFormElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 foreign import acceptCharset :: HTMLFormElement -> Effect String
 foreign import setAcceptCharset :: String -> HTMLFormElement -> Effect Unit
