@@ -378,18 +378,8 @@ exports.setRangeText = function (replacement) {
   };
 };
 
-exports["setRangeText'"] = function (replacement) {
-  return function (start) {
-    return function (end) {
-      return function (selectionMode) {
-        return function (textarea) {
-          return function () {
-            textarea.setRangeText(replacement, start, end, selectionMode);
-          };
-        };
-      };
-    };
-  };
+exports._setRangeText = function (replacement, start, end, selectionMode, textarea) {
+  textarea.setRangeText(replacement, start, end, selectionMode);
 };
 
 // ----------------------------------------------------------------------------

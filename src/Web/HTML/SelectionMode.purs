@@ -1,36 +1,36 @@
-module Web.HTML.SelectionMode
-  ( SelectionMode
-  , runSelectionMode
-  , select
-  , start
-  , end
-  , preserve
-  ) where
+module Web.HTML.SelectionMode where
 
 import Prelude
 
-newtype SelectionMode = SelectionMode String
+import Data.Maybe (Maybe(..))
 
-runSelectionMode :: SelectionMode -> String
-runSelectionMode (SelectionMode m) = m
+data SelectionMode
+  = Preserve
+  | Select
+  | Start
+  | End
 
-instance eqSelectionMode :: Eq SelectionMode where
-  eq (SelectionMode x) (SelectionMode y) = x == y
-
-instance ordSelectionMode :: Ord SelectionMode where
-  compare (SelectionMode x) (SelectionMode y) = compare x y
+derive instance eqSelectionMode :: Eq SelectionMode
+derive instance ordSelectionMode :: Ord SelectionMode
 
 instance showSelectionMode :: Show SelectionMode where
-  show (SelectionMode m) = "(SelectionMode " <> show m <> ")"
+  show = case _ of
+    Preserve -> "Preserve"
+    Select -> "Select"
+    Start -> "Start"
+    End -> "End"
 
-select :: SelectionMode
-select = SelectionMode "select"
+parse :: String -> Maybe SelectionMode
+parse = case _ of
+  "preserve" -> Just Preserve
+  "select" -> Just Select
+  "start" -> Just Start
+  "end" -> Just End
+  _ -> Nothing
 
-start :: SelectionMode
-start = SelectionMode "start"
-
-end :: SelectionMode
-end = SelectionMode "end"
-
-preserve :: SelectionMode
-preserve = SelectionMode "preserve"
+print :: SelectionMode -> String
+print = case _ of
+  Preserve -> "preserve"
+  Select -> "select"
+  Start -> "start"
+  End -> "end"

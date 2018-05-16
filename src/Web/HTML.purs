@@ -71,8 +71,6 @@ import Web.HTML.HTMLUListElement (HTMLUListElement) as Exports
 import Web.HTML.HTMLVideoElement (HTMLVideoElement) as Exports
 import Web.HTML.Location (Location) as Exports
 import Web.HTML.Navigator (Navigator) as Exports
-import Web.HTML.SelectionMode (SelectionMode) as Exports
-import Web.HTML.ValidityState (ValidityState) as Exports
 import Web.HTML.Window (Window) as Exports
 
 foreign import window :: Effect Window

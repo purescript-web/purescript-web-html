@@ -15,7 +15,6 @@ import Data.Maybe (Maybe)
 import Data.MediaType (MediaType(..))
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Partial.Unsafe (unsafeCrashWith)
 import Web.File.FileList (FileList)
 
 foreign import data DataTransfer :: Type
@@ -73,7 +72,7 @@ dropEffect dt =
     "link" -> Link
     "move" -> Move
     "none" -> None
-    de -> unsafeCrashWith ("Found unexpected 'dropEffect' value: " <> de)
+    _ -> None
 
 foreign import _setDropEffect :: String -> DataTransfer -> Effect Unit
 

@@ -80,8 +80,6 @@ exports.setDefault = function (def) {
 
 // ----------------------------------------------------------------------------
 
-exports.readyStateIndex = function (track) {
-  return function () {
-    return track.readyState;
-  };
+exports._readyState = function (track) {
+  return track.readyState;
 };

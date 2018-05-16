@@ -70,6 +70,7 @@ import Prelude
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
+import Effect.Uncurried (EffectFn5, runEffectFn5)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.NodeList (NodeList)
@@ -77,6 +78,7 @@ import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLFormElement (HTMLFormElement)
 import Web.HTML.SelectionMode (SelectionMode)
+import Web.HTML.SelectionMode as SelectionMode
 import Web.HTML.ValidityState (ValidityState)
 import Web.Internal.FFI (unsafeReadProtoTagged)
 
@@ -202,6 +204,11 @@ foreign import selectionDirection :: HTMLTextAreaElement -> Effect String
 foreign import setSelectionDirection :: String -> HTMLTextAreaElement -> Effect Unit
 
 foreign import setRangeText :: String -> HTMLTextAreaElement -> Effect Unit
-foreign import setRangeText' :: String -> Int -> Int -> SelectionMode -> HTMLTextAreaElement -> Effect Unit
+
+setRangeText' :: String -> Int -> Int -> SelectionMode -> HTMLTextAreaElement -> Effect Unit
+setRangeText' rpl s e mode area =
+  runEffectFn5 _setRangeText rpl s e (SelectionMode.print mode) area
+
+foreign import _setRangeText :: EffectFn5 String Int Int String HTMLTextAreaElement Unit
 
 foreign import setSelectionRange :: Int -> Int -> String -> HTMLTextAreaElement -> Effect Unit

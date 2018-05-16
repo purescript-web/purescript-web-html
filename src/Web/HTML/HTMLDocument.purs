@@ -13,23 +13,21 @@ module Web.HTML.HTMLDocument
   , body
   , readyState
   , activeElement
-  , module Exports
   ) where
 
 import Prelude
 
-import Data.Maybe (Maybe, fromJust)
+import Data.Maybe (Maybe, fromMaybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Partial.Unsafe (unsafePartial)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM.Document (Document)
 import Web.DOM.Internal.Types (Node)
 import Web.DOM.NonElementParentNode (NonElementParentNode)
 import Web.DOM.ParentNode (ParentNode)
 import Web.Event.EventTarget (EventTarget)
-import Web.HTML.HTMLDocument.ReadyState (ReadyState(..)) as Exports
-import Web.HTML.HTMLDocument.ReadyState (ReadyState, parseReadyState)
+import Web.HTML.HTMLDocument.ReadyState (ReadyState)
+import Web.HTML.HTMLDocument.ReadyState as ReadyState
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.Internal.FFI (unsafeReadProtoTagged)
 
@@ -73,7 +71,7 @@ body = map toMaybe <<< _body
 foreign import _readyState :: HTMLDocument -> Effect String
 
 readyState :: HTMLDocument -> Effect ReadyState
-readyState = map (unsafePartial fromJust <<< parseReadyState) <<< _readyState
+readyState = map (fromMaybe ReadyState.Loading <<< ReadyState.parse) <<< _readyState
 
 foreign import _activeElement :: HTMLDocument -> Effect (Nullable HTMLElement)
 

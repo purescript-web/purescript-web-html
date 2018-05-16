@@ -1,15 +1,44 @@
-module Web.HTML.HTMLTrackElement where
+module Web.HTML.HTMLTrackElement
+  ( HTMLTrackElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
+  , toHTMLElement
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
+  , kind
+  , setKind
+  , src
+  , setSrc
+  , srclang
+  , setSrclang
+  , label
+  , setLabel
+  , default
+  , setDefault
+  , readyState
+  ) where
 
 import Prelude
 
 import Data.Enum (toEnum)
-import Data.Maybe (Maybe, fromJust)
+import Data.Maybe (Maybe, fromMaybe)
 import Effect (Effect)
+import Effect.Uncurried (EffectFn1, runEffectFn1)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLTrackElement.ReadyState (ReadyState)
+import Web.HTML.HTMLTrackElement.ReadyState as ReadyState
 import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLTrackElement :: Type
@@ -71,9 +100,9 @@ foreign import setLabel :: String -> HTMLTrackElement -> Effect Unit
 foreign import default :: HTMLTrackElement -> Effect Boolean
 foreign import setDefault :: Boolean -> HTMLTrackElement -> Effect Unit
 
-readyState :: Partial => HTMLTrackElement -> Effect ReadyState
-readyState = map (fromJust <<< toEnum) <<< readyStateIndex
+readyState :: HTMLTrackElement -> Effect ReadyState
+readyState el = map (fromMaybe ReadyState.None <<< toEnum) $ runEffectFn1 _readyState el
 
-foreign import readyStateIndex :: HTMLTrackElement -> Effect Int
+foreign import _readyState :: EffectFn1 HTMLTrackElement Int
 
 --   readonly attribute TextTrack track;
