@@ -46,7 +46,7 @@ import Web.HTML.HTMLDocument (HTMLDocument)
 import Web.HTML.History (History)
 import Web.HTML.Location (Location)
 import Web.HTML.Navigator (Navigator)
-import Web.WebStorage.Storage (Storage)
+import Web.Storage.Storage (Storage)
 
 foreign import data Window :: Type
 

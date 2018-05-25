@@ -15,9 +15,9 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-js-date": "#compiler/0.12",
-    "purescript-web-dom": "#compiler/0.12",
-    "purescript-web-file": "#compiler/0.12",
-    "purescript-web-storage": "#compiler/0.12"
+    "purescript-js-date": "^6.0.0",
+    "purescript-web-dom": "^1.0.0",
+    "purescript-web-file": "^1.0.0",
+    "purescript-web-storage": "^2.0.0"
   }
 }
