@@ -41,12 +41,12 @@ import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
 import Prelude (class Eq, class Ord, Unit, (<$>), (<<<), map)
 import Unsafe.Coerce (unsafeCoerce)
-import Web.Event.Types (EventTarget)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLDocument (HTMLDocument)
 import Web.HTML.History (History)
 import Web.HTML.Location (Location)
 import Web.HTML.Navigator (Navigator)
-import Web.WebStorage.Storage (Storage)
+import Web.Storage.Storage (Storage)
 
 foreign import data Window :: Type
 

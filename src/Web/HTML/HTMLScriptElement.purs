@@ -1,18 +1,57 @@
 module Web.HTML.HTMLScriptElement where
 
+import Data.Maybe (Maybe)
 import Effect (Effect)
-import Foreign (Foreign, F, unsafeReadTagged)
 import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLScriptElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLScriptElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLScriptElement"
+
+fromElement :: Element -> Maybe HTMLScriptElement
+fromElement = unsafeReadProtoTagged "HTMLScriptElement"
+
+fromNode :: Node -> Maybe HTMLScriptElement
+fromNode = unsafeReadProtoTagged "HTMLScriptElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLScriptElement
+fromChildNode = unsafeReadProtoTagged "HTMLScriptElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLScriptElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLScriptElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLScriptElement
+fromParentNode = unsafeReadProtoTagged "HTMLScriptElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLScriptElement
+fromEventTarget = unsafeReadProtoTagged "HTMLScriptElement"
 
 toHTMLElement :: HTMLScriptElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLScriptElement
-read = unsafeReadTagged "HTMLScriptElement"
+toElement :: HTMLScriptElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLScriptElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLScriptElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLScriptElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLScriptElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLScriptElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 foreign import src :: HTMLScriptElement -> Effect String
 foreign import setSrc :: String -> HTMLScriptElement -> Effect Unit

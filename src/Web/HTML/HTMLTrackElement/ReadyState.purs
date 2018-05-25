@@ -5,17 +5,17 @@ import Data.Maybe (Maybe(..))
 import Data.Enum (class Enum, class BoundedEnum, Cardinality(..), defaultSucc, defaultPred)
 
 data ReadyState
-  = NONE
-  | LOADING
-  | LOADED
-  | ERROR
+  = None
+  | Loading
+  | Loaded
+  | Error
 
 derive instance eqReadyState :: Eq ReadyState
 derive instance ordReadyState :: Ord ReadyState
 
 instance boundedReadyState :: Bounded ReadyState where
-  bottom = NONE
-  top = ERROR
+  bottom = None
+  top = Error
 
 instance enumReadyState :: Enum ReadyState where
   succ = defaultSucc toEnumReadyState fromEnumReadyState
@@ -27,24 +27,24 @@ instance boundedEnumReadyState :: BoundedEnum ReadyState where
   fromEnum = fromEnumReadyState
 
 instance showReadyState :: Show ReadyState where
-  show NONE = "NONE"
-  show LOADING = "LOADING"
-  show LOADED = "LOADED"
-  show ERROR = "ERROR"
+  show None = "None"
+  show Loading = "Loading"
+  show Loaded = "Loaded"
+  show Error = "Error"
 
 toEnumReadyState :: Int -> Maybe ReadyState
 toEnumReadyState =
   case _ of
-    0 -> Just NONE
-    1 -> Just LOADING
-    2 -> Just LOADED
-    3 -> Just ERROR
+    0 -> Just None
+    1 -> Just Loading
+    2 -> Just Loaded
+    3 -> Just Error
     _ -> Nothing
 
 fromEnumReadyState :: ReadyState -> Int
 fromEnumReadyState =
   case _ of
-    NONE -> 0
-    LOADING -> 1
-    LOADED -> 2
-    ERROR -> 3
+    None -> 0
+    Loading -> 1
+    Loaded -> 2
+    Error -> 3

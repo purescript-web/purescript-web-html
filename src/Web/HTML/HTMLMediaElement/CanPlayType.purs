@@ -1,29 +1,32 @@
-module Web.HTML.HTMLMediaElement.CanPlayType
-  ( CanPlayType
-  , runCanPlayType
-  , unspecified
-  , maybe
-  , probably
-  ) where
+module Web.HTML.HTMLMediaElement.CanPlayType where
 
 import Prelude
 
-newtype CanPlayType = CanPlayType String
+import Data.Maybe (Maybe(..))
 
-runCanPlayType :: CanPlayType -> String
-runCanPlayType (CanPlayType t) = t
+data CanPlayType
+  = Unspecified
+  | Maybe
+  | Probably
 
 derive instance eqCanPlayType :: Eq CanPlayType
 derive instance ordCanPlayType :: Ord CanPlayType
 
 instance showCanPlayType :: Show CanPlayType where
-  show (CanPlayType t) = "(CanPlayType " <> show t <> ")"
+  show = case _ of
+    Unspecified -> "Unspecified"
+    Maybe -> "Maybe"
+    Probably -> "Probably"
 
-unspecified :: CanPlayType
-unspecified = CanPlayType ""
+parse :: String -> Maybe CanPlayType
+parse = case _ of
+  "" -> Just Unspecified
+  "maybe" -> Just Maybe
+  "probably" -> Just Probably
+  _ -> Nothing
 
-maybe :: CanPlayType
-maybe = CanPlayType "maybe"
-
-probably :: CanPlayType
-probably = CanPlayType "probably"
+print :: CanPlayType -> String
+print = case _ of
+  Unspecified -> ""
+  Maybe -> "maybe"
+  Probably -> "probably"

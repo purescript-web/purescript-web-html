@@ -1,7 +1,19 @@
 module Web.HTML.HTMLTextAreaElement
   ( HTMLTextAreaElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
   , toHTMLElement
-  , read
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
   , autocomplete
   , setAutocomplete
   , autofocus
@@ -58,21 +70,61 @@ import Prelude
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
+import Effect.Uncurried (EffectFn5, runEffectFn5)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.NodeList (NodeList)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLFormElement (HTMLFormElement)
 import Web.HTML.SelectionMode (SelectionMode)
+import Web.HTML.SelectionMode as SelectionMode
 import Web.HTML.ValidityState (ValidityState)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLTextAreaElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLTextAreaElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLTextAreaElement"
+
+fromElement :: Element -> Maybe HTMLTextAreaElement
+fromElement = unsafeReadProtoTagged "HTMLTextAreaElement"
+
+fromNode :: Node -> Maybe HTMLTextAreaElement
+fromNode = unsafeReadProtoTagged "HTMLTextAreaElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLTextAreaElement
+fromChildNode = unsafeReadProtoTagged "HTMLTextAreaElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLTextAreaElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLTextAreaElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLTextAreaElement
+fromParentNode = unsafeReadProtoTagged "HTMLTextAreaElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLTextAreaElement
+fromEventTarget = unsafeReadProtoTagged "HTMLTextAreaElement"
 
 toHTMLElement :: HTMLTextAreaElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLTextAreaElement
-read = unsafeReadTagged "HTMLTextAreaElement"
+toElement :: HTMLTextAreaElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLTextAreaElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLTextAreaElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLTextAreaElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLTextAreaElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLTextAreaElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 foreign import autocomplete :: HTMLTextAreaElement -> Effect String
 foreign import setAutocomplete :: String -> HTMLTextAreaElement -> Effect Unit
@@ -152,6 +204,11 @@ foreign import selectionDirection :: HTMLTextAreaElement -> Effect String
 foreign import setSelectionDirection :: String -> HTMLTextAreaElement -> Effect Unit
 
 foreign import setRangeText :: String -> HTMLTextAreaElement -> Effect Unit
-foreign import setRangeText' :: String -> Int -> Int -> SelectionMode -> HTMLTextAreaElement -> Effect Unit
+
+setRangeText' :: String -> Int -> Int -> SelectionMode -> HTMLTextAreaElement -> Effect Unit
+setRangeText' rpl s e mode area =
+  runEffectFn5 _setRangeText rpl s e (SelectionMode.print mode) area
+
+foreign import _setRangeText :: EffectFn5 String Int Int String HTMLTextAreaElement Unit
 
 foreign import setSelectionRange :: Int -> Int -> String -> HTMLTextAreaElement -> Effect Unit

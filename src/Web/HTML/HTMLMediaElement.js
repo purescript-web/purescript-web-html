@@ -40,10 +40,8 @@ exports.setCrossOrigin = function (crossOrigin) {
 
 // ----------------------------------------------------------------------------
 
-exports.networkStateIndex = function (media) {
-  return function () {
-    return media.networkState;
-  };
+exports._networkState = function (media) {
+  return media.networkState;
 };
 
 // ----------------------------------------------------------------------------
@@ -72,20 +70,14 @@ exports.load = function (media) {
 
 // ----------------------------------------------------------------------------
 
-exports.canPlayType = function (type) {
-  return function (media) {
-    return function () {
-      return media.canPlayType(type);
-    };
-  };
+exports._canPlayType = function (type, media) {
+  return media.canPlayType(type);
 };
 
 // ----------------------------------------------------------------------------
 
-exports.readyStateIndex = function (media) {
-  return function () {
-    return media.readyState;
-  };
+exports._readyState = function (media) {
+  return media.readyState;
 };
 
 // ----------------------------------------------------------------------------

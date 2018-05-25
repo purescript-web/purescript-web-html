@@ -1,7 +1,19 @@
 module Web.HTML.HTMLIFrameElement
   ( HTMLIFrameElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
   , toHTMLElement
-  , read
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
   , src
   , setSrc
   , srcdoc
@@ -21,19 +33,57 @@ import Prelude
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.Document (Document)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.Window (Window)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLIFrameElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLIFrameElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLIFrameElement"
+
+fromElement :: Element -> Maybe HTMLIFrameElement
+fromElement = unsafeReadProtoTagged "HTMLIFrameElement"
+
+fromNode :: Node -> Maybe HTMLIFrameElement
+fromNode = unsafeReadProtoTagged "HTMLIFrameElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLIFrameElement
+fromChildNode = unsafeReadProtoTagged "HTMLIFrameElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLIFrameElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLIFrameElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLIFrameElement
+fromParentNode = unsafeReadProtoTagged "HTMLIFrameElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLIFrameElement
+fromEventTarget = unsafeReadProtoTagged "HTMLIFrameElement"
 
 toHTMLElement :: HTMLIFrameElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLIFrameElement
-read = unsafeReadTagged "HTMLIFrameElement"
+toElement :: HTMLIFrameElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLIFrameElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLIFrameElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLIFrameElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLIFrameElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLIFrameElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 foreign import src :: HTMLIFrameElement -> Effect String
 foreign import setSrc :: String -> HTMLIFrameElement -> Effect Unit

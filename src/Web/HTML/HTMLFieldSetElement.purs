@@ -1,7 +1,19 @@
 module Web.HTML.HTMLFieldSetElement
   ( HTMLFieldSetElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
   , toHTMLElement
-  , read
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
   , disabled
   , setDisabled
   , form
@@ -21,19 +33,57 @@ import Prelude
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLFormElement (HTMLFormElement)
 import Web.HTML.ValidityState (ValidityState)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLFieldSetElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLFieldSetElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLFieldSetElement"
+
+fromElement :: Element -> Maybe HTMLFieldSetElement
+fromElement = unsafeReadProtoTagged "HTMLFieldSetElement"
+
+fromNode :: Node -> Maybe HTMLFieldSetElement
+fromNode = unsafeReadProtoTagged "HTMLFieldSetElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLFieldSetElement
+fromChildNode = unsafeReadProtoTagged "HTMLFieldSetElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLFieldSetElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLFieldSetElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLFieldSetElement
+fromParentNode = unsafeReadProtoTagged "HTMLFieldSetElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLFieldSetElement
+fromEventTarget = unsafeReadProtoTagged "HTMLFieldSetElement"
 
 toHTMLElement :: HTMLFieldSetElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLFieldSetElement
-read = unsafeReadTagged "HTMLFieldSetElement"
+toElement :: HTMLFieldSetElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLFieldSetElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLFieldSetElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLFieldSetElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLFieldSetElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLFieldSetElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 foreign import disabled :: HTMLFieldSetElement -> Effect Boolean
 foreign import setDisabled :: Boolean -> HTMLFieldSetElement -> Effect Unit

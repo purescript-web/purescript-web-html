@@ -1,19 +1,58 @@
 module Web.HTML.HTMLAnchorElement where
 
+import Data.Maybe (Maybe)
 import Effect (Effect)
-import Foreign (Foreign, F, unsafeReadTagged)
 import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.DOMTokenList (DOMTokenList)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLAnchorElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLAnchorElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLAnchorElement"
+
+fromElement :: Element -> Maybe HTMLAnchorElement
+fromElement = unsafeReadProtoTagged "HTMLAnchorElement"
+
+fromNode :: Node -> Maybe HTMLAnchorElement
+fromNode = unsafeReadProtoTagged "HTMLAnchorElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLAnchorElement
+fromChildNode = unsafeReadProtoTagged "HTMLAnchorElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLAnchorElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLAnchorElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLAnchorElement
+fromParentNode = unsafeReadProtoTagged "HTMLAnchorElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLAnchorElement
+fromEventTarget = unsafeReadProtoTagged "HTMLAnchorElement"
 
 toHTMLElement :: HTMLAnchorElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLAnchorElement
-read = unsafeReadTagged "HTMLAnchorElement"
+toElement :: HTMLAnchorElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLAnchorElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLAnchorElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLAnchorElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLAnchorElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLAnchorElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 foreign import target :: HTMLAnchorElement -> Effect String
 foreign import setTarget :: String -> HTMLAnchorElement -> Effect Unit

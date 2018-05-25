@@ -1,7 +1,19 @@
 module Web.HTML.HTMLSelectElement
   ( HTMLSelectElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
   , toHTMLElement
-  , read
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
   , autofocus
   , setAutofocus
   , disabled
@@ -36,21 +48,59 @@ import Prelude
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Foreign (F, Foreign, unsafeReadTagged)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.HTMLCollection (HTMLCollection)
 import Web.DOM.NodeList (NodeList)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLFormElement (HTMLFormElement)
 import Web.HTML.ValidityState (ValidityState)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLSelectElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLSelectElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLSelectElement"
+
+fromElement :: Element -> Maybe HTMLSelectElement
+fromElement = unsafeReadProtoTagged "HTMLSelectElement"
+
+fromNode :: Node -> Maybe HTMLSelectElement
+fromNode = unsafeReadProtoTagged "HTMLSelectElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLSelectElement
+fromChildNode = unsafeReadProtoTagged "HTMLSelectElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLSelectElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLSelectElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLSelectElement
+fromParentNode = unsafeReadProtoTagged "HTMLSelectElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLSelectElement
+fromEventTarget = unsafeReadProtoTagged "HTMLSelectElement"
 
 toHTMLElement :: HTMLSelectElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLSelectElement
-read = unsafeReadTagged "HTMLSelectElement"
+toElement :: HTMLSelectElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLSelectElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLSelectElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLSelectElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLSelectElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLSelectElement -> EventTarget
+toEventTarget = unsafeCoerce
 
 foreign import autofocus :: HTMLSelectElement -> Effect Boolean
 foreign import setAutofocus :: Boolean -> HTMLSelectElement -> Effect Unit

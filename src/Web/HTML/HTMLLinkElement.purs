@@ -1,19 +1,59 @@
 module Web.HTML.HTMLLinkElement where
 
+import Data.Maybe (Maybe)
 import Effect (Effect)
-import Foreign (Foreign, F, unsafeReadTagged)
 import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.DOMTokenList (DOMTokenList)
+import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLLinkElement :: Type
+
+fromHTMLElement :: HTMLElement -> Maybe HTMLLinkElement
+fromHTMLElement = unsafeReadProtoTagged "HTMLLinkElement"
+
+fromElement :: Element -> Maybe HTMLLinkElement
+fromElement = unsafeReadProtoTagged "HTMLLinkElement"
+
+fromNode :: Node -> Maybe HTMLLinkElement
+fromNode = unsafeReadProtoTagged "HTMLLinkElement"
+
+fromChildNode :: ChildNode -> Maybe HTMLLinkElement
+fromChildNode = unsafeReadProtoTagged "HTMLLinkElement"
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLLinkElement
+fromNonDocumentTypeChildNode = unsafeReadProtoTagged "HTMLLinkElement"
+
+fromParentNode :: ParentNode -> Maybe HTMLLinkElement
+fromParentNode = unsafeReadProtoTagged "HTMLLinkElement"
+
+fromEventTarget :: EventTarget -> Maybe HTMLLinkElement
+fromEventTarget = unsafeReadProtoTagged "HTMLLinkElement"
 
 toHTMLElement :: HTMLLinkElement -> HTMLElement
 toHTMLElement = unsafeCoerce
 
-read :: Foreign -> F HTMLLinkElement
-read = unsafeReadTagged "HTMLLinkElement"
+toElement :: HTMLLinkElement -> Element
+toElement = unsafeCoerce
+
+toNode :: HTMLLinkElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLLinkElement -> ChildNode
+toChildNode = unsafeCoerce
+
+toNonDocumentTypeChildNode :: HTMLLinkElement -> NonDocumentTypeChildNode
+toNonDocumentTypeChildNode = unsafeCoerce
+
+toParentNode :: HTMLLinkElement -> ParentNode
+toParentNode = unsafeCoerce
+
+toEventTarget :: HTMLLinkElement -> EventTarget
+toEventTarget = unsafeCoerce
+
 
 foreign import disabled :: HTMLLinkElement -> Effect Boolean
 foreign import setDisabled :: Boolean -> HTMLLinkElement -> Effect Unit

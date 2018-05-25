@@ -1,11 +1,17 @@
 module Web.HTML.HTMLElement
   ( HTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
   , toElement
-  , toParentNode
-  , toNonDocumentTypeChildNode
   , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
   , toEventTarget
-  , read
   , title
   , setTitle
   , lang
@@ -40,45 +46,58 @@ module Web.HTML.HTMLElement
 
 import Prelude
 
-import Control.Monad.Except (except)
-import Data.Either (Either(..))
-import Data.Maybe (Maybe)
+import Data.Function.Uncurried (Fn3, runFn3)
+import Data.Maybe (Maybe(..))
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Foreign (F, Foreign, ForeignError(..))
 import Unsafe.Coerce (unsafeCoerce)
+import Web.DOM (ChildNode)
 import Web.DOM.DOMTokenList (DOMTokenList)
 import Web.DOM.Element (Element)
 import Web.DOM.Internal.Types (Node)
 import Web.DOM.NonDocumentTypeChildNode (NonDocumentTypeChildNode)
 import Web.DOM.ParentNode (ParentNode)
-import Web.Event.Types (EventTarget)
+import Web.Event.EventTarget (EventTarget)
 
 foreign import data HTMLElement :: Type
+
+foreign import _read :: forall a. Fn3 (forall x. Maybe x) (forall x. x -> Maybe x) a (Maybe HTMLElement)
+
+fromElement :: Element -> Maybe HTMLElement
+fromElement x = runFn3 _read Nothing Just x
+
+fromNode :: Node -> Maybe HTMLElement
+fromNode x = runFn3 _read Nothing Just x
+
+fromChildNode :: ChildNode -> Maybe HTMLElement
+fromChildNode x = runFn3 _read Nothing Just x
+
+fromNonDocumentTypeChildNode :: NonDocumentTypeChildNode -> Maybe HTMLElement
+fromNonDocumentTypeChildNode x = runFn3 _read Nothing Just x
+
+fromParentNode :: ParentNode -> Maybe HTMLElement
+fromParentNode x = runFn3 _read Nothing Just x
+
+fromEventTarget :: EventTarget -> Maybe HTMLElement
+fromEventTarget x = runFn3 _read Nothing Just x
 
 toElement :: HTMLElement -> Element
 toElement = unsafeCoerce
 
-toParentNode :: HTMLElement -> ParentNode
-toParentNode = unsafeCoerce
+toNode :: HTMLElement -> Node
+toNode = unsafeCoerce
+
+toChildNode :: HTMLElement -> ChildNode
+toChildNode = unsafeCoerce
 
 toNonDocumentTypeChildNode :: HTMLElement -> NonDocumentTypeChildNode
 toNonDocumentTypeChildNode = unsafeCoerce
 
-toNode :: HTMLElement -> Node
-toNode = unsafeCoerce
+toParentNode :: HTMLElement -> ParentNode
+toParentNode = unsafeCoerce
 
 toEventTarget :: HTMLElement -> EventTarget
 toEventTarget = unsafeCoerce
-
-foreign import _read
-  :: (forall a. String -> F a)
-  -> (forall a. a -> F a)
-  -> Foreign
-  -> F HTMLElement
-
-read :: Foreign -> F HTMLElement
-read = _read (except <<< Left <<< pure <<< TypeMismatch "HTMLElement") (except <<< Right)
 
 foreign import title :: HTMLElement -> Effect String
 foreign import setTitle :: String -> HTMLElement -> Effect Unit
