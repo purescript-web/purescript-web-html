@@ -588,22 +588,6 @@ exports["stepDown'"] = function (n) {
 
 // ----------------------------------------------------------------------------
 
-exports.value = function (input) {
-  return function () {
-    return input.value;
-  };
-};
-
-exports.setValue = function (value) {
-  return function (input) {
-    return function () {
-      input.value = value;
-    };
-  };
-};
-
-// ----------------------------------------------------------------------------
-
 exports.willValidate = function (input) {
   return function () {
     return input.willValidate;
