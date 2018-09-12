@@ -85,6 +85,20 @@ exports.classList = function (element) {
 
 // ----------------------------------------------------------------------------
 
+exports._getAttribute = function (element) {
+  return function (attr) {
+    return function () {
+      if (element.hasAttribute(attr)) {
+        return element.getAttribute(attr);
+      } else {
+        return null;
+      }
+    };
+  };
+};
+
+// ----------------------------------------------------------------------------
+
 exports.hidden = function (elt) {
   return function () {
     return elt.hidden;
