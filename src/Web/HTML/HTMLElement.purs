@@ -21,7 +21,6 @@ module Web.HTML.HTMLElement
   , className
   , setClassName
   , classList
-  , getAttribute
   , hidden
   , setHidden
   , tabIndex
@@ -113,11 +112,6 @@ foreign import className :: HTMLElement -> Effect String
 foreign import setClassName :: String -> HTMLElement -> Effect Unit
 
 foreign import classList :: HTMLElement -> Effect DOMTokenList
-
-foreign import _getAttribute :: HTMLElement -> String -> Effect (Nullable String)
-
-getAttribute :: HTMLElement -> String -> Effect (Maybe String)
-getAttribute elem = map toMaybe <<< _getAttribute elem
 
 foreign import hidden :: HTMLElement -> Effect Boolean
 foreign import setHidden :: Boolean -> HTMLElement -> Effect Unit
