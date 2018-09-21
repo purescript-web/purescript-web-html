@@ -17,3 +17,9 @@ exports._activeElement = function (doc) {
     return doc.activeElement;
   };
 };
+
+exports._currentScript = function (doc) {
+  return function () {
+    return doc.currentScript;
+  };
+};

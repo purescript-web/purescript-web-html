@@ -29,6 +29,7 @@ import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLDocument.ReadyState (ReadyState)
 import Web.HTML.HTMLDocument.ReadyState as ReadyState
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.HTML.HTMLScriptElement (HTMLScriptElement)
 import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLDocument :: Type
@@ -77,3 +78,8 @@ foreign import _activeElement :: HTMLDocument -> Effect (Nullable HTMLElement)
 
 activeElement :: HTMLDocument -> Effect (Maybe HTMLElement)
 activeElement = map toMaybe <<< _activeElement
+
+foreign import _currentScript :: HTMLDocument -> Effect (Nullable HTMLScriptElement)
+
+currentScript :: HTMLDocument -> Effect (Maybe HTMLScriptElement)
+currentScript = map toMaybe <<< _currentScript
