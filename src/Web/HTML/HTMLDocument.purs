@@ -13,6 +13,7 @@ module Web.HTML.HTMLDocument
   , body
   , readyState
   , activeElement
+  , currentScript
   ) where
 
 import Prelude
