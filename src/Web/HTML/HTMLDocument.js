@@ -23,3 +23,24 @@ exports._currentScript = function (doc) {
     return doc.currentScript;
   };
 };
+
+exports.referrer = function (doc) {
+  return function () {
+    return doc.referrer;
+  };
+};
+
+exports.title = function (doc) {
+  return function () {
+    return doc.title;
+  };
+};
+
+exports.setTitle = function (title) {
+  return function (doc) {
+    return function () {
+      doc.title = title;
+      return {};
+    };
+  };
+};
