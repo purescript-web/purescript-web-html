@@ -90,5 +90,5 @@ currentScript = map toMaybe <<< _currentScript
 
 foreign import referrer :: HTMLDocument -> Effect String
 
-foreign import title :: HTMLElement -> Effect String
-foreign import setTitle :: String -> HTMLElement -> Effect Unit
+foreign import title :: HTMLDocument -> Effect String
+foreign import setTitle :: String -> HTMLDocument -> Effect Unit
