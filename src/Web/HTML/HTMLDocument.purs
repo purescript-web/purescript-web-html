@@ -14,6 +14,9 @@ module Web.HTML.HTMLDocument
   , readyState
   , activeElement
   , currentScript
+  , referrer
+  , title
+  , setTitle
   ) where
 
 import Prelude
@@ -84,3 +87,8 @@ foreign import _currentScript :: HTMLDocument -> Effect (Nullable HTMLScriptElem
 
 currentScript :: HTMLDocument -> Effect (Maybe HTMLScriptElement)
 currentScript = map toMaybe <<< _currentScript
+
+foreign import referrer :: HTMLDocument -> Effect String
+
+foreign import title :: HTMLDocument -> Effect String
+foreign import setTitle :: String -> HTMLDocument -> Effect Unit
