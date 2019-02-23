@@ -16,8 +16,8 @@
   ],
   "dependencies": {
     "purescript-js-date": "^6.0.0",
-    "purescript-web-dom": "^1.0.0",
-    "purescript-web-file": "^1.0.0",
-    "purescript-web-storage": "^2.0.0"
+    "purescript-web-dom": "^2.0.0",
+    "purescript-web-file": "^2.0.0",
+    "purescript-web-storage": "^3.0.0"
   }
 }
