@@ -38,7 +38,7 @@ import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLDocument :: Type
 
-fromDocument :: Node -> Maybe Document
+fromDocument :: Document -> Maybe HTMLDocument
 fromDocument = unsafeReadProtoTagged "HTMLDocument"
 
 fromNode :: Node -> Maybe HTMLDocument
