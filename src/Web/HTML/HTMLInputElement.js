@@ -614,7 +614,15 @@ exports.validationMessage = function (input) {
 
 exports.checkValidity = function (input) {
   return function () {
-    return input.checkValidity;
+    return input.checkValidity();
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (input) {
+  return function () {
+    return input.reportValidity();
   };
 };
 

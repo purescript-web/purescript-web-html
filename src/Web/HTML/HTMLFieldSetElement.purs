@@ -25,6 +25,7 @@ module Web.HTML.HTMLFieldSetElement
   , validity
   , validationMessage
   , checkValidity
+  , reportValidity
   , setCustomValidity
   ) where
 
@@ -108,5 +109,7 @@ foreign import validity :: HTMLFieldSetElement -> Effect ValidityState
 foreign import validationMessage :: HTMLFieldSetElement -> Effect String
 
 foreign import checkValidity :: HTMLFieldSetElement -> Effect Boolean
+
+foreign import reportValidity :: HTMLFieldSetElement -> Effect Boolean
 
 foreign import setCustomValidity :: String -> HTMLFieldSetElement -> Effect Unit

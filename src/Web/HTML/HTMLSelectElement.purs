@@ -39,6 +39,7 @@ module Web.HTML.HTMLSelectElement
   , validity
   , validationMessage
   , checkValidity
+  , reportValidity
   , setCustomValidity
   , labels
   ) where
@@ -154,6 +155,8 @@ foreign import validity :: HTMLSelectElement -> Effect ValidityState
 foreign import validationMessage :: HTMLSelectElement -> Effect String
 
 foreign import checkValidity :: HTMLSelectElement -> Effect Boolean
+
+foreign import reportValidity :: HTMLSelectElement -> Effect Boolean
 
 foreign import setCustomValidity :: String -> HTMLSelectElement -> Effect Unit
 

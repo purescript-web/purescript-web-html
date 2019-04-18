@@ -90,3 +90,4 @@ foreign import length :: HTMLFormElement -> Effect Int
 foreign import submit :: HTMLFormElement -> Effect Unit
 foreign import reset :: HTMLFormElement -> Effect Unit
 foreign import checkValidity :: HTMLFormElement -> Effect Boolean
+foreign import reportValidity :: HTMLFormElement -> Effect Boolean

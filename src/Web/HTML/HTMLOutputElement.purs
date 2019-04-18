@@ -26,6 +26,7 @@ module Web.HTML.HTMLOutputElement
   , validity
   , validationMessage
   , checkValidity
+  , reportValidity
   , setCustomValidity
   , labels
   ) where
@@ -113,6 +114,8 @@ foreign import validity :: HTMLOutputElement -> Effect ValidityState
 foreign import validationMessage :: HTMLOutputElement -> Effect String
 
 foreign import checkValidity :: HTMLOutputElement -> Effect Boolean
+
+foreign import reportValidity :: HTMLOutputElement -> Effect Boolean
 
 foreign import setCustomValidity :: String -> HTMLOutputElement -> Effect Unit
 

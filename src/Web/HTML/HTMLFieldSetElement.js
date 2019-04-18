@@ -82,7 +82,15 @@ exports.validationMessage = function (fieldset) {
 
 exports.checkValidity = function (fieldset) {
   return function () {
-    return fieldset.checkValidity;
+    return fieldset.checkValidity();
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (fieldset) {
+  return function () {
+    return fieldset.reportValidity();
   };
 };
 

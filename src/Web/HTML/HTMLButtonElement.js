@@ -194,7 +194,15 @@ exports.validationMessage = function (button) {
 
 exports.checkValidity = function (button) {
   return function () {
-    return button.checkValidity;
+    return button.checkValidity();
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (button) {
+  return function () {
+    return button.reportValidity();
   };
 };
 

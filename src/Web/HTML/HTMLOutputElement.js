@@ -90,7 +90,15 @@ exports.validationMessage = function (output) {
 
 exports.checkValidity = function (output) {
   return function () {
-    return output.checkValidity;
+    return output.checkValidity();
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (output) {
+  return function () {
+    return output.reportValidity();
   };
 };
 

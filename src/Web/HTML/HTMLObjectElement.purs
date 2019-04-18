@@ -33,6 +33,7 @@ module Web.HTML.HTMLObjectElement
   , validity
   , validationMessage
   , checkValidity
+  , reportValidity
   , setCustomValidity
   ) where
 
@@ -133,6 +134,8 @@ foreign import validity :: HTMLObjectElement -> Effect ValidityState
 foreign import validationMessage :: HTMLObjectElement -> Effect String
 
 foreign import checkValidity :: HTMLObjectElement -> Effect Boolean
+
+foreign import reportValidity :: HTMLObjectElement -> Effect Boolean
 
 foreign import setCustomValidity :: String -> HTMLObjectElement -> Effect Unit
 

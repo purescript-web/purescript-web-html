@@ -51,6 +51,7 @@ module Web.HTML.HTMLTextAreaElement
   , validity
   , validationMessage
   , checkValidity
+  , reportValidity
   , setCustomValidity
   , labels
   , select
@@ -187,6 +188,8 @@ foreign import validity :: HTMLTextAreaElement -> Effect ValidityState
 foreign import validationMessage :: HTMLTextAreaElement -> Effect String
 
 foreign import checkValidity :: HTMLTextAreaElement -> Effect Boolean
+
+foreign import reportValidity :: HTMLTextAreaElement -> Effect Boolean
 
 foreign import setCustomValidity :: String -> HTMLTextAreaElement -> Effect Unit
 

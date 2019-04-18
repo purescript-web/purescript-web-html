@@ -30,6 +30,7 @@ module Web.HTML.HTMLKeygenElement
   , validity
   , validationMessage
   , checkValidity
+  , reportValidity
   , setCustomValidity
   , labels
   ) where
@@ -122,6 +123,8 @@ foreign import validity :: HTMLKeygenElement -> Effect ValidityState
 foreign import validationMessage :: HTMLKeygenElement -> Effect String
 
 foreign import checkValidity :: HTMLKeygenElement -> Effect Boolean
+
+foreign import reportValidity :: HTMLKeygenElement -> Effect Boolean
 
 foreign import setCustomValidity :: String -> HTMLKeygenElement -> Effect Unit
 
