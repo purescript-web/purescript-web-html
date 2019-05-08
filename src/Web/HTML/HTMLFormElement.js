@@ -173,3 +173,11 @@ exports.checkValidity = function (form) {
     return form.checkValidity();
   };
 };
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (form) {
+  return function () {
+    return form.reportValidity();
+  };
+};

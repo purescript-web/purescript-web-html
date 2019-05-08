@@ -91,6 +91,7 @@ module Web.HTML.HTMLInputElement
   , validity
   , validationMessage
   , checkValidity
+  , reportValidity
   , setCustomValidity
   , labels
   , select
@@ -303,6 +304,8 @@ foreign import validity :: HTMLInputElement -> Effect ValidityState
 foreign import validationMessage :: HTMLInputElement -> Effect String
 
 foreign import checkValidity :: HTMLInputElement -> Effect Boolean
+
+foreign import reportValidity :: HTMLInputElement -> Effect Boolean
 
 foreign import setCustomValidity :: String -> HTMLInputElement -> Effect Unit
 

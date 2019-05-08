@@ -146,7 +146,15 @@ exports.validationMessage = function (object) {
 
 exports.checkValidity = function (object) {
   return function () {
-    return object.checkValidity;
+    return object.checkValidity();
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (object) {
+  return function () {
+    return object.reportValidity();
   };
 };
 

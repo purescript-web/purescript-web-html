@@ -122,7 +122,15 @@ exports.validationMessage = function (keygen) {
 
 exports.checkValidity = function (keygen) {
   return function () {
-    return keygen.checkValidity;
+    return keygen.checkValidity();
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (keygen) {
+  return function () {
+    return keygen.reportValidity();
   };
 };
 

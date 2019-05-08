@@ -194,7 +194,15 @@ exports.validationMessage = function (select) {
 
 exports.checkValidity = function (select) {
   return function () {
-    return select.checkValidity;
+    return select.checkValidity();
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (select) {
+  return function () {
+    return select.reportValidity();
   };
 };
 

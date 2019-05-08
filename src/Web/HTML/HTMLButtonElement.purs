@@ -39,6 +39,7 @@ module Web.HTML.HTMLButtonElement
   , validity
   , validationMessage
   , checkValidity
+  , reportValidity
   , setCustomValidity
   , labels
   ) where
@@ -143,6 +144,8 @@ foreign import validity :: HTMLButtonElement -> Effect ValidityState
 foreign import validationMessage :: HTMLButtonElement -> Effect String
 
 foreign import checkValidity :: HTMLButtonElement -> Effect Boolean
+
+foreign import reportValidity :: HTMLButtonElement -> Effect Boolean
 
 foreign import setCustomValidity :: String -> HTMLButtonElement -> Effect Unit
 

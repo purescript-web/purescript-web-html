@@ -290,7 +290,15 @@ exports.validationMessage = function (textarea) {
 
 exports.checkValidity = function (textarea) {
   return function () {
-    return textarea.checkValidity;
+    return textarea.checkValidity();
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.reportValidity = function (textarea) {
+  return function () {
+    return textarea.reportValidity();
   };
 };
 
