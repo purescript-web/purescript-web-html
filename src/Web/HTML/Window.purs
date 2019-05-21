@@ -33,6 +33,8 @@ module Web.HTML.Window
   , requestIdleCallback
   , cancelIdleCallback
   , RequestIdleCallbackId
+  , parent
+  , opener
   ) where
 
 import Data.Maybe (Maybe)
@@ -150,3 +152,10 @@ foreign import _cancelIdleCallback :: Int -> Window -> Effect Unit
 
 cancelIdleCallback :: RequestIdleCallbackId -> Window -> Effect Unit
 cancelIdleCallback idAF = _cancelIdleCallback (unwrap idAF)
+
+foreign import parent :: Window -> Effect Window
+
+foreign import _opener :: Window -> Effect (Nullable Window)
+
+opener :: Window -> Effect (Maybe Window)
+opener window = toMaybe <$> _opener window
