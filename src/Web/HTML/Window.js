@@ -229,3 +229,15 @@ exports._cancelIdleCallback = function(id) {
     };
   };
 };
+
+exports.parent = function(window) {
+  return function() {
+    return window.parent;
+  };
+};
+
+exports._opener = function(window) {
+  return function() {
+    return window.opener;
+  };
+};
