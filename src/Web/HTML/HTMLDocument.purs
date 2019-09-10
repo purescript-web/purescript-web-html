@@ -10,6 +10,7 @@ module Web.HTML.HTMLDocument
   , toParentNode
   , toNonElementParentNode
   , toEventTarget
+  , head
   , body
   , readyState
   , activeElement
@@ -67,6 +68,11 @@ toNonElementParentNode = unsafeCoerce
 
 toEventTarget :: HTMLDocument -> EventTarget
 toEventTarget = unsafeCoerce
+
+foreign import _head :: HTMLDocument -> Effect (Nullable HTMLElement)
+
+head :: HTMLDocument -> Effect (Maybe HTMLElement)
+head = map toMaybe <<< _head
 
 foreign import _body :: HTMLDocument -> Effect (Nullable HTMLElement)
 
