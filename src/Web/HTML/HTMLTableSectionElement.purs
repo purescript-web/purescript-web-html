@@ -1,4 +1,24 @@
-module Web.HTML.HTMLTableSectionElement where
+module Web.HTML.HTMLTableSectionElement
+  ( HTMLTableSectionElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
+  , toHTMLElement
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
+  , rows
+  , insertRow
+  , insertRow'
+  , deleteRow
+  ) where
 
 import Prelude
 
@@ -60,6 +80,9 @@ foreign import rows :: HTMLTableSectionElement -> Effect HTMLCollection
 insertRow :: HTMLTableSectionElement -> Effect HTMLElement
 insertRow = insertRow' (-1)
 
-foreign import insertRow' :: Int -> HTMLTableSectionElement -> Effect HTMLElement
+foreign import insertRowAt :: Int -> HTMLTableSectionElement -> Effect HTMLElement
+
+insertRow' :: Int -> HTMLTableSectionElement -> Effect HTMLElement
+insertRow' = insertRowAt
 
 foreign import deleteRow :: Int -> HTMLTableSectionElement -> Effect Unit

@@ -8,7 +8,7 @@ exports.rows = function (section) {
 
 // ----------------------------------------------------------------------------
 
-exports["insertRow'"] = function (index) {
+exports.insertRowAt = function (index) {
   return function (section) {
     return function () {
       return section.insertRow(index);

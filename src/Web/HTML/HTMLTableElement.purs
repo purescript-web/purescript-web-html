@@ -138,7 +138,10 @@ foreign import rows :: HTMLTableElement -> Effect HTMLCollection
 insertRow :: HTMLTableElement -> Effect HTMLElement
 insertRow = insertRow' (-1)
 
-foreign import insertRow' :: Int -> HTMLTableElement -> Effect HTMLElement
+foreign import insertRowAt :: Int -> HTMLTableElement -> Effect HTMLElement
+
+insertRow' :: Int -> HTMLTableElement -> Effect HTMLElement
+insertRow' = insertRowAt
 
 foreign import deleteRow :: Int -> HTMLTableElement -> Effect Unit
 

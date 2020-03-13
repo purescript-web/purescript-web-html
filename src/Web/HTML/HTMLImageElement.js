@@ -7,7 +7,7 @@ exports.create = function () {
   };
 };
 
-exports["create'"] = function (width) {
+exports.createWithDimensions = function (width) {
   return function (height) {
     return function () {
       return new Image(width, height);

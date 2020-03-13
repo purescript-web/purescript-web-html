@@ -32,7 +32,7 @@ exports.cells = function (row) {
 
 // ----------------------------------------------------------------------------
 
-exports["insertCell'"] = function (index) {
+exports.insertCellAt = function (index) {
   return function (row) {
     return function () {
       return row.insertCell(index);

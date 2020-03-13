@@ -1,4 +1,39 @@
-module Web.HTML.HTMLImageElement where
+module Web.HTML.HTMLImageElement
+  ( HTMLImageElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
+  , toHTMLElement
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
+  , create
+  , create'
+  , alt
+  , setAlt
+  , src
+  , setSrc
+  , crossOrigin
+  , setCrossOrigin
+  , useMap
+  , setUseMap
+  , isMap
+  , setIsMap
+  , width
+  , setWidth
+  , height
+  , setHeight
+  , naturalWidth
+  , naturalHeight
+  , complete
+  ) where
 
 import Data.Maybe (Maybe)
 import Effect (Effect)
@@ -55,7 +90,10 @@ toEventTarget = unsafeCoerce
 
 
 foreign import create :: Unit -> Effect HTMLImageElement
-foreign import create' :: Int -> Int -> Effect HTMLImageElement
+foreign import createWithDimensions :: Int -> Int -> Effect HTMLImageElement
+
+create' :: Int -> Int -> Effect HTMLImageElement
+create' = createWithDimensions
 
 foreign import alt :: HTMLImageElement -> Effect String
 foreign import setAlt :: String -> HTMLImageElement -> Effect Unit
