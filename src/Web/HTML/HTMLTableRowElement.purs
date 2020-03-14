@@ -1,4 +1,26 @@
-module Web.HTML.HTMLTableRowElement where
+module Web.HTML.HTMLTableRowElement
+  ( HTMLTableRowElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
+  , toHTMLElement
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
+  , rowIndex
+  , sectionRowIndex
+  , cells
+  , insertCell
+  , insertCell'
+  , deleteCell
+  ) where
 
 import Data.Maybe (Maybe)
 import Effect (Effect)
@@ -63,6 +85,9 @@ foreign import cells :: HTMLTableRowElement -> Effect HTMLCollection
 insertCell :: HTMLTableRowElement -> Effect HTMLElement
 insertCell = insertCell' (-1)
 
-foreign import insertCell' :: Int -> HTMLTableRowElement -> Effect HTMLElement
+foreign import insertCellAt :: Int -> HTMLTableRowElement -> Effect HTMLElement
+
+insertCell' :: Int -> HTMLTableRowElement -> Effect HTMLElement
+insertCell' = insertCellAt
 
 foreign import deleteCell :: Int -> HTMLTableRowElement -> Effect Unit

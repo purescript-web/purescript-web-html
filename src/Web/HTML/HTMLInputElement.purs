@@ -290,12 +290,18 @@ foreign import setWidth :: Int -> HTMLInputElement -> Effect Unit
 stepUp :: HTMLInputElement -> Effect Unit
 stepUp = stepUp' 1
 
-foreign import stepUp' :: Int -> HTMLInputElement -> Effect Unit
+foreign import stepUpBy :: Int -> HTMLInputElement -> Effect Unit
+
+stepUp' :: Int -> HTMLInputElement -> Effect Unit
+stepUp' = stepUpBy
 
 stepDown :: HTMLInputElement -> Effect Unit
 stepDown = stepDown' 1
 
-foreign import stepDown' :: Int -> HTMLInputElement -> Effect Unit
+foreign import stepDownBy :: Int -> HTMLInputElement -> Effect Unit
+
+stepDown' :: Int -> HTMLInputElement -> Effect Unit
+stepDown' = stepDownBy
 
 foreign import willValidate :: HTMLInputElement -> Effect Boolean
 

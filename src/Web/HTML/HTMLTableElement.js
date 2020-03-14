@@ -120,7 +120,7 @@ exports.rows = function (table) {
 
 // ----------------------------------------------------------------------------
 
-exports["insertRow'"] = function (index) {
+exports.insertRowAt = function (index) {
   return function (table) {
     return function () {
       return table.insertRow(index);

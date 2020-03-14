@@ -568,7 +568,7 @@ exports.setWidth = function (width) {
 
 // ----------------------------------------------------------------------------
 
-exports["stepUp'"] = function (n) {
+exports.stepUpBy = function (n) {
   return function (input) {
     return function () {
       input.stepUp(n);
@@ -578,7 +578,7 @@ exports["stepUp'"] = function (n) {
 
 // ----------------------------------------------------------------------------
 
-exports["stepDown'"] = function (n) {
+exports.stepDownBy = function (n) {
   return function (input) {
     return function () {
       input.stepDown(n);
