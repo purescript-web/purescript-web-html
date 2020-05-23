@@ -5,6 +5,7 @@ module Web.HTML
 
 import Effect (Effect)
 import Web.HTML.Window (Window)
+import Web.HTML.Common (PropName, AttrName, ClassName) as Exports
 import Web.HTML.History (History) as Exports
 import Web.HTML.HTMLAnchorElement (HTMLAnchorElement) as Exports
 import Web.HTML.HTMLAreaElement (HTMLAreaElement) as Exports
