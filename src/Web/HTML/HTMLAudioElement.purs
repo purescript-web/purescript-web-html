@@ -1,6 +1,27 @@
-module Web.HTML.HTMLAudioElement where
+module Web.HTML.HTMLAudioElement 
+  ( HTMLAudioElement
+  , fromHTMLElement
+  , fromElement
+  , fromNode
+  , fromChildNode
+  , fromNonDocumentTypeChildNode
+  , fromParentNode
+  , fromEventTarget
+  , toHTMLMediaElement
+  , toHTMLElement
+  , toElement
+  , toNode
+  , toChildNode
+  , toNonDocumentTypeChildNode
+  , toParentNode
+  , toEventTarget
+  , create
+  , create'
+  ) where
 
 import Data.Maybe (Maybe)
+import Effect (Effect)
+import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.Event.EventTarget (EventTarget)
@@ -57,3 +78,9 @@ toParentNode = unsafeCoerce
 
 toEventTarget :: HTMLAudioElement -> EventTarget
 toEventTarget = unsafeCoerce
+
+foreign import create :: Unit -> Effect HTMLAudioElement
+foreign import createWithURL :: String -> Effect HTMLAudioElement
+
+create' :: String -> Effect HTMLAudioElement
+create' = createWithURL
