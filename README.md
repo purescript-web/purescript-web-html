@@ -3,7 +3,7 @@
 [![Latest release](http://img.shields.io/github/release/purescript-web/purescript-web-html.svg)](https://github.com/purescript-web/purescript-web-html/releases)
 [![Build status](https://travis-ci.org/purescript-web/purescript-web-html.svg?branch=master)](https://travis-ci.org/purescript-web/purescript-web-html)
 
-Type definitions and low level interface implementations for the [W3C HTML5 API](https://www.w3.org/TR/html5).
+Type definitions and low level interface implementations for the [WHATWG HTML Living Standard](https://html.spec.whatwg.org/).
 
 ## Installation
 
