@@ -21,7 +21,6 @@ exports.setTitle = function (title) {
   return function (elt) {
     return function () {
       elt.title = title;
-      return {};
     };
   };
 };
@@ -38,7 +37,6 @@ exports.setLang = function (lang) {
   return function (elt) {
     return function () {
       elt.lang = lang;
-      return {};
     };
   };
 };
@@ -55,7 +53,6 @@ exports.setDir = function (dir) {
   return function (elt) {
     return function () {
       elt.dir = dir;
-      return {};
     };
   };
 };
@@ -72,7 +69,6 @@ exports.setClassName = function (className) {
   return function (elt) {
     return function () {
       elt.className = className;
-      return {};
     };
   };
 };
@@ -95,7 +91,6 @@ exports.setHidden = function (hidden) {
   return function (elt) {
     return function () {
       elt.hidden = hidden;
-      return {};
     };
   };
 };
@@ -112,7 +107,6 @@ exports.setTabIndex = function (tabIndex) {
   return function (elt) {
     return function () {
       elt.tabIndex = tabIndex;
-      return {};
     };
   };
 };
@@ -129,7 +123,6 @@ exports.setDraggable = function (draggable) {
   return function (elt) {
     return function () {
       elt.draggable = draggable;
-      return {};
     };
   };
 };
@@ -146,7 +139,6 @@ exports.setContentEditable = function (contentEditable) {
   return function (elt) {
     return function () {
       elt.contentEditable = contentEditable;
-      return {};
     };
   };
 };
@@ -169,7 +161,6 @@ exports.setSpellcheck = function (spellcheck) {
   return function (elt) {
     return function () {
       elt.spellcheck = spellcheck;
-      return {};
     };
   };
 };
