@@ -46,7 +46,6 @@ exports.setTitle = function (title) {
   return function (doc) {
     return function () {
       doc.title = title;
-      return {};
     };
   };
 };
