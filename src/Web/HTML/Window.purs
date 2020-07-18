@@ -38,7 +38,6 @@ module Web.HTML.Window
   ) where
 
 import Data.Maybe (Maybe)
-import Data.Newtype (class Newtype, unwrap)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
 import Prelude (class Eq, class Ord, Unit, (<$>), (<<<), map)
@@ -121,37 +120,23 @@ foreign import sessionStorage :: Window -> Effect Storage
 
 newtype RequestAnimationFrameId = RequestAnimationFrameId Int
 
-derive instance newtypeRequestAnimationFrameId :: Newtype RequestAnimationFrameId _
 derive instance eqRequestAnimationFrameId :: Eq RequestAnimationFrameId
 derive instance ordRequestAnimationFrameId :: Ord RequestAnimationFrameId
 
-foreign import _requestAnimationFrame :: Effect Unit -> Window -> Effect Int
+foreign import requestAnimationFrame :: Effect Unit -> Window -> Effect RequestAnimationFrameId
 
-requestAnimationFrame :: Effect Unit -> Window -> Effect RequestAnimationFrameId
-requestAnimationFrame fn = map RequestAnimationFrameId <<< _requestAnimationFrame fn
-
-foreign import _cancelAnimationFrame :: Int -> Window -> Effect Unit
-
-cancelAnimationFrame :: RequestAnimationFrameId -> Window -> Effect Unit
-cancelAnimationFrame idAF = _cancelAnimationFrame (unwrap idAF)
+foreign import cancelAnimationFrame :: RequestAnimationFrameId -> Window -> Effect Unit
 
 newtype RequestIdleCallbackId = RequestIdleCallbackId Int
 
-derive instance newtypeRequestIdleCallbackId :: Newtype RequestIdleCallbackId _
 derive instance eqRequestIdleCallbackId :: Eq RequestIdleCallbackId
 derive instance ordRequestIdleCallbackId :: Ord RequestIdleCallbackId
 
-foreign import _requestIdleCallback :: { timeout :: Int } -> Effect Unit -> Window -> Effect Int
-
 -- | Set timeout to `0` to get the same behaviour as when it is `undefined` in
 -- | [JavaScript](https://w3c.github.io/requestidlecallback/#h-the-requestidle-callback-method).
-requestIdleCallback :: { timeout :: Int } -> Effect Unit -> Window -> Effect RequestIdleCallbackId
-requestIdleCallback opts fn = map RequestIdleCallbackId <<< _requestIdleCallback opts fn
+foreign import requestIdleCallback :: { timeout :: Int } -> Effect Unit -> Window -> Effect RequestIdleCallbackId
 
-foreign import _cancelIdleCallback :: Int -> Window -> Effect Unit
-
-cancelIdleCallback :: RequestIdleCallbackId -> Window -> Effect Unit
-cancelIdleCallback idAF = _cancelIdleCallback (unwrap idAF)
+foreign import cancelIdleCallback :: RequestIdleCallbackId -> Window -> Effect Unit
 
 foreign import parent :: Window -> Effect Window
 

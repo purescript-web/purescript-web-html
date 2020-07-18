@@ -188,7 +188,7 @@ exports.sessionStorage = function (window) {
   };
 };
 
-exports._requestAnimationFrame = function(fn) {
+exports.requestAnimationFrame = function(fn) {
   return function(window) {
     return function() {
       return window.requestAnimationFrame(fn);
@@ -196,7 +196,7 @@ exports._requestAnimationFrame = function(fn) {
   };
 };
 
-exports._cancelAnimationFrame = function(id) {
+exports.cancelAnimationFrame = function(id) {
   return function(window) {
     return function() {
       return window.cancelAnimationFrame(id);
@@ -204,7 +204,7 @@ exports._cancelAnimationFrame = function(id) {
   };
 };
 
-exports._requestIdleCallback = function(opts) {
+exports.requestIdleCallback = function(opts) {
   return function(fn) {
     return function(window) {
       return function() {
@@ -214,7 +214,7 @@ exports._requestIdleCallback = function(opts) {
   };
 };
 
-exports._cancelIdleCallback = function(id) {
+exports.cancelIdleCallback = function(id) {
   return function(window) {
     return function() {
       return window.cancelIdleCallback(id);
