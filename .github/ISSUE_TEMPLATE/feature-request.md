@@ -9,7 +9,7 @@ assignees: ''
 
 ### Prerequisites
 
-- [ ] Before opening an issue, please check the DOM standard (https://html.spec.whatwg.org). If it doesn't appear in this spec, it may be present in the spec for one of the other `purescript-web` projects. Although MDN is a great resource, it is not a suitable reference for this project.
+- [ ] Before opening an issue, please check the HTML standard (https://html.spec.whatwg.org). If it doesn't appear in this spec, it may be present in the spec for one of the other `purescript-web` projects. Although MDN is a great resource, it is not a suitable reference for this project.
 
 ### Description
 
