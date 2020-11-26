@@ -40,7 +40,7 @@ module Web.HTML.Window
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
-import Prelude (class Eq, class Ord, Unit, (<$>), (<<<), map)
+import Prelude (class Eq, class Ord, Unit, (<$>))
 import Unsafe.Coerce (unsafeCoerce)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLDocument (HTMLDocument)
