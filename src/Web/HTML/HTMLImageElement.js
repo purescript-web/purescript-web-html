@@ -49,6 +49,46 @@ exports.setSrc = function (src) {
 
 // ----------------------------------------------------------------------------
 
+exports.srcset = function (image) {
+  return function () {
+    return image.srcset;
+  };
+};
+
+exports.setSrcset = function (srcset) {
+  return function (image) {
+    return function () {
+      image.srcset = srcset;
+    };
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.sizes = function (image) {
+  return function () {
+    return image.sizes;
+  };
+};
+
+exports.setSizes = function (sizes) {
+  return function (image) {
+    return function () {
+      image.sizes = sizes;
+    };
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.currentSrc = function (image) {
+  return function () {
+    return image.currentSrc;
+  };
+};
+
+// ----------------------------------------------------------------------------
+
 exports.crossOrigin = function (image) {
   return function () {
     return image.crossOrigin;
@@ -138,6 +178,55 @@ exports.naturalWidth = function (image) {
 exports.naturalHeight = function (image) {
   return function () {
     return image.naturalHeight;
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.referrerPolicy = function (image) {
+  return function () {
+    return image.referrerPolicy;
+  };
+};
+
+exports.setReferrerPolicy = function (referrerPolicy) {
+  return function (image) {
+    return function () {
+      image.referrerPolicy = referrerPolicy;
+    };
+  };
+};
+
+
+// ----------------------------------------------------------------------------
+
+exports.decoding = function (image) {
+  return function () {
+    return image.decoding;
+  };
+};
+
+exports.setDecoding = function (decoding) {
+  return function (image) {
+    return function () {
+      image.decoding = decoding;
+    };
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.loading = function (image) {
+  return function () {
+    return image.loading;
+  };
+};
+
+exports.setLoading = function (loading) {
+  return function (image) {
+    return function () {
+      image.loading = loading;
+    };
   };
 };
 

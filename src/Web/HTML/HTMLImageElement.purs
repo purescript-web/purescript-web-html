@@ -20,6 +20,9 @@ module Web.HTML.HTMLImageElement
   , setAlt
   , src
   , setSrc
+  , srcset
+  , setSrcset
+  , currentSrc
   , crossOrigin
   , setCrossOrigin
   , useMap
@@ -32,6 +35,12 @@ module Web.HTML.HTMLImageElement
   , setHeight
   , naturalWidth
   , naturalHeight
+  , referrerPolicy
+  , setReferrerPolicy
+  , decoding
+  , setDecoding
+  , loading
+  , setLoading
   , complete
   ) where
 
@@ -101,6 +110,14 @@ foreign import setAlt :: String -> HTMLImageElement -> Effect Unit
 foreign import src :: HTMLImageElement -> Effect String
 foreign import setSrc :: String -> HTMLImageElement -> Effect Unit
 
+foreign import srcset :: HTMLImageElement -> Effect String
+foreign import setSrcset :: String -> HTMLImageElement -> Effect Unit
+
+foreign import currentSrc :: HTMLImageElement -> Effect String
+
+foreign import sizes :: HTMLImageElement -> Effect String
+foreign import setSizes :: String -> HTMLImageElement -> Effect Unit
+
 foreign import crossOrigin :: HTMLImageElement -> Effect String
 foreign import setCrossOrigin :: String -> HTMLImageElement -> Effect Unit
 
@@ -118,4 +135,14 @@ foreign import setHeight :: Int -> HTMLImageElement -> Effect Unit
 
 foreign import naturalWidth :: HTMLImageElement -> Effect Int
 foreign import naturalHeight :: HTMLImageElement -> Effect Int
+
+foreign import referrerPolicy :: HTMLImageElement -> Effect String
+foreign import setReferrerPolicy :: String -> HTMLImageElement -> Effect Unit
+
+foreign import decoding :: HTMLImageElement -> Effect String
+foreign import setDecoding :: String -> HTMLImageElement -> Effect Unit
+
+foreign import loading :: HTMLImageElement -> Effect String
+foreign import setLoading :: String -> HTMLImageElement -> Effect Unit
+
 foreign import complete :: HTMLImageElement -> Effect Boolean
