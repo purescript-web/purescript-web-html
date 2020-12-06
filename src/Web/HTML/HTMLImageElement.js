@@ -89,18 +89,12 @@ exports.currentSrc = function (image) {
 
 // ----------------------------------------------------------------------------
 
-exports.crossOrigin = function (image) {
-  return function () {
-    return image.crossOrigin;
-  };
+exports._crossOrigin = function (image) {
+  return image.crossOrigin;
 };
 
-exports.setCrossOrigin = function (crossOrigin) {
-  return function (image) {
-    return function () {
-      image.crossOrigin = crossOrigin;
-    };
-  };
+exports._setCrossOrigin = function (crossOrigin, image) {
+  image.crossOrigin = crossOrigin;
 };
 
 // ----------------------------------------------------------------------------
@@ -200,34 +194,22 @@ exports.setReferrerPolicy = function (referrerPolicy) {
 
 // ----------------------------------------------------------------------------
 
-exports.decoding = function (image) {
-  return function () {
-    return image.decoding;
-  };
+exports._decoding = function (image) {
+  return image.decoding;
 };
 
-exports.setDecoding = function (decoding) {
-  return function (image) {
-    return function () {
-      image.decoding = decoding;
-    };
-  };
+exports._setDecoding = function (decoding, image) {
+  image.decoding = decoding;
 };
 
 // ----------------------------------------------------------------------------
 
-exports.loading = function (image) {
-  return function () {
-    return image.loading;
-  };
+exports._loading = function (image) {
+  return image.loading;
 };
 
-exports.setLoading = function (loading) {
-  return function (image) {
-    return function () {
-      image.loading = loading;
-    };
-  };
+exports._setLoading = function (loading, image) {
+  image.loading = loading;
 };
 
 // ----------------------------------------------------------------------------
