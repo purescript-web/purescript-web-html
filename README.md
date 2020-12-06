@@ -1,14 +1,14 @@
 # purescript-web-html
 
 [![Latest release](http://img.shields.io/github/release/purescript-web/purescript-web-html.svg)](https://github.com/purescript-web/purescript-web-html/releases)
-[![Build status](https://travis-ci.org/purescript-web/purescript-web-html.svg?branch=master)](https://travis-ci.org/purescript-web/purescript-web-html)
+[![Build status](https://github.com/purescript/purescript-web-html/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-web-html/actions?query=workflow%3ACI+branch%3Amaster)
 
 Type definitions and low level interface implementations for the [WHATWG HTML Standard](https://html.spec.whatwg.org).
 
 ## Installation
 
 ```
-bower install purescript-web-html
+spago install web-html
 ```
 
 ## Documentation
