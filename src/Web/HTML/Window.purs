@@ -25,6 +25,7 @@ module Web.HTML.Window
   , scrollBy
   , scrollX
   , scrollY
+  , devicePixelRatio
   , localStorage
   , sessionStorage
   , requestAnimationFrame
@@ -113,6 +114,8 @@ foreign import scrollBy :: Int -> Int -> Window -> Effect Unit
 foreign import scrollX :: Window -> Effect Int
 
 foreign import scrollY :: Window -> Effect Int
+
+foreign import devicePixelRatio :: Window -> Effect Number
 
 foreign import localStorage :: Window -> Effect Storage
 
