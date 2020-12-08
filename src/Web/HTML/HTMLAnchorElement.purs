@@ -9,6 +9,7 @@ import Web.DOM.DOMTokenList (DOMTokenList)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.Internal.FFI (unsafeReadProtoTagged)
+import Web.HTML.HTMLHyperlinkElementUtils (HTMLHyperlinkElementUtils)
 
 foreign import data HTMLAnchorElement :: Type
 
@@ -53,6 +54,9 @@ toParentNode = unsafeCoerce
 
 toEventTarget :: HTMLAnchorElement -> EventTarget
 toEventTarget = unsafeCoerce
+
+toHTMLHyperlinkElementUtils :: HTMLAnchorElement -> HTMLHyperlinkElementUtils
+toHTMLHyperlinkElementUtils = unsafeCoerce
 
 foreign import target :: HTMLAnchorElement -> Effect String
 foreign import setTarget :: String -> HTMLAnchorElement -> Effect Unit
