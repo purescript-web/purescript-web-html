@@ -1,4 +1,3 @@
-/* global window */
 "use strict";
 
 exports.window = function () {
