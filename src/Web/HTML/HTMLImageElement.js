@@ -1,4 +1,3 @@
-/* global Image */
 "use strict";
 
 exports.create = function () {
