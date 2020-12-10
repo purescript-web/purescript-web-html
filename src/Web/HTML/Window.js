@@ -40,7 +40,6 @@ exports.alert = function (str) {
   return function (window) {
     return function () {
       window.alert(str);
-      return {};
     };
   };
 };
@@ -58,7 +57,6 @@ exports.moveBy = function (xDelta) {
     return function (window) {
       return function () {
         window.moveBy(xDelta, yDelta);
-        return {};
       };
     };
   };
@@ -69,7 +67,6 @@ exports.moveTo = function (width) {
     return function (window) {
       return function () {
         window.moveTo(width, height);
-        return {};
       };
     };
   };
@@ -102,7 +99,6 @@ exports.outerWidth = function (window) {
 exports.print = function (window) {
   return function () {
     window.print();
-    return {};
   };
 };
 
@@ -121,7 +117,6 @@ exports.resizeBy = function (xDelta) {
     return function (window) {
       return function () {
         window.resizeBy(xDelta, yDelta);
-        return {};
       };
     };
   };
@@ -132,7 +127,6 @@ exports.resizeTo = function (width) {
     return function (window) {
       return function () {
         window.resizeTo(width, height);
-        return {};
       };
     };
   };
@@ -155,7 +149,6 @@ exports.scroll = function (xCoord) {
     return function (window) {
       return function () {
         window.scroll(xCoord, yCoord);
-        return {};
       };
     };
   };
@@ -166,7 +159,6 @@ exports.scrollBy = function (xCoord) {
     return function (window) {
       return function () {
         window.scrollBy(xCoord, yCoord);
-        return {};
       };
     };
   };
@@ -196,7 +188,7 @@ exports.sessionStorage = function (window) {
   };
 };
 
-exports._requestAnimationFrame = function(fn) {
+exports.requestAnimationFrame = function(fn) {
   return function(window) {
     return function() {
       return window.requestAnimationFrame(fn);
@@ -204,7 +196,7 @@ exports._requestAnimationFrame = function(fn) {
   };
 };
 
-exports._cancelAnimationFrame = function(id) {
+exports.cancelAnimationFrame = function(id) {
   return function(window) {
     return function() {
       return window.cancelAnimationFrame(id);
@@ -212,7 +204,7 @@ exports._cancelAnimationFrame = function(id) {
   };
 };
 
-exports._requestIdleCallback = function(opts) {
+exports.requestIdleCallback = function(opts) {
   return function(fn) {
     return function(window) {
       return function() {
@@ -222,7 +214,7 @@ exports._requestIdleCallback = function(opts) {
   };
 };
 
-exports._cancelIdleCallback = function(id) {
+exports.cancelIdleCallback = function(id) {
   return function(window) {
     return function() {
       return window.cancelIdleCallback(id);
