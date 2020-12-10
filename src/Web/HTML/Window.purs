@@ -110,9 +110,9 @@ foreign import scroll :: Int -> Int -> Window -> Effect Unit
 
 foreign import scrollBy :: Int -> Int -> Window -> Effect Unit
 
-foreign import scrollX :: Window -> Effect Int
+foreign import scrollX :: Window -> Effect Number
 
-foreign import scrollY :: Window -> Effect Int
+foreign import scrollY :: Window -> Effect Number
 
 foreign import localStorage :: Window -> Effect Storage
 
