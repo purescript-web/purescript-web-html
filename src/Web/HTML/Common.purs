@@ -8,6 +8,7 @@ import Data.Newtype (class Newtype)
 -- |
 -- | The phantom type `value` describes the type of value which this property
 -- | requires.
+newtype PropName :: Type -> Type
 newtype PropName value = PropName String
 
 derive instance newtypePropName :: Newtype (PropName value) _
