@@ -4,7 +4,7 @@ import Prelude
 
 import Data.Newtype (class Newtype)
 
--- | A type-safe wrapper for property names.
+-- | A wrapper for property names.
 -- |
 -- | The phantom type `value` describes the type of value which this property
 -- | requires.
@@ -14,7 +14,7 @@ derive instance newtypePropName :: Newtype (PropName value) _
 derive newtype instance eqPropName :: Eq (PropName value)
 derive newtype instance ordPropName :: Ord (PropName value)
 
--- | A type-safe wrapper for attribute names.
+-- | A wrapper for attribute names.
 newtype AttrName = AttrName String
 
 derive instance newtypeAttrName :: Newtype AttrName _
@@ -27,4 +27,3 @@ newtype ClassName = ClassName String
 derive instance newtypeClassName :: Newtype ClassName _
 derive newtype instance eqClassName :: Eq ClassName
 derive newtype instance ordClassName :: Ord ClassName
-derive newtype instance semigroupClassName :: Semigroup ClassName
