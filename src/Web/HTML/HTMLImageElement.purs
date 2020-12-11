@@ -20,6 +20,11 @@ module Web.HTML.HTMLImageElement
   , setAlt
   , src
   , setSrc
+  , srcset
+  , setSrcset
+  , currentSrc
+  , sizes
+  , setSizes
   , crossOrigin
   , setCrossOrigin
   , useMap
@@ -32,16 +37,31 @@ module Web.HTML.HTMLImageElement
   , setHeight
   , naturalWidth
   , naturalHeight
+  , referrerPolicy
+  , setReferrerPolicy
+  , decoding
+  , setDecoding
+  , loading
+  , setLoading
   , complete
   ) where
 
-import Data.Maybe (Maybe)
+import Data.Nullable (Nullable)
+import Data.Nullable as Nullable
+import Data.Maybe (Maybe, fromMaybe)
 import Effect (Effect)
-import Prelude (Unit)
+import Effect.Uncurried (EffectFn1, EffectFn2, runEffectFn1, runEffectFn2)
+import Prelude (Unit, map, (<<<), (<=<))
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.HTML.HTMLImageElement.CORSMode (CORSMode)
+import Web.HTML.HTMLImageElement.CORSMode as CORSMode
+import Web.HTML.HTMLImageElement.DecodingHint (DecodingHint)
+import Web.HTML.HTMLImageElement.DecodingHint as DecodingHint
+import Web.HTML.HTMLImageElement.Laziness (Laziness)
+import Web.HTML.HTMLImageElement.Laziness as Laziness
 import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLImageElement :: Type
@@ -101,8 +121,23 @@ foreign import setAlt :: String -> HTMLImageElement -> Effect Unit
 foreign import src :: HTMLImageElement -> Effect String
 foreign import setSrc :: String -> HTMLImageElement -> Effect Unit
 
-foreign import crossOrigin :: HTMLImageElement -> Effect String
-foreign import setCrossOrigin :: String -> HTMLImageElement -> Effect Unit
+foreign import srcset :: HTMLImageElement -> Effect String
+foreign import setSrcset :: String -> HTMLImageElement -> Effect Unit
+
+foreign import currentSrc :: HTMLImageElement -> Effect String
+
+foreign import sizes :: HTMLImageElement -> Effect String
+foreign import setSizes :: String -> HTMLImageElement -> Effect Unit
+
+foreign import _crossOrigin :: EffectFn1 HTMLImageElement (Nullable String)
+
+crossOrigin :: HTMLImageElement -> Effect (Maybe CORSMode)
+crossOrigin = map (CORSMode.parse <=< Nullable.toMaybe) <<< runEffectFn1 _crossOrigin
+
+foreign import _setCrossOrigin :: EffectFn2 String HTMLImageElement Unit
+
+setCrossOrigin :: CORSMode -> HTMLImageElement -> Effect Unit
+setCrossOrigin mode = runEffectFn2 _setCrossOrigin (CORSMode.print mode)
 
 foreign import useMap :: HTMLImageElement -> Effect String
 foreign import setUseMap :: String -> HTMLImageElement -> Effect Unit
@@ -118,4 +153,28 @@ foreign import setHeight :: Int -> HTMLImageElement -> Effect Unit
 
 foreign import naturalWidth :: HTMLImageElement -> Effect Int
 foreign import naturalHeight :: HTMLImageElement -> Effect Int
+
+foreign import referrerPolicy :: HTMLImageElement -> Effect String
+foreign import setReferrerPolicy :: String -> HTMLImageElement -> Effect Unit
+
+foreign import _decoding :: EffectFn1 HTMLImageElement String
+
+decoding :: HTMLImageElement -> Effect DecodingHint
+decoding = map (fromMaybe DecodingHint.Auto <<< DecodingHint.parse) <<< runEffectFn1 _decoding
+
+foreign import _setDecoding :: EffectFn2 String HTMLImageElement Unit
+
+setDecoding :: DecodingHint -> HTMLImageElement -> Effect Unit
+setDecoding hint = runEffectFn2 _setDecoding (DecodingHint.print hint)
+
+foreign import _loading :: EffectFn1 HTMLImageElement String
+
+loading :: HTMLImageElement -> Effect Laziness
+loading = map (fromMaybe Laziness.Eager <<< Laziness.parse) <<< runEffectFn1 _loading
+
+foreign import _setLoading :: EffectFn2 String HTMLImageElement Unit
+
+setLoading :: Laziness -> HTMLImageElement -> Effect Unit
+setLoading laziness = runEffectFn2 _setLoading (Laziness.print laziness)
+
 foreign import complete :: HTMLImageElement -> Effect Boolean

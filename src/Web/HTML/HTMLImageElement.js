@@ -48,18 +48,52 @@ exports.setSrc = function (src) {
 
 // ----------------------------------------------------------------------------
 
-exports.crossOrigin = function (image) {
+exports.srcset = function (image) {
   return function () {
-    return image.crossOrigin;
+    return image.srcset;
   };
 };
 
-exports.setCrossOrigin = function (crossOrigin) {
+exports.setSrcset = function (srcset) {
   return function (image) {
     return function () {
-      image.crossOrigin = crossOrigin;
+      image.srcset = srcset;
     };
   };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.sizes = function (image) {
+  return function () {
+    return image.sizes;
+  };
+};
+
+exports.setSizes = function (sizes) {
+  return function (image) {
+    return function () {
+      image.sizes = sizes;
+    };
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.currentSrc = function (image) {
+  return function () {
+    return image.currentSrc;
+  };
+};
+
+// ----------------------------------------------------------------------------
+
+exports._crossOrigin = function (image) {
+  return image.crossOrigin;
+};
+
+exports._setCrossOrigin = function (crossOrigin, image) {
+  image.crossOrigin = crossOrigin;
 };
 
 // ----------------------------------------------------------------------------
@@ -138,6 +172,43 @@ exports.naturalHeight = function (image) {
   return function () {
     return image.naturalHeight;
   };
+};
+
+// ----------------------------------------------------------------------------
+
+exports.referrerPolicy = function (image) {
+  return function () {
+    return image.referrerPolicy;
+  };
+};
+
+exports.setReferrerPolicy = function (referrerPolicy) {
+  return function (image) {
+    return function () {
+      image.referrerPolicy = referrerPolicy;
+    };
+  };
+};
+
+
+// ----------------------------------------------------------------------------
+
+exports._decoding = function (image) {
+  return image.decoding;
+};
+
+exports._setDecoding = function (decoding, image) {
+  image.decoding = decoding;
+};
+
+// ----------------------------------------------------------------------------
+
+exports._loading = function (image) {
+  return image.loading;
+};
+
+exports._setLoading = function (loading, image) {
+  image.loading = loading;
 };
 
 // ----------------------------------------------------------------------------
