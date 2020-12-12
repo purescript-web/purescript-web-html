@@ -1,4 +1,3 @@
-/* global Audio */
 "use strict";
 
 exports.create = function () {
