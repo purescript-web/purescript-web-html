@@ -21,7 +21,6 @@ module Web.HTML.HTMLAudioElement
 
 import Data.Maybe (Maybe)
 import Effect (Effect)
-import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.Event.EventTarget (EventTarget)
