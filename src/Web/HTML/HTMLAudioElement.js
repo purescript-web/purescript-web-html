@@ -1,9 +1,7 @@
 "use strict";
 
 exports.create = function () {
-  return function () {
-    return new Audio();
-  };
+  return new Audio();
 };
 
 exports.createWithURL = function (url) {

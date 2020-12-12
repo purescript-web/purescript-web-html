@@ -1,9 +1,7 @@
 "use strict";
 
 exports.create = function () {
-  return function () {
-    return new Image();
-  };
+  return new Image();
 };
 
 exports.createWithDimensions = function (width) {
@@ -189,7 +187,6 @@ exports.setReferrerPolicy = function (referrerPolicy) {
     };
   };
 };
-
 
 // ----------------------------------------------------------------------------
 
