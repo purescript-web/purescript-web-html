@@ -108,8 +108,7 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLImageElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
-foreign import create :: Unit -> Effect HTMLImageElement
+foreign import create :: Effect HTMLImageElement
 foreign import createWithDimensions :: Int -> Int -> Effect HTMLImageElement
 
 create' :: Int -> Int -> Effect HTMLImageElement

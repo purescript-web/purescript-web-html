@@ -1,4 +1,4 @@
-module Web.HTML.HTMLAudioElement 
+module Web.HTML.HTMLAudioElement
   ( HTMLAudioElement
   , fromHTMLElement
   , fromElement
@@ -21,7 +21,6 @@ module Web.HTML.HTMLAudioElement
 
 import Data.Maybe (Maybe)
 import Effect (Effect)
-import Prelude (Unit)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.Event.EventTarget (EventTarget)
@@ -79,7 +78,7 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLAudioElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-foreign import create :: Unit -> Effect HTMLAudioElement
+foreign import create :: Effect HTMLAudioElement
 foreign import createWithURL :: String -> Effect HTMLAudioElement
 
 create' :: String -> Effect HTMLAudioElement
