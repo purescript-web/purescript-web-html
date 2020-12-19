@@ -170,8 +170,8 @@ toEventTarget :: HTMLInputElement -> EventTarget
 toEventTarget = unsafeCoerce
 
 
-foreign import accept :: HTMLInputElement -> Effect Boolean
-foreign import setAccept :: Boolean -> HTMLInputElement -> Effect Unit
+foreign import accept :: HTMLInputElement -> Effect String
+foreign import setAccept :: String -> HTMLInputElement -> Effect Unit
 
 foreign import alt :: HTMLInputElement -> Effect Boolean
 foreign import setAlt :: Boolean -> HTMLInputElement -> Effect Unit
