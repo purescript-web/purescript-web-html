@@ -7,6 +7,9 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 - Added support for PureScript 0.14 and dropped support for all previous versions (#45)
 - Removed unnecessary `Unit` argument in creation functions for `HTMLImageElement` and `HTMLAudioElement` (#46)
+- Fixed return type of `scrollX` and `scrollY` to be `Effect Number`, as these can return subpixel values (#17)
+- Removed `Newtype` instances for types with hidden constructors (#39)
+- Changed `HTMLInputElement.accept` attribute type to `String` (#47) 
 
 New features:
 - Added `HTMLHyperlinkElementUtils` module (#44)
@@ -15,9 +18,6 @@ New features:
 - Added common `PropName`, `AttrName`, and `ClassName` which can be reused across libraries representing properties, attributes, and CSS classes (#30)
 
 Bugfixes:
-- Fixed return type of `scrollX` and `scrollY` to be `Effect Number`, as these can return subpixel values (#17)
-- Removed `Newtype` instances for types with hidden constructors (#39)
-- Changed `HTMLInputElement.accept` attribute type to `String` (#47) 
 
 Other improvements:
 - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#41)
@@ -25,8 +25,7 @@ Other improvements:
 - Removed `return {}` from FFI implementations for a small performance improvement (#35)
 - Removed unused explicit exports (#39)
 - Updated HTML spec link (#34)
-- Added a CHANGELOG.md file and new pull request template (#48, #50)
-- Removed old pull request template (#49)
+- Added a CHANGELOG.md file and new pull request template (#48, #49, #50)
 
 ## [v2.3.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v2.3.0) - 2019-09-15
 
