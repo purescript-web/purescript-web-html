@@ -15,9 +15,9 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-js-date": "main",
-    "purescript-web-dom": "master",
-    "purescript-web-file": "master",
-    "purescript-web-storage": "master"
+    "purescript-js-date": "^7.0.0",
+    "purescript-web-dom": "^5.0.0",
+    "purescript-web-file": "^3.0.0",
+    "purescript-web-storage": "^4.0.0"
   }
 }
