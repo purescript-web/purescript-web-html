@@ -54,6 +54,9 @@ foreign import data Window :: Type
 toEventTarget :: Window -> EventTarget
 toEventTarget = unsafeCoerce
 
+fromEventTarget :: EventTarget -> Maybe Window
+fromEventTarget = unsafeReadProtoTagged "Window"
+
 foreign import document :: Window -> Effect HTMLDocument
 
 foreign import navigator :: Window -> Effect Navigator
