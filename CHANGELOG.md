@@ -7,7 +7,6 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
-- Added `fromEventTarget` function for `Window` (#53 by @thomashoneyman)
 
 Bugfixes:
 
