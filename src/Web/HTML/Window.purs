@@ -1,6 +1,7 @@
 module Web.HTML.Window
   ( Window
   , toEventTarget
+  , fromEventTarget
   , document
   , navigator
   , location
@@ -48,11 +49,15 @@ import Web.HTML.History (History)
 import Web.HTML.Location (Location)
 import Web.HTML.Navigator (Navigator)
 import Web.Storage.Storage (Storage)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data Window :: Type
 
 toEventTarget :: Window -> EventTarget
 toEventTarget = unsafeCoerce
+
+fromEventTarget :: EventTarget -> Maybe Window
+fromEventTarget = unsafeReadProtoTagged "Window"
 
 foreign import document :: Window -> Effect HTMLDocument
 
