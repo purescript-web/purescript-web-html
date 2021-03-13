@@ -13,6 +13,11 @@ Bugfixes:
 
 Other improvements:
 
+## [v3.0.1](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.0.1) - 2021-03-13
+
+New features:
+- Added `fromEventTarget` function for `Window` (#53 by @thomashoneyman)
+
 ## [v3.0.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.0.0) - 2021-02-26
 
 Breaking changes:
