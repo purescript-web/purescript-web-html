@@ -7,12 +7,18 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
-- Export `fromHTMLMediaElement`, `stepUp`, and `stepDown` (#57 by @JordanMartinez)
 
 Bugfixes:
 
 Other improvements:
-- Fix warnings found by v0.14.1 PS release (#57 by @JordanMartinez)
+
+## [v3.1.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.1.0) - 2021-05-06
+
+New features:
+- Exported `fromHTMLMediaElement`, `stepUp`, and `stepDown` (#57 by @JordanMartinez)
+
+Other improvements:
+- Fixed warnings found by v0.14.1 PS release (#57 by @JordanMartinez)
 
 ## [v3.0.1](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.0.1) - 2021-03-13
 
@@ -33,8 +39,6 @@ New features:
 - Added `create` and `create'` functions for `Audio` (#32)
 - Added missing attributes for `HTMLImage`, including `srcset`, `currentSrc`, `sizes`, `referrerPolicy`, `decoding`, `loading` (#40)
 - Added common `PropName`, `AttrName`, and `ClassName` which can be reused across libraries representing properties, attributes, and CSS classes (#30)
-
-Bugfixes:
 
 Other improvements:
 - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#41)
