@@ -7,10 +7,12 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
+- Export `fromHTMLMediaElement`, `stepUp`, and `stepDown` (#57 by @JordanMartinez)
 
 Bugfixes:
 
 Other improvements:
+- Fix warnings found by v0.14.1 PS release (#57 by @JordanMartinez)
 
 ## [v3.0.1](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.0.1) - 2021-03-13
 
