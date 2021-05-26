@@ -4,6 +4,10 @@ exports._files = function (dataTransfer) {
   return dataTransfer.files;
 };
 
+exports.items = function (dataTransfer) {
+  return dataTransfer.items;
+};
+
 exports.types = function (dataTransfer) {
   return dataTransfer.types;
 };

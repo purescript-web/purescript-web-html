@@ -16,6 +16,7 @@ import Data.MediaType (MediaType(..))
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
 import Web.File.FileList (FileList)
+import Web.HTML.Event.DataTransfer.DataTransferItem (DataTransferItemList)
 
 foreign import data DataTransfer :: Type
 
@@ -28,6 +29,10 @@ files :: DataTransfer -> Maybe FileList
 files = toMaybe <$> _files
 
 foreign import _files :: DataTransfer -> Nullable FileList
+
+-- | Returns a `DataTransferItemList` object which is a list of all of the drag
+-- | data.
+foreign import items :: DataTransfer -> DataTransferItemList
 
 -- | Returns an array of data formats used in the drag operation.
 -- | If the drag operation included no data, then the array is empty.
