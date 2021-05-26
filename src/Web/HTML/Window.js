@@ -176,6 +176,12 @@ exports.scrollY = function (window) {
   };
 };
 
+exports.devicePixelRatio = function(window) {
+  return function() {
+    return window.devicePixelRatio;
+  };
+};
+
 exports.localStorage = function (window) {
   return function () {
     return window.localStorage;
