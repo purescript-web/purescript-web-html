@@ -7,6 +7,7 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
+- Added `languages` value for `Navigator` (#59 by @toastal)
 
 Bugfixes:
 
