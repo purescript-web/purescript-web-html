@@ -6,6 +6,12 @@ exports.language = function (navigator) {
   };
 };
 
+exports.languages = function (navigator) {
+  return function () {
+    return navigator.languages;
+  };
+};
+
 exports.platform = function (navigator) {
   return function () {
     return navigator.platform;
