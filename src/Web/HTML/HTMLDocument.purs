@@ -10,6 +10,7 @@ module Web.HTML.HTMLDocument
   , toParentNode
   , toNonElementParentNode
   , toEventTarget
+  , documentElement
   , head
   , body
   , readyState
@@ -34,6 +35,7 @@ import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLDocument.ReadyState (ReadyState)
 import Web.HTML.HTMLDocument.ReadyState as ReadyState
 import Web.HTML.HTMLElement (HTMLElement)
+import Web.HTML.HTMLHtmlElement (HTMLHtmlElement)
 import Web.HTML.HTMLScriptElement (HTMLScriptElement)
 import Web.Internal.FFI (unsafeReadProtoTagged)
 
@@ -68,6 +70,11 @@ toNonElementParentNode = unsafeCoerce
 
 toEventTarget :: HTMLDocument -> EventTarget
 toEventTarget = unsafeCoerce
+
+foreign import _documentElement :: HTMLDocument -> Effect (Nullable HTMLHtmlElement)
+
+documentElement :: HTMLDocument -> Effect (Maybe HTMLHtmlElement)
+documentElement = map toMaybe <<< _documentElement
 
 foreign import _head :: HTMLDocument -> Effect (Nullable HTMLElement)
 

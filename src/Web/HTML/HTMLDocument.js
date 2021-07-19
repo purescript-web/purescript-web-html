@@ -1,5 +1,11 @@
 "use strict";
 
+exports._documentElement = function (doc) {
+  return function () {
+    return doc.documentElement;
+  };
+};
+
 exports._head = function (doc) {
   return function () {
     return doc.head;
