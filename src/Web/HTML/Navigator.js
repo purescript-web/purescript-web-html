@@ -12,6 +12,12 @@ exports.languages = function (navigator) {
   };
 };
 
+exports.onLine = function (navigator) {
+  return function () {
+    return navigator.onLine;
+  };
+};
+
 exports.platform = function (navigator) {
   return function () {
     return navigator.platform;
