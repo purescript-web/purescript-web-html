@@ -85,7 +85,9 @@ module Web.HTML.HTMLInputElement
   , setValueAsNumber
   , width
   , setWidth
+  , stepUp
   , stepUp'
+  , stepDown
   , stepDown'
   , willValidate
   , validity

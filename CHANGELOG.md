@@ -8,10 +8,21 @@ Breaking changes:
 
 New features:
 - Added `items` function for `DataTransfer` and related types (`DataTransferItem`, `DataTransferItemList`) (#55 by @ptrfrncsmrph)
+- Added `languages` value for `Navigator` (#59 by @toastal)
+- Added `HTMLHtmlElement` module and `documentElement` function `HTMLDocument` (#60 by @toastal)
+- Added `onLine` value for `Navigator` (#61 by @toastal)
 
 Bugfixes:
 
 Other improvements:
+
+## [v3.1.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.1.0) - 2021-05-06
+
+New features:
+- Exported `fromHTMLMediaElement`, `stepUp`, and `stepDown` (#57 by @JordanMartinez)
+
+Other improvements:
+- Fixed warnings found by v0.14.1 PS release (#57 by @JordanMartinez)
 
 ## [v3.0.1](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.0.1) - 2021-03-13
 
@@ -32,8 +43,6 @@ New features:
 - Added `create` and `create'` functions for `Audio` (#32)
 - Added missing attributes for `HTMLImage`, including `srcset`, `currentSrc`, `sizes`, `referrerPolicy`, `decoding`, `loading` (#40)
 - Added common `PropName`, `AttrName`, and `ClassName` which can be reused across libraries representing properties, attributes, and CSS classes (#30)
-
-Bugfixes:
 
 Other improvements:
 - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#41)
