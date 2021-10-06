@@ -20,6 +20,9 @@ New features:
 - Added `onLine` value for `Navigator` (#61 by @toastal)
 - Added `setDragImage` function for `DataTransfer` (#65 by @ajarista)
 
+Bugfixes:
+- Removed duplicated `cells` export from the FFI in HTMLTableRowElement.js (#58 by @thomashoneyman)
+
 ## [v3.1.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.1.0) - 2021-05-06
 
 New features:
