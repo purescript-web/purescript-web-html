@@ -26,6 +26,18 @@ exports._setData = function (format) {
   };
 };
 
+exports._setDragImage = function (dataTransfer) {
+  return function (image) {
+    return function (x) {
+      return function (y) {
+        return function () {
+          return dataTransfer.setDragImage(image, x, y);
+        };
+      };
+    };
+  };
+};
+
 exports._dropEffect = function (dataTransfer) {
   return function () {
     return dataTransfer.dropEffect;
