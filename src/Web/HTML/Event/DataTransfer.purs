@@ -59,14 +59,13 @@ setData
   -> Effect Unit
 setData (MediaType format) dat dt = _setData format dat dt
 
+foreign import _setDragImage :: DataTransfer -> Element -> Int -> Int -> Effect Unit
+
 -- | Sets the image to be used for dragging if a custom one is desired.
 -- | The image will typically be an <image> but could be any other *visible* element.
 -- | The x and y coordinates define where the image appears relative to the mouse.
 setDragImage :: DataTransfer -> Element -> Int -> Int -> Effect Unit
 setDragImage = _setDragImage
-
-foreign import _setDragImage :: DataTransfer -> Element -> Int -> Int -> Effect Unit
-
 foreign import _dropEffect :: DataTransfer -> Effect String
 
 data DropEffect = Copy | Link | Move | None
