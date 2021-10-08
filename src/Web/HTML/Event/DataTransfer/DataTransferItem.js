@@ -1,10 +1,12 @@
 "use strict";
 
-exports._kind = function (text, file, dataTransferItem) {
+exports._kind = function (nothing, just, text, file, dataTransferItem) {
   if (dataTransferItem.kind === "string") {
-    return text;
+    return just(text);
+  } else if (dataTransferItem.kind === "file") {
+    return just(file);
   } else {
-    return file;
+    return nothing;
   }
 };
 

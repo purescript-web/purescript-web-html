@@ -10,9 +10,9 @@ module Web.HTML.Event.DataTransfer.DataTransferItem
 
 import Prelude
 
-import Data.Function.Uncurried (Fn3)
+import Data.Function.Uncurried (Fn5)
 import Data.Function.Uncurried as Uncurried
-import Data.Maybe (Maybe)
+import Data.Maybe (Maybe(..))
 import Data.Nullable (Nullable)
 import Data.Nullable as Nullable
 
@@ -26,11 +26,19 @@ instance Show DataTransferItemKind where
     Text -> "Text"
     File -> "File"
 
-foreign import _kind :: Fn3 DataTransferItemKind DataTransferItemKind DataTransferItem DataTransferItemKind
+foreign import _kind
+  :: Fn5 (forall x. Maybe x)
+       (forall x. x -> Maybe x)
+       DataTransferItemKind
+       DataTransferItemKind
+       DataTransferItem
+       (Maybe DataTransferItemKind)
 
--- | Returns the drag data item kind, which is either "string" or "file".
-kind :: DataTransferItem -> DataTransferItemKind
-kind = Uncurried.runFn3 _kind Text File
+-- | Returns the drag data item kind of the `DataTransferItem`. In the case
+-- | where the `DataTransferItem` object is in _disabled mode_, `Nothing` is
+-- | returned.
+kind :: DataTransferItem -> Maybe DataTransferItemKind
+kind = Uncurried.runFn5 _kind Nothing Just Text File
 
 -- | A Unicode string giving the type or format of the data, generally given by
 -- | a MIME type. Some values that are not MIME types are special-cased for
