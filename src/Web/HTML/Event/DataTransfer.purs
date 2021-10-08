@@ -1,6 +1,7 @@
 module Web.HTML.Event.DataTransfer
   ( DataTransfer
   , files
+  , items
   , types
   , getData
   , setData

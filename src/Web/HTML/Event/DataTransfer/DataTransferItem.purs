@@ -1,15 +1,36 @@
 module Web.HTML.Event.DataTransfer.DataTransferItem
   ( DataTransferItem
+  , DataTransferItemKind(..)
   , DataTransferItemList
+  , dataTransferItem
+  , kind
+  , length
+  , type_
   ) where
 
 import Prelude
+
+import Data.Function.Uncurried (Fn3)
+import Data.Function.Uncurried as Uncurried
 import Data.Maybe (Maybe)
 import Data.Nullable (Nullable)
 import Data.Nullable as Nullable
 
+data DataTransferItemKind = Text | File
+
+derive instance Eq DataTransferItemKind
+derive instance Ord DataTransferItemKind
+
+instance Show DataTransferItemKind where
+  show = case _ of
+    Text -> "Text"
+    File -> "File"
+
 -- | Returns the drag data item kind, which is either "string" or "file".
-foreign import kind :: DataTransferItem -> String
+kind :: DataTransferItem -> DataTransferItemKind
+kind = Uncurried.runFn3 _kind Text File
+
+foreign import _kind :: Fn3 DataTransferItemKind DataTransferItemKind DataTransferItem DataTransferItemKind
 
 -- | A Unicode string giving the type or format of the data, generally given by
 -- | a MIME type. Some values that are not MIME types are special-cased for

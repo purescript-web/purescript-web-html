@@ -1,7 +1,11 @@
 "use strict";
 
-exports.kind = function (dataTransferItem) {
-  return dataTransferItem.kind;
+exports._kind = function (text, file, dataTransferItem) {
+  if (dataTransferItem.kind === "string") {
+    return text;
+  } else {
+    return file;
+  }
 };
 
 exports.type_ = function (dataTransferItem) {
