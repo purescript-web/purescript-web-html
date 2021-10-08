@@ -1,5 +1,6 @@
 module Web.HTML.HTMLAudioElement
   ( HTMLAudioElement
+  , fromHTMLMediaElement
   , fromHTMLElement
   , fromElement
   , fromNode

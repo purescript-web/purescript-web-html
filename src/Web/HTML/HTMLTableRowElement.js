@@ -24,14 +24,6 @@ exports.cells = function (row) {
 
 // ----------------------------------------------------------------------------
 
-exports.cells = function (row) {
-  return function () {
-    return row.cells;
-  };
-};
-
-// ----------------------------------------------------------------------------
-
 exports.insertCellAt = function (index) {
   return function (row) {
     return function () {
