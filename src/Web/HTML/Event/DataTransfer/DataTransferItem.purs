@@ -26,11 +26,11 @@ instance Show DataTransferItemKind where
     Text -> "Text"
     File -> "File"
 
+foreign import _kind :: Fn3 DataTransferItemKind DataTransferItemKind DataTransferItem DataTransferItemKind
+
 -- | Returns the drag data item kind, which is either "string" or "file".
 kind :: DataTransferItem -> DataTransferItemKind
 kind = Uncurried.runFn3 _kind Text File
-
-foreign import _kind :: Fn3 DataTransferItemKind DataTransferItemKind DataTransferItem DataTransferItemKind
 
 -- | A Unicode string giving the type or format of the data, generally given by
 -- | a MIME type. Some values that are not MIME types are special-cased for
@@ -40,16 +40,16 @@ foreign import _kind :: Fn3 DataTransferItemKind DataTransferItemKind DataTransf
 -- | There is a limit of one text item per item type string.
 foreign import type_ :: DataTransferItem -> String
 
+foreign import _dataTransferItem :: Int -> DataTransferItemList -> Nullable DataTransferItem
+
 -- | Access an item in the `DataTransferItemList` by index.
 dataTransferItem :: Int -> DataTransferItemList -> Maybe DataTransferItem
 dataTransferItem = map Nullable.toMaybe <$> _dataTransferItem
 
-foreign import _dataTransferItem :: Int -> DataTransferItemList -> Nullable DataTransferItem
+foreign import _length :: DataTransferItemList -> Int
 
 length :: DataTransferItemList -> Int
 length = _length
-
-foreign import _length :: DataTransferItemList -> Int
 
 foreign import data DataTransferItem :: Type
 
