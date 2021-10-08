@@ -7,7 +7,6 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
-- Added `items` function for `DataTransfer` and related types (`DataTransferItem`, `DataTransferItemList`) (#55 by @ptrfrncsmrph)
 
 Bugfixes:
 
@@ -16,6 +15,7 @@ Other improvements:
 ## [v3.2.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.2.0) - 2021-10-06
 
 New features:
+- Added `items` function for `DataTransfer` and related types (`DataTransferItem`, `DataTransferItemList`) (#55 by @ptrfrncsmrph)
 - Added `languages` value for `Navigator` (#59 by @toastal)
 - Added `HTMLHtmlElement` module and `documentElement` function `HTMLDocument` (#60 by @toastal)
 - Added `onLine` value for `Navigator` (#61 by @toastal)
