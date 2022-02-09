@@ -18,10 +18,10 @@ import Data.Nullable as Nullable
 
 data DataTransferItemKind = Text | File
 
-derive instance Eq DataTransferItemKind
-derive instance Ord DataTransferItemKind
+derive instance eqDataTransferItemKind :: Eq DataTransferItemKind
+derive instance ordDataTransferItemKind :: Ord DataTransferItemKind
 
-instance Show DataTransferItemKind where
+instance showDataTransferItemKind :: Show DataTransferItemKind where
   show = case _ of
     Text -> "Text"
     File -> "File"

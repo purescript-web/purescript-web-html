@@ -9,6 +9,7 @@ Breaking changes:
 New features:
 
 Bugfixes:
+- Added missing type class instance names for `DataTransferItemKind` (#69 by @ptrfrncsmrph)
 
 Other improvements:
 
