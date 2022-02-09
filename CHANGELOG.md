@@ -9,9 +9,13 @@ Breaking changes:
 New features:
 
 Bugfixes:
-- Added missing type class instance names for `DataTransferItemKind` (#69 by @ptrfrncsmrph)
 
 Other improvements:
+
+## [v3.2.1](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.2.1) - 2021-02-09
+
+Bugfixes:
+- Added missing type class instance names for `DataTransferItemKind` (#69 by @ptrfrncsmrph)
 
 ## [v3.2.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v3.2.0) - 2021-10-06
 
