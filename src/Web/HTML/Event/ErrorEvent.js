@@ -1,17 +1,17 @@
 "use strict";
 
-exports.message = function (e) {
+export function message(e) {
   return e.message;
-};
+}
 
-exports.fileName = function (e) {
+export function fileName(e) {
   return e.filename;
-};
+}
 
-exports.lineNo = function (e) {
+export function lineNo(e) {
   return e.lineno;
-};
+}
 
-exports.colNo = function (e) {
+export function colNo(e) {
   return e.colno;
-};
+}

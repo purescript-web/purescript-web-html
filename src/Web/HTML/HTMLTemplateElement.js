@@ -1,7 +1,7 @@
 "use strict";
 
-exports.content = function (template) {
+export function content(template) {
   return function () {
     return template.content;
   };
-};
+}

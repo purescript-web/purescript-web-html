@@ -1,47 +1,47 @@
 "use strict";
 
-exports.name = function (meta) {
+export function name(meta) {
   return function () {
     return meta.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (meta) {
     return function () {
       meta.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.httpEquiv = function (meta) {
+export function httpEquiv(meta) {
   return function () {
     return meta.httpEquiv;
   };
-};
+}
 
-exports.setHttpEquiv = function (httpEquiv) {
+export function setHttpEquiv(httpEquiv) {
   return function (meta) {
     return function () {
       meta.httpEquiv = httpEquiv;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.content = function (meta) {
+export function content(meta) {
   return function () {
     return meta.content;
   };
-};
+}
 
-exports.setContent = function (content) {
+export function setContent(content) {
   return function (meta) {
     return function () {
       meta.content = content;
     };
   };
-};
+}

@@ -1,5 +1,5 @@
 "use strict";
 
-exports.dataTransfer = function (e) {
+export function dataTransfer(e) {
   return e.dataTransfer;
-};
+}

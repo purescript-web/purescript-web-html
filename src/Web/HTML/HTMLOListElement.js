@@ -1,47 +1,47 @@
 "use strict";
 
-exports.reversed = function (ol) {
+export function reversed(ol) {
   return function () {
     return ol.reversed;
   };
-};
+}
 
-exports.setReversed = function (reversed) {
+export function setReversed(reversed) {
   return function (ol) {
     return function () {
       ol.reversed = reversed;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.start = function (ol) {
+export function start(ol) {
   return function () {
     return ol.start;
   };
-};
+}
 
-exports.setStart = function (start) {
+export function setStart(start) {
   return function (ol) {
     return function () {
       ol.start = start;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (ol) {
+export function type_(ol) {
   return function () {
     return ol.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (ol) {
     return function () {
       ol.type = type;
     };
   };
-};
+}

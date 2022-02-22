@@ -1,43 +1,43 @@
 "use strict";
 
-exports.rowIndex = function (row) {
+export function rowIndex(row) {
   return function () {
     return row.rowIndex;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.sectionRowIndex = function (row) {
+export function sectionRowIndex(row) {
   return function () {
     return row.sectionRowIndex;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.cells = function (row) {
+export function cells(row) {
   return function () {
     return row.cells;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.insertCellAt = function (index) {
+export function insertCellAt(index) {
   return function (row) {
     return function () {
       return row.insertCell(index);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.deleteCell = function (index) {
+export function deleteCell(index) {
   return function (row) {
     return function () {
       row.deleteCell(index);
     };
   };
-};
+}

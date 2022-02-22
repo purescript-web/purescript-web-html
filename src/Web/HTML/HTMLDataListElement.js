@@ -1,7 +1,7 @@
 "use strict";
 
-exports.options = function (dle) {
+export function options(dle) {
   return function () {
     return dle.options;
   };
-};
+}

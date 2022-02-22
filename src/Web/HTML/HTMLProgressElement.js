@@ -1,47 +1,47 @@
 "use strict";
 
-exports.value = function (progress) {
+export function value(progress) {
   return function () {
     return progress.value;
   };
-};
+}
 
-exports.setValue = function (value) {
+export function setValue(value) {
   return function (progress) {
     return function () {
       progress.value = value;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.max = function (progress) {
+export function max(progress) {
   return function () {
     return progress.max;
   };
-};
+}
 
-exports.setMax = function (max) {
+export function setMax(max) {
   return function (progress) {
     return function () {
       progress.max = max;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.position = function (progress) {
+export function position(progress) {
   return function () {
     return progress.position;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.labels = function (progress) {
+export function labels(progress) {
   return function () {
     return progress.labels;
   };
-};
+}

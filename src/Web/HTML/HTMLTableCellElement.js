@@ -1,39 +1,39 @@
 "use strict";
 
-exports.colSpan = function (cell) {
+export function colSpan(cell) {
   return function () {
     return cell.colSpan;
   };
-};
+}
 
-exports.setColSpan = function (colSpan) {
+export function setColSpan(colSpan) {
   return function (cell) {
     return function () {
       cell.colSpan = colSpan;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.rowSpan = function (cell) {
+export function rowSpan(cell) {
   return function () {
     return cell.rowSpan;
   };
-};
+}
 
-exports.setRowSpan = function (rowSpan) {
+export function setRowSpan(rowSpan) {
   return function (cell) {
     return function () {
       cell.rowSpan = rowSpan;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.cellIndex = function (cell) {
+export function cellIndex(cell) {
   return function () {
     return cell.cellIndex;
   };
-};
+}

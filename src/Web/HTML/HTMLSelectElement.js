@@ -1,225 +1,225 @@
 "use strict";
 
-exports.autofocus = function (select) {
+export function autofocus(select) {
   return function () {
     return select.autofocus;
   };
-};
+}
 
-exports.setAutofocus = function (autofocus) {
+export function setAutofocus(autofocus) {
   return function (select) {
     return function () {
       select.autofocus = autofocus;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.disabled = function (select) {
+export function disabled(select) {
   return function () {
     return select.disabled;
   };
-};
+}
 
-exports.setDisabled = function (disabled) {
+export function setDisabled(disabled) {
   return function (select) {
     return function () {
       select.disabled = disabled;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.multiple = function (select) {
+export function multiple(select) {
   return function () {
     return select.multiple;
   };
-};
+}
 
-exports.setMultiple = function (multiple) {
+export function setMultiple(multiple) {
   return function (select) {
     return function () {
       select.multiple = multiple;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._form = function (select) {
+export function _form(select) {
   return function () {
     return select.form;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (select) {
+export function name(select) {
   return function () {
     return select.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (select) {
     return function () {
       select.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.required = function (select) {
+export function required(select) {
   return function () {
     return select.required;
   };
-};
+}
 
-exports.setRequired = function (required) {
+export function setRequired(required) {
   return function (select) {
     return function () {
       select.required = required;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.size = function (select) {
+export function size(select) {
   return function () {
     return select.size;
   };
-};
+}
 
-exports.setSize = function (size) {
+export function setSize(size) {
   return function (select) {
     return function () {
       select.size = size;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (select) {
+export function type_(select) {
   return function () {
     return select.type;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.length = function (select) {
+export function length(select) {
   return function () {
     return select.length;
   };
-};
+}
 
-exports.setLength = function (length) {
+export function setLength(length) {
   return function (select) {
     return function () {
       select.length = length;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.selectedOptions = function (select) {
+export function selectedOptions(select) {
   return function () {
     return select.selectedOptions;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.selectedIndex = function (select) {
+export function selectedIndex(select) {
   return function () {
     return select.selectedIndex;
   };
-};
+}
 
-exports.setSelectedIndex = function (selectedIndex) {
+export function setSelectedIndex(selectedIndex) {
   return function (select) {
     return function () {
       select.selectedIndex = selectedIndex;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.value = function (select) {
+export function value(select) {
   return function () {
     return select.value;
   };
-};
+}
 
-exports.setValue = function (value) {
+export function setValue(value) {
   return function (select) {
     return function () {
       select.value = value;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.willValidate = function (select) {
+export function willValidate(select) {
   return function () {
     return select.willValidate;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validity = function (select) {
+export function validity(select) {
   return function () {
     return select.validity;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validationMessage = function (select) {
+export function validationMessage(select) {
   return function () {
     return select.validationMessage;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.checkValidity = function (select) {
+export function checkValidity(select) {
   return function () {
     return select.checkValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reportValidity = function (select) {
+export function reportValidity(select) {
   return function () {
     return select.reportValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setCustomValidity = function (value) {
+export function setCustomValidity(value) {
   return function (select) {
     return function () {
       select.setCustomValidity(value);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.labels = function (select) {
+export function labels(select) {
   return function () {
     return select.labels;
   };
-};
+}

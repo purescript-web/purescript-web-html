@@ -1,105 +1,105 @@
 "use strict";
 
-exports.disabled = function (fieldset) {
+export function disabled(fieldset) {
   return function () {
     return fieldset.disabled;
   };
-};
+}
 
-exports.setDisabled = function (disabled) {
+export function setDisabled(disabled) {
   return function (fieldset) {
     return function () {
       fieldset.disabled = disabled;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._form = function (fieldset) {
+export function _form(fieldset) {
   return function () {
     return fieldset.form;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (fieldset) {
+export function name(fieldset) {
   return function () {
     return fieldset.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (fieldset) {
     return function () {
       fieldset.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (fieldset) {
+export function type_(fieldset) {
   return function () {
     return fieldset.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (fieldset) {
     return function () {
       fieldset.type = type;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.willValidate = function (fieldset) {
+export function willValidate(fieldset) {
   return function () {
     return fieldset.willValidate;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validity = function (fieldset) {
+export function validity(fieldset) {
   return function () {
     return fieldset.validity;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validationMessage = function (fieldset) {
+export function validationMessage(fieldset) {
   return function () {
     return fieldset.validationMessage;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.checkValidity = function (fieldset) {
+export function checkValidity(fieldset) {
   return function () {
     return fieldset.checkValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reportValidity = function (fieldset) {
+export function reportValidity(fieldset) {
   return function () {
     return fieldset.reportValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setCustomValidity = function (value) {
+export function setCustomValidity(value) {
   return function (fieldset) {
     return function () {
       fieldset.setCustomValidity(value);
     };
   };
-};
+}

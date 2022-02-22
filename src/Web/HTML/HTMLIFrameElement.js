@@ -1,93 +1,93 @@
 "use strict";
 
-exports.src = function (iframe) {
+export function src(iframe) {
   return function () {
     return iframe.src;
   };
-};
+}
 
-exports.setSrc = function (src) {
+export function setSrc(src) {
   return function (iframe) {
     return function () {
       iframe.src = src;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.srcdoc = function (iframe) {
+export function srcdoc(iframe) {
   return function () {
     return iframe.srcdoc;
   };
-};
+}
 
-exports.setSrcdoc = function (srcdoc) {
+export function setSrcdoc(srcdoc) {
   return function (iframe) {
     return function () {
       iframe.srcdoc = srcdoc;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (iframe) {
+export function name(iframe) {
   return function () {
     return iframe.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (iframe) {
     return function () {
       iframe.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.width = function (iframe) {
+export function width(iframe) {
   return function () {
     return iframe.width;
   };
-};
+}
 
-exports.setWidth = function (width) {
+export function setWidth(width) {
   return function (iframe) {
     return function () {
       iframe.width = width;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.height = function (iframe) {
+export function height(iframe) {
   return function () {
     return iframe.height;
   };
-};
+}
 
-exports.setHeight = function (height) {
+export function setHeight(height) {
   return function (iframe) {
     return function () {
       iframe.height = height;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._contentDocument = function (iframe) {
+export function _contentDocument(iframe) {
   return function () {
     return iframe.contentDocument;
   };
-};
+}
 
-exports._contentWindow = function (iframe) {
+export function _contentWindow(iframe) {
   return function () {
     return iframe.contentWindow;
   };
-};
+}

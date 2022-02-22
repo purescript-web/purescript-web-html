@@ -1,66 +1,66 @@
 "use strict";
 
-exports.kind = function (track) {
+export function kind(track) {
   return function () {
     return track.kind;
   };
-};
+}
 
-exports.setKind = function (kind) {
+export function setKind(kind) {
   return function (track) {
     return function () {
       track.kind = kind;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.src = function (track) {
+export function src(track) {
   return function () {
     return track.src;
   };
-};
+}
 
-exports.setSrc = function (src) {
+export function setSrc(src) {
   return function (track) {
     return function () {
       track.src = src;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.srclang = function (track) {
+export function srclang(track) {
   return function () {
     return track.srclang;
   };
-};
+}
 
-exports.setSrclang = function (srclang) {
+export function setSrclang(srclang) {
   return function (track) {
     return function () {
       track.srclang = srclang;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.label = function (track) {
+export function label(track) {
   return function () {
     return track.label;
   };
-};
+}
 
-exports.setLabel = function (label) {
+export function setLabel(label) {
   return function (track) {
     return function () {
       track.label = label;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
@@ -70,16 +70,16 @@ exports["default"] = function (track) {
   };
 };
 
-exports.setDefault = function (def) {
+export function setDefault(def) {
   return function (track) {
     return function () {
       track["default"] = def;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._readyState = function (track) {
+export function _readyState(track) {
   return track.readyState;
-};
+}

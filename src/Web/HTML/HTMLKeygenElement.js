@@ -1,153 +1,153 @@
 "use strict";
 
-exports.autofocus = function (keygen) {
+export function autofocus(keygen) {
   return function () {
     return keygen.autofocus;
   };
-};
+}
 
-exports.setAutofocus = function (autofocus) {
+export function setAutofocus(autofocus) {
   return function (keygen) {
     return function () {
       keygen.autofocus = autofocus;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.challenge = function (keygen) {
+export function challenge(keygen) {
   return function () {
     return keygen.challenge;
   };
-};
+}
 
-exports.setChallenge = function (challenge) {
+export function setChallenge(challenge) {
   return function (keygen) {
     return function () {
       keygen.challenge = challenge;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.disabled = function (keygen) {
+export function disabled(keygen) {
   return function () {
     return keygen.disabled;
   };
-};
+}
 
-exports.setDisabled = function (disabled) {
+export function setDisabled(disabled) {
   return function (keygen) {
     return function () {
       keygen.disabled = disabled;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._form = function (keygen) {
+export function _form(keygen) {
   return function () {
     return keygen.form;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.keytype = function (keygen) {
+export function keytype(keygen) {
   return function () {
     return keygen.keytype;
   };
-};
+}
 
-exports.setKeytype = function (keytype) {
+export function setKeytype(keytype) {
   return function (keygen) {
     return function () {
       keygen.keytype = keytype;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (keygen) {
+export function name(keygen) {
   return function () {
     return keygen.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (keygen) {
     return function () {
       keygen.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (keygen) {
+export function type_(keygen) {
   return function () {
     return keygen.type;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.willValidate = function (keygen) {
+export function willValidate(keygen) {
   return function () {
     return keygen.willValidate;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validity = function (keygen) {
+export function validity(keygen) {
   return function () {
     return keygen.validity;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validationMessage = function (keygen) {
+export function validationMessage(keygen) {
   return function () {
     return keygen.validationMessage;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.checkValidity = function (keygen) {
+export function checkValidity(keygen) {
   return function () {
     return keygen.checkValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reportValidity = function (keygen) {
+export function reportValidity(keygen) {
   return function () {
     return keygen.reportValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setCustomValidity = function (value) {
+export function setCustomValidity(value) {
   return function (keygen) {
     return function () {
       keygen.setCustomValidity(value);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.labels = function (keygen) {
+export function labels(keygen) {
   return function () {
     return keygen.labels;
   };
-};
+}

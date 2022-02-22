@@ -1,15 +1,15 @@
 "use strict";
 
-exports.value = function (data) {
+export function value(data) {
   return function () {
     return data.value;
   };
-};
+}
 
-exports.setValue = function (value) {
+export function setValue(value) {
   return function (data) {
     return function () {
       data.value = value;
     };
   };
-};
+}
