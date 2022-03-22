@@ -1,31 +1,29 @@
-"use strict";
-
-exports.language = function (navigator) {
+export function language(navigator) {
   return function () {
     return navigator.language;
   };
-};
+}
 
-exports.languages = function (navigator) {
+export function languages(navigator) {
   return function () {
     return navigator.languages;
   };
-};
+}
 
-exports.onLine = function (navigator) {
+export function onLine(navigator) {
   return function () {
     return navigator.onLine;
   };
-};
+}
 
-exports.platform = function (navigator) {
+export function platform(navigator) {
   return function () {
     return navigator.platform;
   };
-};
+}
 
-exports.userAgent = function (navigator) {
+export function userAgent(navigator) {
   return function () {
     return navigator.userAgent;
   };
-};
+}

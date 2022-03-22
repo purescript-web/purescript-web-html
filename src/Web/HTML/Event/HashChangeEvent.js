@@ -1,9 +1,7 @@
-"use strict";
-
-exports.oldURL = function (e) {
+export function oldURL(e) {
   return e.oldURL;
-};
+}
 
-exports.newURL = function (e) {
+export function newURL(e) {
   return e.newURL;
-};
+}

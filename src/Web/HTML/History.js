@@ -1,23 +1,24 @@
-"use strict";
-
-exports.back = function(history) {
+export function back(history) {
   return function() {
     return history.back();
   };
-};
-exports.forward = function(history) {
+}
+
+export function forward(history) {
   return function() {
     return history.forward();
   };
-};
-exports.go = function(delta) {
+}
+
+export function go(delta) {
   return function(history) {
     return function() {
       return history.go(delta);
     };
   };
-};
-exports.pushState = function(a) {
+}
+
+export function pushState(a) {
   return function(docTitle) {
     return function(url) {
       return function(history) {
@@ -27,8 +28,9 @@ exports.pushState = function(a) {
       };
     };
   };
-};
-exports.replaceState = function(a) {
+}
+
+export function replaceState(a) {
   return function(docTitle) {
     return function(url) {
       return function(history) {
@@ -38,9 +40,10 @@ exports.replaceState = function(a) {
       };
     };
   };
-};
-exports.state = function(history) {
+}
+
+export function state(history) {
   return function() {
     return history.state;
   };
-};
+}

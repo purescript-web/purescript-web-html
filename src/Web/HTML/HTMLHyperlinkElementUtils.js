@@ -1,167 +1,165 @@
-"use strict";
-
-exports.href = function (u) {
+export function href(u) {
   return function () {
     return u.href;
   };
-};
+}
 
-exports.setHref = function (href) {
+export function setHref(href) {
   return function (u) {
     return function () {
       u.href = href;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.origin = function (u) {
+export function origin(u) {
   return function () {
     return u.origin;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.protocol = function (u) {
+export function protocol(u) {
   return function () {
     return u.protocol;
   };
-};
+}
 
-exports.setProtocol = function (protocol) {
+export function setProtocol(protocol) {
   return function (u) {
     return function () {
       u.protocol = protocol;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.username = function (u) {
+export function username(u) {
   return function () {
     return u.username;
   };
-};
+}
 
-exports.setUsername = function (username) {
+export function setUsername(username) {
   return function (u) {
     return function () {
       u.username = username;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.password = function (u) {
+export function password(u) {
   return function () {
     return u.password;
   };
-};
+}
 
-exports.setPassword = function (password) {
+export function setPassword(password) {
   return function (u) {
     return function () {
       u.password = password;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.host = function (u) {
+export function host(u) {
   return function () {
     return u.host;
   };
-};
+}
 
-exports.setHost = function (host) {
+export function setHost(host) {
   return function (u) {
     return function () {
       u.host = host;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.hostname = function (u) {
+export function hostname(u) {
   return function () {
     return u.hostname;
   };
-};
+}
 
-exports.setHostname = function (hostname) {
+export function setHostname(hostname) {
   return function (u) {
     return function () {
       u.hostname = hostname;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.port = function (u) {
+export function port(u) {
   return function () {
     return u.port;
   };
-};
+}
 
-exports.setPort = function (port) {
+export function setPort(port) {
   return function (u) {
     return function () {
       u.port = port;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.pathname = function (u) {
+export function pathname(u) {
   return function () {
     return u.pathname;
   };
-};
+}
 
-exports.setPathname = function (pathname) {
+export function setPathname(pathname) {
   return function (u) {
     return function () {
       u.pathname = pathname;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.search = function (u) {
+export function search(u) {
   return function () {
     return u.search;
   };
-};
+}
 
-exports.setSearch = function (search) {
+export function setSearch(search) {
   return function (u) {
     return function () {
       u.search = search;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.hash = function (u) {
+export function hash(u) {
   return function () {
     return u.hash;
   };
-};
+}
 
-exports.setHash = function (hash) {
+export function setHash(hash) {
   return function (u) {
     return function () {
       u.hash = hash;
     };
   };
-};
+}

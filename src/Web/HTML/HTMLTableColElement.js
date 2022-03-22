@@ -1,15 +1,13 @@
-"use strict";
-
-exports.span = function (col) {
+export function span(col) {
   return function () {
     return col.span;
   };
-};
+}
 
-exports.setSpan = function (span) {
+export function setSpan(span) {
   return function (col) {
     return function () {
       col.span = span;
     };
   };
-};
+}

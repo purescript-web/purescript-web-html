@@ -1,135 +1,133 @@
-"use strict";
-
-exports.alt = function (area) {
+export function alt(area) {
   return function () {
     return area.alt;
   };
-};
+}
 
-exports.setAlt = function (alt) {
+export function setAlt(alt) {
   return function (area) {
     return function () {
       area.alt = alt;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.coords = function (area) {
+export function coords(area) {
   return function () {
     return area.coords;
   };
-};
+}
 
-exports.setCoords = function (coords) {
+export function setCoords(coords) {
   return function (area) {
     return function () {
       area.coords = coords;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.shape = function (area) {
+export function shape(area) {
   return function () {
     return area.shape;
   };
-};
+}
 
-exports.setShape = function (shape) {
+export function setShape(shape) {
   return function (area) {
     return function () {
       area.shape = shape;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.target = function (area) {
+export function target(area) {
   return function () {
     return area.target;
   };
-};
+}
 
-exports.setTarget = function (target) {
+export function setTarget(target) {
   return function (area) {
     return function () {
       area.target = target;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.download = function (area) {
+export function download(area) {
   return function () {
     return area.download;
   };
-};
+}
 
-exports.setDownload = function (download) {
+export function setDownload(download) {
   return function (area) {
     return function () {
       area.download = download;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.rel = function (area) {
+export function rel(area) {
   return function () {
     return area.rel;
   };
-};
+}
 
-exports.setRel = function (rel) {
+export function setRel(rel) {
   return function (area) {
     return function () {
       area.rel = rel;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.relList = function (area) {
+export function relList(area) {
   return function () {
     return area.relList;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.hreflang = function (area) {
+export function hreflang(area) {
   return function () {
     return area.hreflang;
   };
-};
+}
 
-exports.setHreflang = function (hreflang) {
+export function setHreflang(hreflang) {
   return function (area) {
     return function () {
       area.hreflang = hreflang;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (area) {
+export function type_(area) {
   return function () {
     return area.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (area) {
     return function () {
       area.type = type;
     };
   };
-};
+}

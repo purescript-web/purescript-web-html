@@ -1,31 +1,29 @@
-"use strict";
-
-exports.cite = function (mod) {
+export function cite(mod) {
   return function () {
     return mod.cite;
   };
-};
+}
 
-exports.setCite = function (cite) {
+export function setCite(cite) {
   return function (mod) {
     return function () {
       mod.cite = cite;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.dateTime = function (mod) {
+export function dateTime(mod) {
   return function () {
     return mod.dateTime;
   };
-};
+}
 
-exports.setDateTime = function (dateTime) {
+export function setDateTime(dateTime) {
   return function (mod) {
     return function () {
       mod.dateTime = dateTime;
     };
   };
-};
+}

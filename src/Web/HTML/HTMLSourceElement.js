@@ -1,47 +1,45 @@
-"use strict";
-
-exports.src = function (source) {
+export function src(source) {
   return function () {
     return source.src;
   };
-};
+}
 
-exports.setSrc = function (src) {
+export function setSrc(src) {
   return function (source) {
     return function () {
       source.src = src;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (source) {
+export function type_(source) {
   return function () {
     return source.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (source) {
     return function () {
       source.type = type;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.media = function (source) {
+export function media(source) {
   return function () {
     return source.media;
   };
-};
+}
 
-exports.setMedia = function (media) {
+export function setMedia(media) {
   return function (source) {
     return function () {
       source.media = media;
     };
   };
-};
+}

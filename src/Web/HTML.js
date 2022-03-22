@@ -1,5 +1,3 @@
-"use strict";
-
-exports.window = function () {
+export function window() {
   return window;
-};
+}

@@ -1,11 +1,9 @@
-"use strict";
-
-exports.create = function () {
+export function create() {
   return new Audio();
-};
+}
 
-exports.createWithURL = function (url) {
+export function createWithURL(url) {
   return function () {
     return new Audio(url);
   };
-};
+}

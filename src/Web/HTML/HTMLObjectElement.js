@@ -1,169 +1,167 @@
-"use strict";
-
-exports.data_ = function (object) {
+export function data_(object) {
   return function () {
     return object.data;
   };
-};
+}
 
-exports.setData = function (data) {
+export function setData(data) {
   return function (object) {
     return function () {
       object.data = data;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (object) {
+export function type_(object) {
   return function () {
     return object.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (object) {
     return function () {
       object.type = type;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.typeMustMatch = function (object) {
+export function typeMustMatch(object) {
   return function () {
     return object.typeMustMatch;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (object) {
+export function name(object) {
   return function () {
     return object.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (object) {
     return function () {
       object.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.useMap = function (object) {
+export function useMap(object) {
   return function () {
     return object.useMap;
   };
-};
+}
 
-exports.setUseMap = function (useMap) {
+export function setUseMap(useMap) {
   return function (object) {
     return function () {
       object.useMap = useMap;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._form = function (object) {
+export function _form(object) {
   return function () {
     return object.form;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.width = function (object) {
+export function width(object) {
   return function () {
     return object.width;
   };
-};
+}
 
-exports.setWidth = function (width) {
+export function setWidth(width) {
   return function (object) {
     return function () {
       object.width = width;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.height = function (object) {
+export function height(object) {
   return function () {
     return object.height;
   };
-};
+}
 
-exports.setHeight = function (height) {
+export function setHeight(height) {
   return function (object) {
     return function () {
       object.height = height;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._contentDocument = function (object) {
+export function _contentDocument(object) {
   return function () {
     return object.contentDocument;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.willValidate = function (object) {
+export function willValidate(object) {
   return function () {
     return object.willValidate;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validity = function (object) {
+export function validity(object) {
   return function () {
     return object.validity;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validationMessage = function (object) {
+export function validationMessage(object) {
   return function () {
     return object.validationMessage;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.checkValidity = function (object) {
+export function checkValidity(object) {
   return function () {
     return object.checkValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reportValidity = function (object) {
+export function reportValidity(object) {
   return function () {
     return object.reportValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setCustomValidity = function (value) {
+export function setCustomValidity(value) {
   return function (object) {
     return function () {
       object.setCustomValidity(value);
     };
   };
-};
+}

@@ -1,15 +1,13 @@
-"use strict";
-
-exports.returnValue = function (e) {
+export function returnValue(e) {
   return function () {
     return e.returnValue;
   };
-};
+}
 
-exports.setReturnValue = function (v) {
+export function setReturnValue(v) {
   return function (e) {
     return function () {
       e.returnValue = v;
     };
   };
-};
+}

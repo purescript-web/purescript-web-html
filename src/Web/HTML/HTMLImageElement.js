@@ -1,217 +1,215 @@
-"use strict";
-
-exports.create = function () {
+export function create() {
   return new Image();
-};
+}
 
-exports.createWithDimensions = function (width) {
+export function createWithDimensions(width) {
   return function (height) {
     return function () {
       return new Image(width, height);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.alt = function (image) {
+export function alt(image) {
   return function () {
     return image.alt;
   };
-};
+}
 
-exports.setAlt = function (alt) {
+export function setAlt(alt) {
   return function (image) {
     return function () {
       image.alt = alt;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.src = function (image) {
+export function src(image) {
   return function () {
     return image.src;
   };
-};
+}
 
-exports.setSrc = function (src) {
+export function setSrc(src) {
   return function (image) {
     return function () {
       image.src = src;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.srcset = function (image) {
+export function srcset(image) {
   return function () {
     return image.srcset;
   };
-};
+}
 
-exports.setSrcset = function (srcset) {
+export function setSrcset(srcset) {
   return function (image) {
     return function () {
       image.srcset = srcset;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.sizes = function (image) {
+export function sizes(image) {
   return function () {
     return image.sizes;
   };
-};
+}
 
-exports.setSizes = function (sizes) {
+export function setSizes(sizes) {
   return function (image) {
     return function () {
       image.sizes = sizes;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.currentSrc = function (image) {
+export function currentSrc(image) {
   return function () {
     return image.currentSrc;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._crossOrigin = function (image) {
+export function _crossOrigin(image) {
   return image.crossOrigin;
-};
+}
 
-exports._setCrossOrigin = function (crossOrigin, image) {
+export function _setCrossOrigin(crossOrigin, image) {
   image.crossOrigin = crossOrigin;
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.useMap = function (image) {
+export function useMap(image) {
   return function () {
     return image.useMap;
   };
-};
+}
 
-exports.setUseMap = function (useMap) {
+export function setUseMap(useMap) {
   return function (image) {
     return function () {
       image.useMap = useMap;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.isMap = function (image) {
+export function isMap(image) {
   return function () {
     return image.isMap;
   };
-};
+}
 
-exports.setIsMap = function (isMap) {
+export function setIsMap(isMap) {
   return function (image) {
     return function () {
       image.isMap = isMap;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.width = function (image) {
+export function width(image) {
   return function () {
     return image.width;
   };
-};
+}
 
-exports.setWidth = function (width) {
+export function setWidth(width) {
   return function (image) {
     return function () {
       image.width = width;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.height = function (image) {
+export function height(image) {
   return function () {
     return image.height;
   };
-};
+}
 
-exports.setHeight = function (height) {
+export function setHeight(height) {
   return function (image) {
     return function () {
       image.height = height;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.naturalWidth = function (image) {
+export function naturalWidth(image) {
   return function () {
     return image.naturalWidth;
   };
-};
+}
 
-exports.naturalHeight = function (image) {
+export function naturalHeight(image) {
   return function () {
     return image.naturalHeight;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.referrerPolicy = function (image) {
+export function referrerPolicy(image) {
   return function () {
     return image.referrerPolicy;
   };
-};
+}
 
-exports.setReferrerPolicy = function (referrerPolicy) {
+export function setReferrerPolicy(referrerPolicy) {
   return function (image) {
     return function () {
       image.referrerPolicy = referrerPolicy;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._decoding = function (image) {
+export function _decoding(image) {
   return image.decoding;
-};
+}
 
-exports._setDecoding = function (decoding, image) {
+export function _setDecoding(decoding, image) {
   image.decoding = decoding;
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._loading = function (image) {
+export function _loading(image) {
   return image.loading;
-};
+}
 
-exports._setLoading = function (loading, image) {
+export function _setLoading(loading, image) {
   image.loading = loading;
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.complete = function (image) {
+export function complete(image) {
   return function () {
     return image.complete;
   };
-};
+}

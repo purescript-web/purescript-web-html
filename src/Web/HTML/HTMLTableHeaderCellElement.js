@@ -1,31 +1,29 @@
-"use strict";
-
-exports.scope = function (cell) {
+export function scope(cell) {
   return function () {
     return cell.scope;
   };
-};
+}
 
-exports.setScope = function (scope) {
+export function setScope(scope) {
   return function (cell) {
     return function () {
       cell.scope = scope;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.abbr = function (cell) {
+export function abbr(cell) {
   return function () {
     return cell.abbr;
   };
-};
+}
 
-exports.setAbbr = function (abbr) {
+export function setAbbr(abbr) {
   return function (cell) {
     return function () {
       cell.abbr = abbr;
     };
   };
-};
+}

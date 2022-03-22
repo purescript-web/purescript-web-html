@@ -1,27 +1,25 @@
-"use strict";
-
-exports.rows = function (section) {
+export function rows(section) {
   return function () {
     return section.rows;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.insertRowAt = function (index) {
+export function insertRowAt(index) {
   return function (section) {
     return function () {
       return section.insertRow(index);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.deleteRow = function (index) {
+export function deleteRow(index) {
   return function (section) {
     return function () {
       section.deleteRow(index);
     };
   };
-};
+}

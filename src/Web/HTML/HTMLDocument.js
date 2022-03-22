@@ -1,57 +1,55 @@
-"use strict";
-
-exports._documentElement = function (doc) {
+export function _documentElement(doc) {
   return function () {
     return doc.documentElement;
   };
-};
+}
 
-exports._head = function (doc) {
+export function _head(doc) {
   return function () {
     return doc.head;
   };
-};
+}
 
-exports._body = function (doc) {
+export function _body(doc) {
   return function () {
     return doc.body;
   };
-};
+}
 
-exports._readyState = function (doc) {
+export function _readyState(doc) {
   return function () {
     return doc.readyState;
   };
-};
+}
 
-exports._activeElement = function (doc) {
+export function _activeElement(doc) {
   return function () {
     return doc.activeElement;
   };
-};
+}
 
-exports._currentScript = function (doc) {
+export function _currentScript(doc) {
   return function () {
     return doc.currentScript;
   };
-};
+}
 
-exports.referrer = function (doc) {
+export function referrer(doc) {
   return function () {
     return doc.referrer;
   };
-};
+}
 
-exports.title = function (doc) {
+export function title(doc) {
   return function () {
     return doc.title;
   };
-};
+}
 
-exports.setTitle = function (title) {
+export function setTitle(title) {
   return function (doc) {
     return function () {
       doc.title = title;
     };
   };
-};
+}

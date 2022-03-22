@@ -1,65 +1,63 @@
-"use strict";
-
 // ----------------------------------------------------------------------------
 
-exports.width = function (video) {
+export function width(video) {
   return function () {
     return video.width;
   };
-};
+}
 
-exports.setWidth = function (width) {
+export function setWidth(width) {
   return function (video) {
     return function () {
       video.width = width;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.height = function (video) {
+export function height(video) {
   return function () {
     return video.height;
   };
-};
+}
 
-exports.setHeight = function (height) {
+export function setHeight(height) {
   return function (video) {
     return function () {
       video.height = height;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.videoWidth = function (video) {
+export function videoWidth(video) {
   return function () {
     return video.videoWidth;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.videoHeight = function (video) {
+export function videoHeight(video) {
   return function () {
     return video.videoHeight;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.poster = function (video) {
+export function poster(video) {
   return function () {
     return video.poster;
   };
-};
+}
 
-exports.setPoster = function (poster) {
+export function setPoster(poster) {
   return function (video) {
     return function () {
       video.poster = poster;
     };
   };
-};
+}

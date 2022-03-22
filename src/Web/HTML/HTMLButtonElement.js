@@ -1,225 +1,223 @@
-"use strict";
-
-exports.autofocus = function (button) {
+export function autofocus(button) {
   return function () {
     return button.autofocus;
   };
-};
+}
 
-exports.setAutofocus = function (autofocus) {
+export function setAutofocus(autofocus) {
   return function (button) {
     return function () {
       button.autofocus = autofocus;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.disabled = function (button) {
+export function disabled(button) {
   return function () {
     return button.disabled;
   };
-};
+}
 
-exports.setDisabled = function (disabled) {
+export function setDisabled(disabled) {
   return function (button) {
     return function () {
       button.disabled = disabled;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._form = function (button) {
+export function _form(button) {
   return function () {
     return button.form;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.formAction = function (button) {
+export function formAction(button) {
   return function () {
     return button.formAction;
   };
-};
+}
 
-exports.setFormAction = function (formAction) {
+export function setFormAction(formAction) {
   return function (button) {
     return function () {
       button.formAction = formAction;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.formEnctype = function (button) {
+export function formEnctype(button) {
   return function () {
     return button.formEnctype;
   };
-};
+}
 
-exports.setFormEnctype = function (formEnctype) {
+export function setFormEnctype(formEnctype) {
   return function (button) {
     return function () {
       button.formEnctype = formEnctype;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.formMethod = function (button) {
+export function formMethod(button) {
   return function () {
     return button.formMethod;
   };
-};
+}
 
-exports.setFormMethod = function (formMethod) {
+export function setFormMethod(formMethod) {
   return function (button) {
     return function () {
       button.formMethod = formMethod;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.formNoValidate = function (button) {
+export function formNoValidate(button) {
   return function () {
     return button.formNoValidate;
   };
-};
+}
 
-exports.setFormNoValidate = function (formNoValidate) {
+export function setFormNoValidate(formNoValidate) {
   return function (button) {
     return function () {
       button.formNoValidate = formNoValidate;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.formTarget = function (button) {
+export function formTarget(button) {
   return function () {
     return button.formTarget;
   };
-};
+}
 
-exports.setFormTarget = function (formTarget) {
+export function setFormTarget(formTarget) {
   return function (button) {
     return function () {
       button.formTarget = formTarget;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (button) {
+export function name(button) {
   return function () {
     return button.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (button) {
     return function () {
       button.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (button) {
+export function type_(button) {
   return function () {
     return button.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (button) {
     return function () {
       button.type = type;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.value = function (button) {
+export function value(button) {
   return function () {
     return button.value;
   };
-};
+}
 
-exports.setValue = function (value) {
+export function setValue(value) {
   return function (button) {
     return function () {
       button.value = value;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.willValidate = function (button) {
+export function willValidate(button) {
   return function () {
     return button.willValidate;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validity = function (button) {
+export function validity(button) {
   return function () {
     return button.validity;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validationMessage = function (button) {
+export function validationMessage(button) {
   return function () {
     return button.validationMessage;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.checkValidity = function (button) {
+export function checkValidity(button) {
   return function () {
     return button.checkValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reportValidity = function (button) {
+export function reportValidity(button) {
   return function () {
     return button.reportValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setCustomValidity = function (value) {
+export function setCustomValidity(value) {
   return function (button) {
     return function () {
       button.setCustomValidity(value);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.labels = function (button) {
+export function labels(button) {
   return function () {
     return button.labels;
   };
-};
+}

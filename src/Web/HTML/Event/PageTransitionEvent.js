@@ -1,5 +1,3 @@
-"use strict";
-
-exports.persisted = function (e) {
+export function persisted(e) {
   return e.persisted;
-};
+}

@@ -1,6 +1,4 @@
-"use strict";
-
-exports._kind = function (nothing, just, text, file, dataTransferItem) {
+export function _kind(nothing, just, text, file, dataTransferItem) {
   if (dataTransferItem.kind === "string") {
     return just(text);
   } else if (dataTransferItem.kind === "file") {
@@ -8,18 +6,18 @@ exports._kind = function (nothing, just, text, file, dataTransferItem) {
   } else {
     return nothing;
   }
-};
+}
 
-exports.type_ = function (dataTransferItem) {
+export function type_(dataTransferItem) {
   return dataTransferItem.type;
-};
+}
 
-exports._dataTransferItem = function (index) {
+export function _dataTransferItem(index) {
   return function (dataTransferItemList) {
     return dataTransferItemList[index];
   };
-};
+}
 
-exports._length = function (dataTransferItemList) {
+export function _length(dataTransferItemList) {
   return dataTransferItemList.length;
-};
+}

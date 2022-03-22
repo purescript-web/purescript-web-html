@@ -1,31 +1,29 @@
-"use strict";
-
-exports.width = function (canvas) {
+export function width(canvas) {
   return function () {
     return canvas.width;
   };
-};
+}
 
-exports.setWidth = function (width) {
+export function setWidth(width) {
   return function (canvas) {
     return function () {
       canvas.width = width;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.height = function (canvas) {
+export function height(canvas) {
   return function () {
     return canvas.height;
   };
-};
+}
 
-exports.setHeight = function (height) {
+export function setHeight(height) {
   return function (canvas) {
     return function () {
       canvas.height = height;
     };
   };
-};
+}

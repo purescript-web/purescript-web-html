@@ -1,5 +1,3 @@
-"use strict";
-
-exports.readProp = function (prop, vs) {
+export function readProp(prop, vs) {
   return vs[prop];
-};
+}

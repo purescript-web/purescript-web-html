@@ -1,135 +1,133 @@
-"use strict";
-
-exports.disabled = function (link) {
+export function disabled(link) {
   return function () {
     return link.disabled;
   };
-};
+}
 
-exports.setDisabled = function (disabled) {
+export function setDisabled(disabled) {
   return function (link) {
     return function () {
       link.disabled = disabled;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.href = function (link) {
+export function href(link) {
   return function () {
     return link.href;
   };
-};
+}
 
-exports.setHref = function (href) {
+export function setHref(href) {
   return function (link) {
     return function () {
       link.href = href;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.crossOrigin = function (link) {
+export function crossOrigin(link) {
   return function () {
     return link.crossOrigin;
   };
-};
+}
 
-exports.setCrossOrigin = function (crossOrigin) {
+export function setCrossOrigin(crossOrigin) {
   return function (link) {
     return function () {
       link.crossOrigin = crossOrigin;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.rel = function (link) {
+export function rel(link) {
   return function () {
     return link.rel;
   };
-};
+}
 
-exports.setRel = function (rel) {
+export function setRel(rel) {
   return function (link) {
     return function () {
       link.rel = rel;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.rev = function (link) {
+export function rev(link) {
   return function () {
     return link.rev;
   };
-};
+}
 
-exports.setRev = function (rev) {
+export function setRev(rev) {
   return function (link) {
     return function () {
       link.rev = rev;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.relList = function (link) {
+export function relList(link) {
   return function () {
     return link.relList;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.media = function (link) {
+export function media(link) {
   return function () {
     return link.media;
   };
-};
+}
 
-exports.setMedia = function (media) {
+export function setMedia(media) {
   return function (link) {
     return function () {
       link.media = media;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.hreflang = function (link) {
+export function hreflang(link) {
   return function () {
     return link.hreflang;
   };
-};
+}
 
-exports.setHreflang = function (hreflang) {
+export function setHreflang(hreflang) {
   return function (link) {
     return function () {
       link.hreflang = hreflang;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (link) {
+export function type_(link) {
   return function () {
     return link.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (link) {
     return function () {
       link.type = type;
     };
   };
-};
+}

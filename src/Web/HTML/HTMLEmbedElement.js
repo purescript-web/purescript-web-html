@@ -1,63 +1,61 @@
-"use strict";
-
-exports.src = function (embed) {
+export function src(embed) {
   return function () {
     return embed.src;
   };
-};
+}
 
-exports.setSrc = function (src) {
+export function setSrc(src) {
   return function (embed) {
     return function () {
       embed.src = src;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (embed) {
+export function type_(embed) {
   return function () {
     return embed.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (embed) {
     return function () {
       embed.type = type;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.width = function (embed) {
+export function width(embed) {
   return function () {
     return embed.width;
   };
-};
+}
 
-exports.setWidth = function (width) {
+export function setWidth(width) {
   return function (embed) {
     return function () {
       embed.width = width;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.height = function (embed) {
+export function height(embed) {
   return function () {
     return embed.height;
   };
-};
+}
 
-exports.setHeight = function (height) {
+export function setHeight(height) {
   return function (embed) {
     return function () {
       embed.height = height;
     };
   };
-};
+}

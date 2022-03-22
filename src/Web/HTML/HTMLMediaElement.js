@@ -1,297 +1,295 @@
-"use strict";
-
-exports.src = function (media) {
+export function src(media) {
   return function () {
     return media.src;
   };
-};
+}
 
-exports.setSrc = function (src) {
+export function setSrc(src) {
   return function (media) {
     return function () {
       media.src = src;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.currentSrc = function (media) {
+export function currentSrc(media) {
   return function () {
     return media.currentSrc;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.crossOrigin = function (media) {
+export function crossOrigin(media) {
   return function () {
     return media.crossOrigin;
   };
-};
+}
 
-exports.setCrossOrigin = function (crossOrigin) {
+export function setCrossOrigin(crossOrigin) {
   return function (media) {
     return function () {
       media.crossOrigin = crossOrigin;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._networkState = function (media) {
+export function _networkState(media) {
   return media.networkState;
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.preload = function (media) {
+export function preload(media) {
   return function () {
     return media.preload;
   };
-};
+}
 
-exports.setPreload = function (preload) {
+export function setPreload(preload) {
   return function (media) {
     return function () {
       media.preload = preload;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.load = function (media) {
+export function load(media) {
   return function () {
     return media.load();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._canPlayType = function (type, media) {
+export function _canPlayType(type, media) {
   return media.canPlayType(type);
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._readyState = function (media) {
+export function _readyState(media) {
   return media.readyState;
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.seeking = function (media) {
+export function seeking(media) {
   return function () {
     return media.seeking;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.currentTime = function (media) {
+export function currentTime(media) {
   return function () {
     return media.currentTime;
   };
-};
+}
 
-exports.setCurrentTime = function (currentTime) {
+export function setCurrentTime(currentTime) {
   return function (media) {
     return function () {
       media.currentTime = currentTime;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.duration = function (media) {
+export function duration(media) {
   return function () {
     return media.duration;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.getStartDate = function (media) {
+export function getStartDate(media) {
   return function () {
     return media.getStartDate();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.paused = function (media) {
+export function paused(media) {
   return function () {
     return media.paused;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.defaultPlaybackRate = function (media) {
+export function defaultPlaybackRate(media) {
   return function () {
     return media.defaultPlaybackRate;
   };
-};
+}
 
-exports.setDefaultPlaybackRate = function (defaultPlaybackRate) {
+export function setDefaultPlaybackRate(defaultPlaybackRate) {
   return function (media) {
     return function () {
       media.defaultPlaybackRate = defaultPlaybackRate;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.playbackRate = function (media) {
+export function playbackRate(media) {
   return function () {
     return media.playbackRate;
   };
-};
+}
 
-exports.setPlaybackRate = function (playbackRate) {
+export function setPlaybackRate(playbackRate) {
   return function (media) {
     return function () {
       media.playbackRate = playbackRate;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.ended = function (media) {
+export function ended(media) {
   return function () {
     return media.ended;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.autoplay = function (media) {
+export function autoplay(media) {
   return function () {
     return media.autoplay;
   };
-};
+}
 
-exports.setAutoplay = function (autoplay) {
+export function setAutoplay(autoplay) {
   return function (media) {
     return function () {
       media.autoplay = autoplay;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.loop = function (media) {
+export function loop(media) {
   return function () {
     return media.loop;
   };
-};
+}
 
-exports.setLoop = function (loop) {
+export function setLoop(loop) {
   return function (media) {
     return function () {
       media.loop = loop;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.play = function (media) {
+export function play(media) {
   return function () {
     media.play();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.pause = function (media) {
+export function pause(media) {
   return function () {
     media.pause();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.mediaGroup = function (media) {
+export function mediaGroup(media) {
   return function () {
     return media.mediaGroup;
   };
-};
+}
 
-exports.setMediaGroup = function (mediaGroup) {
+export function setMediaGroup(mediaGroup) {
   return function (media) {
     return function () {
       media.mediaGroup = mediaGroup;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.controls = function (media) {
+export function controls(media) {
   return function () {
     return media.controls;
   };
-};
+}
 
-exports.setControls = function (controls) {
+export function setControls(controls) {
   return function (media) {
     return function () {
       media.controls = controls;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.volume = function (media) {
+export function volume(media) {
   return function () {
     return media.volume;
   };
-};
+}
 
-exports.setVolume = function (volume) {
+export function setVolume(volume) {
   return function (media) {
     return function () {
       media.volume = volume;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.muted = function (media) {
+export function muted(media) {
   return function () {
     return media.muted;
   };
-};
+}
 
-exports.setMuted = function (muted) {
+export function setMuted(muted) {
   return function (media) {
     return function () {
       media.muted = muted;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.defaultMuted = function (media) {
+export function defaultMuted(media) {
   return function () {
     return media.defaultMuted;
   };
-};
+}
 
-exports.setDefaultMuted = function (defaultMuted) {
+export function setDefaultMuted(defaultMuted) {
   return function (media) {
     return function () {
       media.defaultMuted = defaultMuted;
     };
   };
-};
+}

@@ -1,26 +1,24 @@
-"use strict";
-
-exports._files = function (dataTransfer) {
+export function _files(dataTransfer) {
   return dataTransfer.files;
-};
+}
 
-exports.items = function (dataTransfer) {
+export function items(dataTransfer) {
   return dataTransfer.items;
-};
+}
 
-exports.types = function (dataTransfer) {
+export function types(dataTransfer) {
   return dataTransfer.types;
-};
+}
 
-exports._getData = function (format) {
+export function _getData(format) {
   return function (dataTransfer) {
     return function () {
       return dataTransfer.getData(format);
     };
   };
-};
+}
 
-exports._setData = function (format) {
+export function _setData(format) {
   return function (data) {
     return function (dataTransfer) {
       return function () {
@@ -28,9 +26,9 @@ exports._setData = function (format) {
       };
     };
   };
-};
+}
 
-exports._setDragImage = function (dataTransfer) {
+export function _setDragImage(dataTransfer) {
   return function (image) {
     return function (x) {
       return function (y) {
@@ -40,18 +38,18 @@ exports._setDragImage = function (dataTransfer) {
       };
     };
   };
-};
+}
 
-exports._dropEffect = function (dataTransfer) {
+export function _dropEffect(dataTransfer) {
   return function () {
     return dataTransfer.dropEffect;
   };
-};
+}
 
-exports._setDropEffect = function (e) {
+export function _setDropEffect(e) {
   return function (dataTransfer) {
     return function () {
       dataTransfer.dropEffect = e;
     };
   };
-};
+}
