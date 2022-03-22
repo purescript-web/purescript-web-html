@@ -1,58 +1,58 @@
 "use strict";
 
-exports.document = function (window) {
+export function document(window) {
   return function () {
     return window.document;
   };
-};
+}
 
-exports.navigator = function (window) {
+export function navigator(window) {
   return function () {
     return window.navigator;
   };
-};
+}
 
-exports.location = function (window) {
+export function location(window) {
   return function () {
     return window.location;
   };
-};
+}
 
-exports.history = function(window) {
+export function history(window) {
   return function() {
     return window.history;
   };
-};
+}
 
-exports.innerWidth = function (window) {
+export function innerWidth(window) {
   return function () {
     return window.innerWidth;
   };
-};
+}
 
-exports.innerHeight = function (window) {
+export function innerHeight(window) {
   return function () {
     return window.innerHeight;
   };
-};
+}
 
-exports.alert = function (str) {
+export function alert(str) {
   return function (window) {
     return function () {
       window.alert(str);
     };
   };
-};
+}
 
-exports.confirm = function (str) {
+export function confirm(str) {
   return function (window) {
     return function () {
       return window.confirm(str);
     };
   };
-};
+}
 
-exports.moveBy = function (xDelta) {
+export function moveBy(xDelta) {
   return function (yDelta) {
     return function (window) {
       return function () {
@@ -60,9 +60,9 @@ exports.moveBy = function (xDelta) {
       };
     };
   };
-};
+}
 
-exports.moveTo = function (width) {
+export function moveTo(width) {
   return function (height) {
     return function (window) {
       return function () {
@@ -70,9 +70,9 @@ exports.moveTo = function (width) {
       };
     };
   };
-};
+}
 
-exports._open = function (url) {
+export function _open(url) {
   return function (name) {
     return function (features) {
       return function (window) {
@@ -82,27 +82,27 @@ exports._open = function (url) {
       };
     };
   };
-};
+}
 
-exports.outerHeight = function (window) {
+export function outerHeight(window) {
   return function () {
     return window.outerHeight;
   };
-};
+}
 
-exports.outerWidth = function (window) {
+export function outerWidth(window) {
   return function () {
     return window.outerWidth;
   };
-};
+}
 
-exports.print = function (window) {
+export function print(window) {
   return function () {
     window.print();
   };
-};
+}
 
-exports._prompt = function (str) {
+export function _prompt(str) {
   return function (defaultText) {
     return function (window) {
       return function () {
@@ -110,9 +110,9 @@ exports._prompt = function (str) {
       };
     };
   };
-};
+}
 
-exports.resizeBy = function (xDelta) {
+export function resizeBy(xDelta) {
   return function (yDelta) {
     return function (window) {
       return function () {
@@ -120,9 +120,9 @@ exports.resizeBy = function (xDelta) {
       };
     };
   };
-};
+}
 
-exports.resizeTo = function (width) {
+export function resizeTo(width) {
   return function (height) {
     return function (window) {
       return function () {
@@ -130,21 +130,21 @@ exports.resizeTo = function (width) {
       };
     };
   };
-};
+}
 
-exports.screenX = function (window) {
+export function screenX(window) {
   return function () {
     return window.screenX;
   };
-};
+}
 
-exports.screenY = function (window) {
+export function screenY(window) {
   return function () {
     return window.screenY;
   };
-};
+}
 
-exports.scroll = function (xCoord) {
+export function scroll(xCoord) {
   return function (yCoord) {
     return function (window) {
       return function () {
@@ -152,9 +152,9 @@ exports.scroll = function (xCoord) {
       };
     };
   };
-};
+}
 
-exports.scrollBy = function (xCoord) {
+export function scrollBy(xCoord) {
   return function (yCoord) {
     return function (window) {
       return function () {
@@ -162,49 +162,49 @@ exports.scrollBy = function (xCoord) {
       };
     };
   };
-};
+}
 
-exports.scrollX = function (window) {
+export function scrollX(window) {
   return function () {
     return window.scrollX;
   };
-};
+}
 
-exports.scrollY = function (window) {
+export function scrollY(window) {
   return function () {
     return window.scrollY;
   };
-};
+}
 
-exports.localStorage = function (window) {
+export function localStorage(window) {
   return function () {
     return window.localStorage;
   };
-};
+}
 
-exports.sessionStorage = function (window) {
+export function sessionStorage(window) {
   return function () {
     return window.sessionStorage;
   };
-};
+}
 
-exports.requestAnimationFrame = function(fn) {
+export function requestAnimationFrame(fn) {
   return function(window) {
     return function() {
       return window.requestAnimationFrame(fn);
     };
   };
-};
+}
 
-exports.cancelAnimationFrame = function(id) {
+export function cancelAnimationFrame(id) {
   return function(window) {
     return function() {
       return window.cancelAnimationFrame(id);
     };
   };
-};
+}
 
-exports.requestIdleCallback = function(opts) {
+export function requestIdleCallback(opts) {
   return function(fn) {
     return function(window) {
       return function() {
@@ -212,24 +212,24 @@ exports.requestIdleCallback = function(opts) {
       };
     };
   };
-};
+}
 
-exports.cancelIdleCallback = function(id) {
+export function cancelIdleCallback(id) {
   return function(window) {
     return function() {
       return window.cancelIdleCallback(id);
     };
   };
-};
+}
 
-exports.parent = function(window) {
+export function parent(window) {
   return function() {
     return window.parent;
   };
-};
+}
 
-exports._opener = function(window) {
+export function _opener(window) {
   return function() {
     return window.opener;
   };
-};
+}

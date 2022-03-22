@@ -1,155 +1,155 @@
 "use strict";
 
-exports._caption = function (table) {
+export function _caption(table) {
   return function () {
     return table.caption;
   };
-};
+}
 
-exports._setCaption = function (caption) {
+export function _setCaption(caption) {
   return function (table) {
     return function () {
       table.caption = caption;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.createCaption = function (table) {
+export function createCaption(table) {
   return function () {
     return table.createCaption();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.deleteCaption = function (table) {
+export function deleteCaption(table) {
   return function () {
     table.deleteCaption();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._tHead = function (table) {
+export function _tHead(table) {
   return function () {
     return table.tHead;
   };
-};
+}
 
-exports._setTHead = function (tHead) {
+export function _setTHead(tHead) {
   return function (table) {
     return function () {
       table.tHead = tHead;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.createTHead = function (table) {
+export function createTHead(table) {
   return function () {
     return table.createTHead();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.deleteTHead = function (table) {
+export function deleteTHead(table) {
   return function () {
     table.deleteTHead();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._tFoot = function (table) {
+export function _tFoot(table) {
   return function () {
     return table.tFoot;
   };
-};
+}
 
-exports._setTFoot = function (tFoot) {
+export function _setTFoot(tFoot) {
   return function (table) {
     return function () {
       table.tFoot = tFoot;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.createTFoot = function (table) {
+export function createTFoot(table) {
   return function () {
     return table.createTFoot();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.deleteTFoot = function (table) {
+export function deleteTFoot(table) {
   return function () {
     table.deleteTFoot();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.tBodies = function (table) {
+export function tBodies(table) {
   return function () {
     return table.tBodies;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.createTBody = function (table) {
+export function createTBody(table) {
   return function () {
     return table.createTBody();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.rows = function (table) {
+export function rows(table) {
   return function () {
     return table.rows;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.insertRowAt = function (index) {
+export function insertRowAt(index) {
   return function (table) {
     return function () {
       return table.insertRow(index);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.deleteRow = function (index) {
+export function deleteRow(index) {
   return function (table) {
     return function () {
       table.deleteRow(index);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.border = function (table) {
+export function border(table) {
   return function () {
     return table.border;
   };
-};
+}
 
-exports.setBorder = function (border) {
+export function setBorder(border) {
   return function (table) {
     return function () {
       table.border = border;
     };
   };
-};
+}

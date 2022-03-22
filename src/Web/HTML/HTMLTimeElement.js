@@ -1,15 +1,15 @@
 "use strict";
 
-exports.dateTime = function (time) {
+export function dateTime(time) {
   return function () {
     return time.dateTime;
   };
-};
+}
 
-exports.setDateTime = function (dateTime) {
+export function setDateTime(dateTime) {
   return function (time) {
     return function () {
       time.dateTime = dateTime;
     };
   };
-};
+}

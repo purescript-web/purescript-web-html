@@ -1,31 +1,31 @@
 "use strict";
 
-exports.media = function (style) {
+export function media(style) {
   return function () {
     return style.media;
   };
-};
+}
 
-exports.setMedia = function (media) {
+export function setMedia(media) {
   return function (style) {
     return function () {
       style.media = media;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (style) {
+export function type_(style) {
   return function () {
     return style.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (style) {
     return function () {
       style.type = type;
     };
   };
-};
+}

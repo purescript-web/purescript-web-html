@@ -1,31 +1,31 @@
 "use strict";
 
-exports.name = function (map) {
+export function name(map) {
   return function () {
     return map.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (map) {
     return function () {
       map.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.areas = function (map) {
+export function areas(map) {
   return function () {
     return map.areas;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.images = function (map) {
+export function images(map) {
   return function () {
     return map.images;
   };
-};
+}

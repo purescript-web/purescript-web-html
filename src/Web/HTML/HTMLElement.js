@@ -1,193 +1,193 @@
 "use strict";
 
-exports._read = function (nothing, just, value) {
+export function _read(nothing, just, value) {
   var tag = Object.prototype.toString.call(value);
   if (tag.indexOf("[object HTML") === 0 && tag.indexOf("Element]") === tag.length - 8) {
     return just(value);
   } else {
     return nothing;
   }
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.title = function (elt) {
+export function title(elt) {
   return function () {
     return elt.title;
   };
-};
+}
 
-exports.setTitle = function (title) {
+export function setTitle(title) {
   return function (elt) {
     return function () {
       elt.title = title;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.lang = function (elt) {
+export function lang(elt) {
   return function () {
     return elt.lang;
   };
-};
+}
 
-exports.setLang = function (lang) {
+export function setLang(lang) {
   return function (elt) {
     return function () {
       elt.lang = lang;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.dir = function (elt) {
+export function dir(elt) {
   return function () {
     return elt.dir;
   };
-};
+}
 
-exports.setDir = function (dir) {
+export function setDir(dir) {
   return function (elt) {
     return function () {
       elt.dir = dir;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.className = function (elt) {
+export function className(elt) {
   return function () {
     return elt.className;
   };
-};
+}
 
-exports.setClassName = function (className) {
+export function setClassName(className) {
   return function (elt) {
     return function () {
       elt.className = className;
     };
   };
-};
+}
 
-exports.classList = function (element) {
+export function classList(element) {
   return function () {
     return element.classList;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.hidden = function (elt) {
+export function hidden(elt) {
   return function () {
     return elt.hidden;
   };
-};
+}
 
-exports.setHidden = function (hidden) {
+export function setHidden(hidden) {
   return function (elt) {
     return function () {
       elt.hidden = hidden;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.tabIndex = function (elt) {
+export function tabIndex(elt) {
   return function () {
     return elt.tabIndex;
   };
-};
+}
 
-exports.setTabIndex = function (tabIndex) {
+export function setTabIndex(tabIndex) {
   return function (elt) {
     return function () {
       elt.tabIndex = tabIndex;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.draggable = function (elt) {
+export function draggable(elt) {
   return function () {
     return elt.draggable;
   };
-};
+}
 
-exports.setDraggable = function (draggable) {
+export function setDraggable(draggable) {
   return function (elt) {
     return function () {
       elt.draggable = draggable;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.contentEditable = function (elt) {
+export function contentEditable(elt) {
   return function () {
     return elt.contentEditable;
   };
-};
+}
 
-exports.setContentEditable = function (contentEditable) {
+export function setContentEditable(contentEditable) {
   return function (elt) {
     return function () {
       elt.contentEditable = contentEditable;
     };
   };
-};
+}
 
-exports.isContentEditable = function (elt) {
+export function isContentEditable(elt) {
   return function () {
     return elt.isContentEditable;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.spellcheck = function (elt) {
+export function spellcheck(elt) {
   return function () {
     return elt.spellcheck;
   };
-};
+}
 
-exports.setSpellcheck = function (spellcheck) {
+export function setSpellcheck(spellcheck) {
   return function (elt) {
     return function () {
       elt.spellcheck = spellcheck;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.click = function (elt) {
+export function click(elt) {
   return function () {
     return elt.click();
   };
-};
+}
 
-exports.focus = function (elt) {
+export function focus(elt) {
   return function () {
     return elt.focus();
   };
-};
+}
 
-exports.blur = function (elt) {
+export function blur(elt) {
   return function () {
     return elt.blur();
   };
-};
+}
 
 // - CSSOM ---------------------------------------------------------------------
 
-exports.getBoundingClientRect = function (el) {
+export function getBoundingClientRect(el) {
   return function () {
     var rect = el.getBoundingClientRect();
     return {
@@ -199,34 +199,34 @@ exports.getBoundingClientRect = function (el) {
       height: rect.height
     };
   };
-};
+}
 
-exports._offsetParent = function (el) {
+export function _offsetParent(el) {
   return function () {
     return el.offsetParent;
   };
-};
+}
 
-exports.offsetTop = function (el) {
+export function offsetTop(el) {
   return function () {
     return el.offsetTop;
   };
-};
+}
 
-exports.offsetLeft = function (el) {
+export function offsetLeft(el) {
   return function () {
     return el.offsetLeft;
   };
-};
+}
 
-exports.offsetWidth = function (el) {
+export function offsetWidth(el) {
   return function () {
     return el.offsetWidth;
   };
-};
+}
 
-exports.offsetHeight = function (el) {
+export function offsetHeight(el) {
   return function () {
     return el.offsetHeight;
   };
-};
+}

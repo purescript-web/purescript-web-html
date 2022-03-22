@@ -1,111 +1,111 @@
 "use strict";
 
-exports.src = function (script) {
+export function src(script) {
   return function () {
     return script.src;
   };
-};
+}
 
-exports.setSrc = function (src) {
+export function setSrc(src) {
   return function (script) {
     return function () {
       script.src = src;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (script) {
+export function type_(script) {
   return function () {
     return script.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (script) {
     return function () {
       script.type = type;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.charset = function (script) {
+export function charset(script) {
   return function () {
     return script.charset;
   };
-};
+}
 
-exports.setCharset = function (charset) {
+export function setCharset(charset) {
   return function (script) {
     return function () {
       script.charset = charset;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.async = function (script) {
+export function async(script) {
   return function () {
     return script.async;
   };
-};
+}
 
-exports.setAsync = function (async) {
+export function setAsync(async) {
   return function (script) {
     return function () {
       script.async = async;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.defer = function (script) {
+export function defer(script) {
   return function () {
     return script.defer;
   };
-};
+}
 
-exports.setDefer = function (defer) {
+export function setDefer(defer) {
   return function (script) {
     return function () {
       script.defer = defer;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.crossOrigin = function (script) {
+export function crossOrigin(script) {
   return function () {
     return script.crossOrigin;
   };
-};
+}
 
-exports.setCrossOrigin = function (crossOrigin) {
+export function setCrossOrigin(crossOrigin) {
   return function (script) {
     return function () {
       script.crossOrigin = crossOrigin;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.text = function (script) {
+export function text(script) {
   return function () {
     return script.text;
   };
-};
+}
 
-exports.setText = function (text) {
+export function setText(text) {
   return function (script) {
     return function () {
       script.text = text;
     };
   };
-};
+}

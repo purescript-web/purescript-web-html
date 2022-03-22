@@ -1,171 +1,171 @@
 "use strict";
 
-exports.hash = function (location) {
+export function hash(location) {
   return function () {
     return location.hash;
   };
-};
+}
 
-exports.setHash = function (hash) {
+export function setHash(hash) {
   return function (location) {
     return function () {
       location.hash = hash;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.host = function (location) {
+export function host(location) {
   return function () {
     return location.host;
   };
-};
+}
 
-exports.setHost = function (host) {
+export function setHost(host) {
   return function (location) {
     return function () {
       location.host = host;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.hostname = function (location) {
+export function hostname(location) {
   return function () {
     return location.hostname;
   };
-};
+}
 
-exports.setHostname = function (hostname) {
+export function setHostname(hostname) {
   return function (location) {
     return function () {
       location.hostname = hostname;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.href = function (location) {
+export function href(location) {
   return function () {
     return location.href;
   };
-};
+}
 
-exports.setHref = function (href) {
+export function setHref(href) {
   return function (location) {
     return function () {
       location.href = href;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.origin = function (location) {
+export function origin(location) {
   return function () {
     return location.origin;
   };
-};
+}
 
-exports.setOrigin = function (origin) {
+export function setOrigin(origin) {
   return function (location) {
     return function () {
       location.origin = origin;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.pathname = function (location) {
+export function pathname(location) {
   return function () {
     return location.pathname;
   };
-};
+}
 
-exports.setPathname = function (pathname) {
+export function setPathname(pathname) {
   return function (location) {
     return function () {
       location.pathname = pathname;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.port = function (location) {
+export function port(location) {
   return function () {
     return location.port;
   };
-};
+}
 
-exports.setPort = function (port) {
+export function setPort(port) {
   return function (location) {
     return function () {
       location.port = port;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.protocol = function (location) {
+export function protocol(location) {
   return function () {
     return location.protocol;
   };
-};
+}
 
-exports.setProtocol = function (protocol) {
+export function setProtocol(protocol) {
   return function (location) {
     return function () {
       location.protocol = protocol;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.search = function (location) {
+export function search(location) {
   return function () {
     return location.search;
   };
-};
+}
 
-exports.setSearch = function (search) {
+export function setSearch(search) {
   return function (location) {
     return function () {
       location.search = search;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.assign = function (url) {
+export function assign(url) {
   return function (location) {
     return function () {
       location.assign(url);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.replace = function (url) {
+export function replace(url) {
   return function (location) {
     return function () {
       location.replace(url);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reload = function (location) {
+export function reload(location) {
   return function () {
     location.reload();
   };
-};
+}

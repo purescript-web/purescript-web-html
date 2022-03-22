@@ -1,103 +1,103 @@
 "use strict";
 
-exports.value = function (meter) {
+export function value(meter) {
   return function () {
     return meter.value;
   };
-};
+}
 
-exports.setValue = function (value) {
+export function setValue(value) {
   return function (meter) {
     return function () {
       meter.value = value;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.min = function (meter) {
+export function min(meter) {
   return function () {
     return meter.min;
   };
-};
+}
 
-exports.setMin = function (min) {
+export function setMin(min) {
   return function (meter) {
     return function () {
       meter.min = min;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.max = function (meter) {
+export function max(meter) {
   return function () {
     return meter.max;
   };
-};
+}
 
-exports.setMax = function (max) {
+export function setMax(max) {
   return function (meter) {
     return function () {
       meter.max = max;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.low = function (meter) {
+export function low(meter) {
   return function () {
     return meter.low;
   };
-};
+}
 
-exports.setLow = function (low) {
+export function setLow(low) {
   return function (meter) {
     return function () {
       meter.low = low;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.high = function (meter) {
+export function high(meter) {
   return function () {
     return meter.high;
   };
-};
+}
 
-exports.setHigh = function (high) {
+export function setHigh(high) {
   return function (meter) {
     return function () {
       meter.high = high;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.optimum = function (meter) {
+export function optimum(meter) {
   return function () {
     return meter.optimum;
   };
-};
+}
 
-exports.setOptimum = function (optimum) {
+export function setOptimum(optimum) {
   return function (meter) {
     return function () {
       meter.optimum = optimum;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.labels = function (meter) {
+export function labels(meter) {
   return function () {
     return meter.labels;
   };
-};
+}

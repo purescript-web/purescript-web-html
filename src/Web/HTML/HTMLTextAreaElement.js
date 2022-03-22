@@ -1,398 +1,398 @@
 "use strict";
 
-exports.autocomplete = function (textarea) {
+export function autocomplete(textarea) {
   return function () {
     return textarea.autocomplete;
   };
-};
+}
 
-exports.setAutocomplete = function (autocomplete) {
+export function setAutocomplete(autocomplete) {
   return function (textarea) {
     return function () {
       textarea.autocomplete = autocomplete;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.autofocus = function (textarea) {
+export function autofocus(textarea) {
   return function () {
     return textarea.autofocus;
   };
-};
+}
 
-exports.setAutofocus = function (autofocus) {
+export function setAutofocus(autofocus) {
   return function (textarea) {
     return function () {
       textarea.autofocus = autofocus;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.cols = function (textarea) {
+export function cols(textarea) {
   return function () {
     return textarea.cols;
   };
-};
+}
 
-exports.setCols = function (cols) {
+export function setCols(cols) {
   return function (textarea) {
     return function () {
       textarea.cols = cols;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.dirName = function (textarea) {
+export function dirName(textarea) {
   return function () {
     return textarea.dirName;
   };
-};
+}
 
-exports.setDirName = function (dirName) {
+export function setDirName(dirName) {
   return function (textarea) {
     return function () {
       textarea.dirName = dirName;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.disabled = function (textarea) {
+export function disabled(textarea) {
   return function () {
     return textarea.disabled;
   };
-};
+}
 
-exports.setDisabled = function (disabled) {
+export function setDisabled(disabled) {
   return function (textarea) {
     return function () {
       textarea.disabled = disabled;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._form = function (textarea) {
+export function _form(textarea) {
   return function () {
     return textarea.form;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.maxLength = function (textarea) {
+export function maxLength(textarea) {
   return function () {
     return textarea.maxLength;
   };
-};
+}
 
-exports.setMaxLength = function (maxLength) {
+export function setMaxLength(maxLength) {
   return function (textarea) {
     return function () {
       textarea.maxLength = maxLength;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.minLength = function (textarea) {
+export function minLength(textarea) {
   return function () {
     return textarea.minLength;
   };
-};
+}
 
-exports.setMinLength = function (minLength) {
+export function setMinLength(minLength) {
   return function (textarea) {
     return function () {
       textarea.minLength = minLength;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (textarea) {
+export function name(textarea) {
   return function () {
     return textarea.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (textarea) {
     return function () {
       textarea.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.placeholder = function (textarea) {
+export function placeholder(textarea) {
   return function () {
     return textarea.placeholder;
   };
-};
+}
 
-exports.setPlaceholder = function (placeholder) {
+export function setPlaceholder(placeholder) {
   return function (textarea) {
     return function () {
       textarea.placeholder = placeholder;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.readOnly = function (textarea) {
+export function readOnly(textarea) {
   return function () {
     return textarea.readOnly;
   };
-};
+}
 
-exports.setReadOnly = function (readOnly) {
+export function setReadOnly(readOnly) {
   return function (textarea) {
     return function () {
       textarea.readOnly = readOnly;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.required = function (textarea) {
+export function required(textarea) {
   return function () {
     return textarea.required;
   };
-};
+}
 
-exports.setRequired = function (required) {
+export function setRequired(required) {
   return function (textarea) {
     return function () {
       textarea.required = required;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.rows = function (textarea) {
+export function rows(textarea) {
   return function () {
     return textarea.rows;
   };
-};
+}
 
-exports.setRows = function (rows) {
+export function setRows(rows) {
   return function (textarea) {
     return function () {
       textarea.rows = rows;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.wrap = function (textarea) {
+export function wrap(textarea) {
   return function () {
     return textarea.wrap;
   };
-};
+}
 
-exports.setWrap = function (wrap) {
+export function setWrap(wrap) {
   return function (textarea) {
     return function () {
       textarea.wrap = wrap;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (textarea) {
+export function type_(textarea) {
   return function () {
     return textarea.type;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.defaultValue = function (textarea) {
+export function defaultValue(textarea) {
   return function () {
     return textarea.defaultValue;
   };
-};
+}
 
-exports.setDefaultValue = function (defaultValue) {
+export function setDefaultValue(defaultValue) {
   return function (textarea) {
     return function () {
       textarea.defaultValue = defaultValue;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.value = function (textarea) {
+export function value(textarea) {
   return function () {
     return textarea.value;
   };
-};
+}
 
-exports.setValue = function (value) {
+export function setValue(value) {
   return function (textarea) {
     return function () {
       textarea.value = value;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.textLength = function (textarea) {
+export function textLength(textarea) {
   return function () {
     return textarea.textLength;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.willValidate = function (textarea) {
+export function willValidate(textarea) {
   return function () {
     return textarea.willValidate;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validity = function (textarea) {
+export function validity(textarea) {
   return function () {
     return textarea.validity;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validationMessage = function (textarea) {
+export function validationMessage(textarea) {
   return function () {
     return textarea.validationMessage;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.checkValidity = function (textarea) {
+export function checkValidity(textarea) {
   return function () {
     return textarea.checkValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reportValidity = function (textarea) {
+export function reportValidity(textarea) {
   return function () {
     return textarea.reportValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setCustomValidity = function (value) {
+export function setCustomValidity(value) {
   return function (textarea) {
     return function () {
       textarea.setCustomValidity(value);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.labels = function (textarea) {
+export function labels(textarea) {
   return function () {
     return textarea.labels;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.select = function (textarea) {
+export function select(textarea) {
   return function () {
     textarea.select();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.selectionStart = function (textarea) {
+export function selectionStart(textarea) {
   return function () {
     return textarea.selectionStart;
   };
-};
+}
 
-exports.setSelectionStart = function (selectionStart) {
+export function setSelectionStart(selectionStart) {
   return function (textarea) {
     return function () {
       textarea.selectionStart = selectionStart;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.selectionEnd = function (textarea) {
+export function selectionEnd(textarea) {
   return function () {
     return textarea.selectionEnd;
   };
-};
+}
 
-exports.setSelectionEnd = function (selectionEnd) {
+export function setSelectionEnd(selectionEnd) {
   return function (textarea) {
     return function () {
       textarea.selectionEnd = selectionEnd;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.selectionDirection = function (textarea) {
+export function selectionDirection(textarea) {
   return function () {
     return textarea.selectionDirection;
   };
-};
+}
 
-exports.setSelectionDirection = function (selectionDirection) {
+export function setSelectionDirection(selectionDirection) {
   return function (textarea) {
     return function () {
       textarea.selectionDirection = selectionDirection;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setRangeText = function (replacement) {
+export function setRangeText(replacement) {
   return function (textarea) {
     return function () {
       textarea.setRangeText(replacement);
     };
   };
-};
+}
 
-exports._setRangeText = function (replacement, start, end, selectionMode, textarea) {
+export function _setRangeText(replacement, start, end, selectionMode, textarea) {
   textarea.setRangeText(replacement, start, end, selectionMode);
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setSelectionRange = function (start) {
+export function setSelectionRange(start) {
   return function (end) {
     return function (direction) {
       return function (textarea) {
@@ -402,4 +402,4 @@ exports.setSelectionRange = function (start) {
       };
     };
   };
-};
+}

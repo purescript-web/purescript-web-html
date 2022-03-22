@@ -1,121 +1,121 @@
 "use strict";
 
-exports._form = function (output) {
+export function _form(output) {
   return function () {
     return output.form;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (output) {
+export function name(output) {
   return function () {
     return output.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (output) {
     return function () {
       output.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (output) {
+export function type_(output) {
   return function () {
     return output.type;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.defaultValue = function (output) {
+export function defaultValue(output) {
   return function () {
     return output.defaultValue;
   };
-};
+}
 
-exports.setDefaultValue = function (defaultValue) {
+export function setDefaultValue(defaultValue) {
   return function (output) {
     return function () {
       output.defaultValue = defaultValue;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.value = function (output) {
+export function value(output) {
   return function () {
     return output.value;
   };
-};
+}
 
-exports.setValue = function (value) {
+export function setValue(value) {
   return function (output) {
     return function () {
       output.value = value;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.willValidate = function (output) {
+export function willValidate(output) {
   return function () {
     return output.willValidate;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validity = function (output) {
+export function validity(output) {
   return function () {
     return output.validity;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.validationMessage = function (output) {
+export function validationMessage(output) {
   return function () {
     return output.validationMessage;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.checkValidity = function (output) {
+export function checkValidity(output) {
   return function () {
     return output.checkValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reportValidity = function (output) {
+export function reportValidity(output) {
   return function () {
     return output.reportValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.setCustomValidity = function (value) {
+export function setCustomValidity(value) {
   return function (output) {
     return function () {
       output.setCustomValidity(value);
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.labels = function (output) {
+export function labels(output) {
   return function () {
     return output.labels;
   };
-};
+}

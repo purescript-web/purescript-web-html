@@ -1,119 +1,119 @@
 "use strict";
 
-exports.target = function (a) {
+export function target(a) {
   return function () {
     return a.target;
   };
-};
+}
 
-exports.setTarget = function (target) {
+export function setTarget(target) {
   return function (a) {
     return function () {
       a.target = target;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.download = function (a) {
+export function download(a) {
   return function () {
     return a.download;
   };
-};
+}
 
-exports.setDownload = function (download) {
+export function setDownload(download) {
   return function (a) {
     return function () {
       a.download = download;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.rel = function (a) {
+export function rel(a) {
   return function () {
     return a.rel;
   };
-};
+}
 
-exports.setRel = function (rel) {
+export function setRel(rel) {
   return function (a) {
     return function () {
       a.rel = rel;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.rev = function (a) {
+export function rev(a) {
   return function () {
     return a.rev;
   };
-};
+}
 
-exports.setRev = function (rev) {
+export function setRev(rev) {
   return function (a) {
     return function () {
       a.rev = rev;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.relList = function (a) {
+export function relList(a) {
   return function () {
     return a.relList;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.hreflang = function (a) {
+export function hreflang(a) {
   return function () {
     return a.hreflang;
   };
-};
+}
 
-exports.setHreflang = function (hreflang) {
+export function setHreflang(hreflang) {
   return function (a) {
     return function () {
       a.hreflang = hreflang;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.type_ = function (a) {
+export function type_(a) {
   return function () {
     return a.type;
   };
-};
+}
 
-exports.setType = function (type) {
+export function setType(type) {
   return function (a) {
     return function () {
       a.type = type;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.text = function (a) {
+export function text(a) {
   return function () {
     return a.text;
   };
-};
+}
 
-exports.setText = function (text) {
+export function setText(text) {
   return function (a) {
     return function () {
       a.text = text;
     };
   };
-};
+}

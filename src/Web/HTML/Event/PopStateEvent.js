@@ -1,5 +1,5 @@
 "use strict";
 
-exports.state = function (e) {
+export function state(e) {
   return e.state;
-};
+}

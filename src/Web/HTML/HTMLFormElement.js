@@ -1,183 +1,183 @@
 "use strict";
 
-exports.acceptCharset = function (form) {
+export function acceptCharset(form) {
   return function () {
     return form.acceptCharset;
   };
-};
+}
 
-exports.setAcceptCharset = function (acceptCharset) {
+export function setAcceptCharset(acceptCharset) {
   return function (form) {
     return function () {
       form.acceptCharset = acceptCharset;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.action = function (form) {
+export function action(form) {
   return function () {
     return form.action;
   };
-};
+}
 
-exports.setAction = function (action) {
+export function setAction(action) {
   return function (form) {
     return function () {
       form.action = action;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.autocomplete = function (form) {
+export function autocomplete(form) {
   return function () {
     return form.autocomplete;
   };
-};
+}
 
-exports.setAutocomplete = function (autocomplete) {
+export function setAutocomplete(autocomplete) {
   return function (form) {
     return function () {
       form.autocomplete = autocomplete;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.enctype = function (form) {
+export function enctype(form) {
   return function () {
     return form.enctype;
   };
-};
+}
 
-exports.setEnctype = function (enctype) {
+export function setEnctype(enctype) {
   return function (form) {
     return function () {
       form.enctype = enctype;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.encoding = function (form) {
+export function encoding(form) {
   return function () {
     return form.encoding;
   };
-};
+}
 
-exports.setEncoding = function (encoding) {
+export function setEncoding(encoding) {
   return function (form) {
     return function () {
       form.encoding = encoding;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.method = function (form) {
+export function method(form) {
   return function () {
     return form.method;
   };
-};
+}
 
-exports.setMethod = function (method) {
+export function setMethod(method) {
   return function (form) {
     return function () {
       form.method = method;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.name = function (form) {
+export function name(form) {
   return function () {
     return form.name;
   };
-};
+}
 
-exports.setName = function (name) {
+export function setName(name) {
   return function (form) {
     return function () {
       form.name = name;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.noValidate = function (form) {
+export function noValidate(form) {
   return function () {
     return form.noValidate;
   };
-};
+}
 
-exports.setNoValidate = function (noValidate) {
+export function setNoValidate(noValidate) {
   return function (form) {
     return function () {
       form.noValidate = noValidate;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.target = function (form) {
+export function target(form) {
   return function () {
     return form.target;
   };
-};
+}
 
-exports.setTarget = function (target) {
+export function setTarget(target) {
   return function (form) {
     return function () {
       form.target = target;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.length = function (form) {
+export function length(form) {
   return function () {
     return form.length;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.submit = function (form) {
+export function submit(form) {
   return function () {
     form.submit();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reset = function (form) {
+export function reset(form) {
   return function () {
     form.reset();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.checkValidity = function (form) {
+export function checkValidity(form) {
   return function () {
     return form.checkValidity();
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.reportValidity = function (form) {
+export function reportValidity(form) {
   return function () {
     return form.reportValidity();
   };
-};
+}

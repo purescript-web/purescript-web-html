@@ -1,111 +1,111 @@
 "use strict";
 
-exports.disabled = function (option) {
+export function disabled(option) {
   return function () {
     return option.disabled;
   };
-};
+}
 
-exports.setDisabled = function (disabled) {
+export function setDisabled(disabled) {
   return function (option) {
     return function () {
       option.disabled = disabled;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports._form = function (option) {
+export function _form(option) {
   return function () {
     return option.form;
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.label = function (option) {
+export function label(option) {
   return function () {
     return option.label;
   };
-};
+}
 
-exports.setLabel = function (label) {
+export function setLabel(label) {
   return function (option) {
     return function () {
       option.label = label;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.defaultSelected = function (option) {
+export function defaultSelected(option) {
   return function () {
     return option.defaultSelected;
   };
-};
+}
 
-exports.setDefaultSelected = function (defaultSelected) {
+export function setDefaultSelected(defaultSelected) {
   return function (option) {
     return function () {
       option.defaultSelected = defaultSelected;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.selected = function (option) {
+export function selected(option) {
   return function () {
     return option.selected;
   };
-};
+}
 
-exports.setSelected = function (selected) {
+export function setSelected(selected) {
   return function (option) {
     return function () {
       option.selected = selected;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.value = function (option) {
+export function value(option) {
   return function () {
     return option.value;
   };
-};
+}
 
-exports.setValue = function (value) {
+export function setValue(value) {
   return function (option) {
     return function () {
       option.value = value;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.text = function (option) {
+export function text(option) {
   return function () {
     return option.text;
   };
-};
+}
 
-exports.setText = function (text) {
+export function setText(text) {
   return function (option) {
     return function () {
       option.text = text;
     };
   };
-};
+}
 
 // ----------------------------------------------------------------------------
 
-exports.index = function (option) {
+export function index(option) {
   return function () {
     return option.index;
   };
-};
+}
