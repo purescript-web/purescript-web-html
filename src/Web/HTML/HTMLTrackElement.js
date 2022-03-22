@@ -62,11 +62,12 @@ export function setLabel(label) {
 
 // ----------------------------------------------------------------------------
 
-exports["default"] = function (track) {
+const defaultImpl = function (track) {
   return function () {
     return track["default"];
   };
 };
+export { defaultImpl as default };
 
 export function setDefault(def) {
   return function (track) {
