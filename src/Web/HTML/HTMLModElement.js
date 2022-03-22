@@ -1,5 +1,3 @@
-"use strict";
-
 export function cite(mod) {
   return function () {
     return mod.cite;

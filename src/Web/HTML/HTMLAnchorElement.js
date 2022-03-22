@@ -1,5 +1,3 @@
-"use strict";
-
 export function target(a) {
   return function () {
     return a.target;

@@ -1,5 +1,3 @@
-"use strict";
-
 export function rows(section) {
   return function () {
     return section.rows;

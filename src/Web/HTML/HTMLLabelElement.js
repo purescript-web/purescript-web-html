@@ -1,5 +1,3 @@
-"use strict";
-
 export function _form(label) {
   return function () {
     return label.form;

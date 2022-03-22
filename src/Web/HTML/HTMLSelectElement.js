@@ -1,5 +1,3 @@
-"use strict";
-
 export function autofocus(select) {
   return function () {
     return select.autofocus;

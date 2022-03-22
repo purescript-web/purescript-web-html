@@ -1,5 +1,3 @@
-"use strict";
-
 export function autofocus(button) {
   return function () {
     return button.autofocus;

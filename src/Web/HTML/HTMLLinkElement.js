@@ -1,5 +1,3 @@
-"use strict";
-
 export function disabled(link) {
   return function () {
     return link.disabled;

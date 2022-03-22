@@ -1,5 +1,3 @@
-"use strict";
-
 export function autofocus(keygen) {
   return function () {
     return keygen.autofocus;

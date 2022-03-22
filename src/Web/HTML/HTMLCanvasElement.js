@@ -1,5 +1,3 @@
-"use strict";
-
 export function width(canvas) {
   return function () {
     return canvas.width;

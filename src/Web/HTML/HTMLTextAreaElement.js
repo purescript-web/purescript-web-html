@@ -1,5 +1,3 @@
-"use strict";
-
 export function autocomplete(textarea) {
   return function () {
     return textarea.autocomplete;

@@ -1,5 +1,3 @@
-"use strict";
-
 export function name(map) {
   return function () {
     return map.name;

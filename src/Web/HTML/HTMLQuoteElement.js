@@ -1,5 +1,3 @@
-"use strict";
-
 export function cite(quote) {
   return function () {
     return quote.cite;

@@ -1,5 +1,3 @@
-"use strict";
-
 export function name(meta) {
   return function () {
     return meta.name;

@@ -1,5 +1,3 @@
-"use strict";
-
 export function kind(track) {
   return function () {
     return track.kind;

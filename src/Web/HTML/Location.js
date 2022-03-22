@@ -1,5 +1,3 @@
-"use strict";
-
 export function hash(location) {
   return function () {
     return location.hash;

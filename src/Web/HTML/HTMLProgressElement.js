@@ -1,5 +1,3 @@
-"use strict";
-
 export function value(progress) {
   return function () {
     return progress.value;

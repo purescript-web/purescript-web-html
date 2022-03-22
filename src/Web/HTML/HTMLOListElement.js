@@ -1,5 +1,3 @@
-"use strict";
-
 export function reversed(ol) {
   return function () {
     return ol.reversed;

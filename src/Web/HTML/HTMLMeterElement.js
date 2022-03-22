@@ -1,5 +1,3 @@
-"use strict";
-
 export function value(meter) {
   return function () {
     return meter.value;

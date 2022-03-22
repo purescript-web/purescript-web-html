@@ -1,5 +1,3 @@
-"use strict";
-
 export function disabled(option) {
   return function () {
     return option.disabled;

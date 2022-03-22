@@ -1,5 +1,3 @@
-"use strict";
-
 export function src(iframe) {
   return function () {
     return iframe.src;

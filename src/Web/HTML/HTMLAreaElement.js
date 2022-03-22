@@ -1,5 +1,3 @@
-"use strict";
-
 export function alt(area) {
   return function () {
     return area.alt;

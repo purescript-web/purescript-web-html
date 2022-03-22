@@ -1,5 +1,3 @@
-"use strict";
-
 export function _documentElement(doc) {
   return function () {
     return doc.documentElement;

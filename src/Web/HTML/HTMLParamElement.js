@@ -1,5 +1,3 @@
-"use strict";
-
 export function name(param) {
   return function () {
     return param.name;

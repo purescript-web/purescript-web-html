@@ -1,5 +1,3 @@
-"use strict";
-
 export function language(navigator) {
   return function () {
     return navigator.language;

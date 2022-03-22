@@ -1,5 +1,3 @@
-"use strict";
-
 export function src(source) {
   return function () {
     return source.src;

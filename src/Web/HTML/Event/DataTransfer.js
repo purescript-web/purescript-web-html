@@ -1,5 +1,3 @@
-"use strict";
-
 export function _files(dataTransfer) {
   return dataTransfer.files;
 }

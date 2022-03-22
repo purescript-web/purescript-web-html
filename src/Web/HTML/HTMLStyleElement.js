@@ -1,5 +1,3 @@
-"use strict";
-
 export function media(style) {
   return function () {
     return style.media;

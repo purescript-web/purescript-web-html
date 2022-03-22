@@ -1,5 +1,3 @@
-"use strict";
-
 export function _caption(table) {
   return function () {
     return table.caption;

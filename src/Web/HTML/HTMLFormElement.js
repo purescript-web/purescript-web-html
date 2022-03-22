@@ -1,5 +1,3 @@
-"use strict";
-
 export function acceptCharset(form) {
   return function () {
     return form.acceptCharset;

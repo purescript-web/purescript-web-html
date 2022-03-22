@@ -1,5 +1,3 @@
-"use strict";
-
 export function accept(input) {
   return function () {
     return input.accept;

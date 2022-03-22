@@ -1,5 +1,3 @@
-"use strict";
-
 export function href(u) {
   return function () {
     return u.href;

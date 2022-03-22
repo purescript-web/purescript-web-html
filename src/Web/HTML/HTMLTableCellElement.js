@@ -1,5 +1,3 @@
-"use strict";
-
 export function colSpan(cell) {
   return function () {
     return cell.colSpan;

@@ -1,5 +1,3 @@
-"use strict";
-
 export function text(title) {
   return function () {
     return title.text;

@@ -1,5 +1,3 @@
-"use strict";
-
 export function disabled(optgroup) {
   return function () {
     return optgroup.disabled;

@@ -1,5 +1,3 @@
-"use strict";
-
 export function message(e) {
   return e.message;
 }

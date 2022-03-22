@@ -1,5 +1,3 @@
-"use strict";
-
 export function disabled(fieldset) {
   return function () {
     return fieldset.disabled;

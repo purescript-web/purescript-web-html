@@ -1,5 +1,3 @@
-"use strict";
-
 export function span(col) {
   return function () {
     return col.span;

@@ -1,5 +1,3 @@
-"use strict";
-
 export function scope(cell) {
   return function () {
     return cell.scope;

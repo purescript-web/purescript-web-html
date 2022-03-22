@@ -1,5 +1,3 @@
-"use strict";
-
 export function dateTime(time) {
   return function () {
     return time.dateTime;

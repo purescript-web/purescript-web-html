@@ -1,5 +1,3 @@
-"use strict";
-
 export function back(history) {
   return function() {
     return history.back();

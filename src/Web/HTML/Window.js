@@ -1,5 +1,3 @@
-"use strict";
-
 export function document(window) {
   return function () {
     return window.document;

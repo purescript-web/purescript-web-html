@@ -1,5 +1,3 @@
-"use strict";
-
 export function _kind(nothing, just, text, file, dataTransferItem) {
   if (dataTransferItem.kind === "string") {
     return just(text);
