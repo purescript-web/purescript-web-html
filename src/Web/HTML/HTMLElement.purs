@@ -35,8 +35,6 @@ module Web.HTML.HTMLElement
   , click
   , focus
   , blur
-  , getBoundingClientRect
-  , DOMRect
   , offsetParent
   , offsetTop
   , offsetLeft
@@ -132,17 +130,6 @@ foreign import setSpellcheck :: Boolean -> HTMLElement -> Effect Unit
 foreign import click :: HTMLElement -> Effect Unit
 foreign import focus :: HTMLElement -> Effect Unit
 foreign import blur :: HTMLElement -> Effect Unit
-
-type DOMRect =
-  { top :: Number
-  , right :: Number
-  , bottom :: Number
-  , left :: Number
-  , width :: Number
-  , height :: Number
-  }
-
-foreign import getBoundingClientRect :: HTMLElement -> Effect DOMRect
 
 foreign import _offsetParent :: HTMLElement -> Effect (Nullable Element)
 

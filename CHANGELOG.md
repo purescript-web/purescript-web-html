@@ -5,6 +5,7 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
+- Move `getBoundingClientRect` to `purescript-web-dom` (#73 by @JordanMartinez)
 
 New features:
 

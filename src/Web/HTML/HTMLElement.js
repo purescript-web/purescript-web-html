@@ -185,20 +185,6 @@ export function blur(elt) {
 
 // - CSSOM ---------------------------------------------------------------------
 
-export function getBoundingClientRect(el) {
-  return function () {
-    var rect = el.getBoundingClientRect();
-    return {
-      top: rect.top,
-      right: rect.right,
-      bottom: rect.bottom,
-      left: rect.left,
-      width: rect.width,
-      height: rect.height
-    };
-  };
-}
-
 export function _offsetParent(el) {
   return function () {
     return el.offsetParent;
