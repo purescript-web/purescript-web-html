@@ -18,9 +18,6 @@ module Web.HTML.HTMLElement
   , setLang
   , dir
   , setDir
-  , className
-  , setClassName
-  , classList
   , hidden
   , setHidden
   , tabIndex
@@ -105,11 +102,6 @@ foreign import setLang :: String -> HTMLElement -> Effect Unit
 
 foreign import dir :: HTMLElement -> Effect String
 foreign import setDir :: String -> HTMLElement -> Effect Unit
-
-foreign import className :: HTMLElement -> Effect String
-foreign import setClassName :: String -> HTMLElement -> Effect Unit
-
-foreign import classList :: HTMLElement -> Effect DOMTokenList
 
 foreign import hidden :: HTMLElement -> Effect Boolean
 foreign import setHidden :: Boolean -> HTMLElement -> Effect Unit

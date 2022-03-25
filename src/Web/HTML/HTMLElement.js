@@ -57,28 +57,6 @@ export function setDir(dir) {
 
 // ----------------------------------------------------------------------------
 
-export function className(elt) {
-  return function () {
-    return elt.className;
-  };
-}
-
-export function setClassName(className) {
-  return function (elt) {
-    return function () {
-      elt.className = className;
-    };
-  };
-}
-
-export function classList(element) {
-  return function () {
-    return element.classList;
-  };
-}
-
-// ----------------------------------------------------------------------------
-
 export function hidden(elt) {
   return function () {
     return elt.hidden;
