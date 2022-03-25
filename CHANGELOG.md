@@ -6,6 +6,9 @@ Notable changes to this project are documented in this file. The format is based
 
 Breaking changes:
 - Move `getBoundingClientRect` to `purescript-web-dom` (#73 by @JordanMartinez)
+- Drop duplicated `set/getClassName` and `classList` (#74 by @JordanMartinez)
+
+  These three entities are already defined in `purescript-web-dom`
 
 New features:
 
