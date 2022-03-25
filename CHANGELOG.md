@@ -6,6 +6,7 @@ Notable changes to this project are documented in this file. The format is based
 
 Breaking changes:
 - Migrate FFI to ES modules (#71 by @JordanMartinez)
+- Make `autocomplete` take a `String` arg, not Boolean (#72 by @JordanMartinez)
 
 New features:
 
