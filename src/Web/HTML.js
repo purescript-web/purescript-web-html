@@ -1,3 +1,3 @@
-export function window() {
+export function windowImpl() {
   return window;
 }

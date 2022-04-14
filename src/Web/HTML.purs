@@ -74,4 +74,7 @@ import Web.HTML.Location (Location) as Exports
 import Web.HTML.Navigator (Navigator) as Exports
 import Web.HTML.Window (Window) as Exports
 
-foreign import window :: Effect Window
+foreign import windowImpl :: Effect Window
+
+window :: Effect Window
+window = windowImpl
