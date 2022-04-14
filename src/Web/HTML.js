@@ -1,3 +1,4 @@
-export function windowImpl() {
+const windowImpl = function() {
   return window;
 }
+export {windowImpl as window};
