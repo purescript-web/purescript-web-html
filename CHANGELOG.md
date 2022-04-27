@@ -5,6 +5,16 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
+
+New features:
+
+Bugfixes:
+
+Other improvements:
+
+## [v4.0.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.0.0) - 2022-04-27
+
+Breaking changes:
 - Move `getBoundingClientRect` to `purescript-web-dom` (#73 by @JordanMartinez)
 - Drop duplicated `set/getClassName` and `classList` (#74 by @JordanMartinez)
 
