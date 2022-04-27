@@ -178,8 +178,8 @@ foreign import setAccept :: String -> HTMLInputElement -> Effect Unit
 foreign import alt :: HTMLInputElement -> Effect Boolean
 foreign import setAlt :: Boolean -> HTMLInputElement -> Effect Unit
 
-foreign import autocomplete :: HTMLInputElement -> Effect Boolean
-foreign import setAutocomplete :: Boolean -> HTMLInputElement -> Effect Unit
+foreign import autocomplete :: HTMLInputElement -> Effect String
+foreign import setAutocomplete :: String -> HTMLInputElement -> Effect Unit
 
 foreign import autofocus :: HTMLInputElement -> Effect Boolean
 foreign import setAutofocus :: Boolean -> HTMLInputElement -> Effect Unit
