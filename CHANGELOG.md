@@ -5,11 +5,20 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
+
+New features:
+
+Bugfixes:
+
+Other improvements:
+
+## [v4.0.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.0.0) - 2022-04-27
+
+Breaking changes:
 - Migrate FFI to ES modules (#71 by @JordanMartinez)
 - Make `autocomplete` take a `String` arg, not Boolean (#72 by @JordanMartinez)
 - Move `getBoundingClientRect` to `purescript-web-dom` (#73 by @JordanMartinez)
 - Drop duplicated `set/getClassName` and `classList` (#74 by @JordanMartinez)
-
   These three entities are already defined in `purescript-web-dom`
 
 New features:
