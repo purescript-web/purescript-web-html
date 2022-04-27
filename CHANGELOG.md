@@ -5,6 +5,8 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
+- Migrate FFI to ES modules (#71 by @JordanMartinez)
+- Make `autocomplete` take a `String` arg, not Boolean (#72 by @JordanMartinez)
 - Move `getBoundingClientRect` to `purescript-web-dom` (#73 by @JordanMartinez)
 - Drop duplicated `set/getClassName` and `classList` (#74 by @JordanMartinez)
 
