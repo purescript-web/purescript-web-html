@@ -13,6 +13,7 @@ module Web.HTML.Window
   , moveBy
   , moveTo
   , open
+  , close
   , outerHeight
   , outerWidth
   , print
@@ -88,6 +89,8 @@ foreign import _open
   -> String
   -> Window
   -> Effect (Nullable Window)
+
+foreign import close :: Window -> Effect Unit
 
 foreign import outerHeight :: Window -> Effect Int
 

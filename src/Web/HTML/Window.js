@@ -82,6 +82,12 @@ export function _open(url) {
   };
 }
 
+export function close(window) {
+  return function () {
+    return window.close();
+  };
+}
+
 export function outerHeight(window) {
   return function () {
     return window.outerHeight;
