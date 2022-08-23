@@ -7,6 +7,7 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
+- Added `close` function for `Window` (#78 by @jmp-0x7C0)
 
 Bugfixes:
 
