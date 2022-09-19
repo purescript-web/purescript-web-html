@@ -8,10 +8,13 @@ Breaking changes:
 
 New features:
 - Added `close` function for `Window` (#78 by @jmp-0x7C0)
+- Added `visibilityState` for `HTMLDocument` (#79 by @garyb)
 
 Bugfixes:
 
 Other improvements:
+- Added `purs-tidy` config and format checking (#79 by @garyb)
+- `HTMLDocument`'s FFI is now implemented in terms of `EffectFn` (#79 by @garyb)
 
 ## [v4.0.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.0.0) - 2022-04-27
 
