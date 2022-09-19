@@ -18,8 +18,8 @@ instance showVisibilityState :: Show VisibilityState where
 
 print :: VisibilityState -> String
 print = case _ of
-  Visible -> "loading"
-  Hidden -> "interactive"
+  Visible -> "visible"
+  Hidden -> "hidden"
 
 parse :: String -> Maybe VisibilityState
 parse = case _ of
