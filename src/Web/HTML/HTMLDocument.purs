@@ -14,6 +14,7 @@ module Web.HTML.HTMLDocument
   , head
   , body
   , readyState
+  , visibilityState
   , activeElement
   , currentScript
   , referrer
@@ -26,6 +27,7 @@ import Prelude
 import Data.Maybe (Maybe, fromMaybe)
 import Data.Nullable (Nullable, toMaybe)
 import Effect (Effect)
+import Effect.Uncurried (EffectFn1, EffectFn2, runEffectFn1, runEffectFn2)
 import Unsafe.Coerce (unsafeCoerce)
 import Web.DOM.Document (Document)
 import Web.DOM.Internal.Types (Node)
@@ -34,6 +36,8 @@ import Web.DOM.ParentNode (ParentNode)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLDocument.ReadyState (ReadyState)
 import Web.HTML.HTMLDocument.ReadyState as ReadyState
+import Web.HTML.HTMLDocument.VisibilityState (VisibilityState)
+import Web.HTML.HTMLDocument.VisibilityState as VisibilityState
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLHtmlElement (HTMLHtmlElement)
 import Web.HTML.HTMLScriptElement (HTMLScriptElement)
@@ -71,37 +75,52 @@ toNonElementParentNode = unsafeCoerce
 toEventTarget :: HTMLDocument -> EventTarget
 toEventTarget = unsafeCoerce
 
-foreign import _documentElement :: HTMLDocument -> Effect (Nullable HTMLHtmlElement)
+foreign import _documentElement :: EffectFn1 HTMLDocument (Nullable HTMLHtmlElement)
 
 documentElement :: HTMLDocument -> Effect (Maybe HTMLHtmlElement)
-documentElement = map toMaybe <<< _documentElement
+documentElement doc = toMaybe <$> runEffectFn1 _documentElement doc
 
-foreign import _head :: HTMLDocument -> Effect (Nullable HTMLElement)
+foreign import _head :: EffectFn1 HTMLDocument (Nullable HTMLElement)
 
 head :: HTMLDocument -> Effect (Maybe HTMLElement)
-head = map toMaybe <<< _head
+head doc = toMaybe <$> runEffectFn1 _head doc
 
-foreign import _body :: HTMLDocument -> Effect (Nullable HTMLElement)
+foreign import _body :: EffectFn1 HTMLDocument (Nullable HTMLElement)
 
 body :: HTMLDocument -> Effect (Maybe HTMLElement)
-body = map toMaybe <<< _body
+body doc = toMaybe <$> runEffectFn1 _body doc
 
-foreign import _readyState :: HTMLDocument -> Effect String
+foreign import _readyState :: EffectFn1 HTMLDocument String
 
 readyState :: HTMLDocument -> Effect ReadyState
-readyState = map (fromMaybe ReadyState.Loading <<< ReadyState.parse) <<< _readyState
+readyState doc = (fromMaybe ReadyState.Loading <<< ReadyState.parse) <$> (runEffectFn1 _readyState doc)
 
-foreign import _activeElement :: HTMLDocument -> Effect (Nullable HTMLElement)
+foreign import _visibilityState :: EffectFn1 HTMLDocument String
+
+visibilityState :: HTMLDocument -> Effect VisibilityState
+visibilityState doc = (fromMaybe VisibilityState.Visible <<< VisibilityState.parse) <$> (runEffectFn1 _visibilityState doc)
+
+foreign import _activeElement :: EffectFn1 HTMLDocument (Nullable HTMLElement)
 
 activeElement :: HTMLDocument -> Effect (Maybe HTMLElement)
-activeElement = map toMaybe <<< _activeElement
+activeElement doc = toMaybe <$> (runEffectFn1 _activeElement doc)
 
-foreign import _currentScript :: HTMLDocument -> Effect (Nullable HTMLScriptElement)
+foreign import _currentScript :: EffectFn1 HTMLDocument (Nullable HTMLScriptElement)
 
 currentScript :: HTMLDocument -> Effect (Maybe HTMLScriptElement)
-currentScript = map toMaybe <<< _currentScript
+currentScript doc = toMaybe <$> (runEffectFn1 _currentScript doc)
 
-foreign import referrer :: HTMLDocument -> Effect String
+foreign import _referrer :: EffectFn1 HTMLDocument String
 
-foreign import title :: HTMLDocument -> Effect String
-foreign import setTitle :: String -> HTMLDocument -> Effect Unit
+referrer :: HTMLDocument -> Effect String
+referrer doc = runEffectFn1 _referrer doc
+
+foreign import _title :: EffectFn1 HTMLDocument String
+
+title :: HTMLDocument -> Effect String
+title doc = runEffectFn1 _title doc
+
+foreign import _setTitle :: EffectFn2 String HTMLDocument Unit
+
+setTitle :: String -> HTMLDocument -> Effect Unit
+setTitle newTitle doc = runEffectFn2 _setTitle newTitle doc

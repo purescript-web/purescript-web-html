@@ -1,8 +1,9 @@
 module Web.HTML.HTMLMediaElement.ReadyState (ReadyState(..)) where
 
 import Prelude
+
+import Data.Enum (class BoundedEnum, class Enum, Cardinality(..), defaultPred, defaultSucc)
 import Data.Maybe (Maybe(..))
-import Data.Enum (class Enum, class BoundedEnum, Cardinality(..), defaultSucc, defaultPred)
 
 data ReadyState
   = HaveNothing

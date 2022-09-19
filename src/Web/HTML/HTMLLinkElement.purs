@@ -54,7 +54,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLLinkElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import disabled :: HTMLLinkElement -> Effect Boolean
 foreign import setDisabled :: Boolean -> HTMLLinkElement -> Effect Unit
 

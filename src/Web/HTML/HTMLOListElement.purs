@@ -53,7 +53,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLOListElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import reversed :: HTMLOListElement -> Effect Boolean
 foreign import setReversed :: Boolean -> HTMLOListElement -> Effect Unit
 

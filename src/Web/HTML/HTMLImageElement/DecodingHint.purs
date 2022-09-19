@@ -9,7 +9,7 @@ import Prelude (class Eq, class Ord, class Show)
 
 data DecodingHint
   = Sync
-  | Async 
+  | Async
   | Auto
 
 derive instance eqDecodingHint :: Eq DecodingHint

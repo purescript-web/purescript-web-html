@@ -73,7 +73,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLLegendElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 form :: HTMLLegendElement -> Effect (Maybe HTMLFormElement)
 form = map toMaybe <<< _form
 

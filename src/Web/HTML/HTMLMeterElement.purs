@@ -54,7 +54,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLMeterElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import value :: HTMLMeterElement -> Effect Number
 foreign import setValue :: Number -> HTMLMeterElement -> Effect Unit
 

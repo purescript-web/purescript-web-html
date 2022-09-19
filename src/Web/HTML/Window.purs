@@ -49,8 +49,8 @@ import Web.HTML.HTMLDocument (HTMLDocument)
 import Web.HTML.History (History)
 import Web.HTML.Location (Location)
 import Web.HTML.Navigator (Navigator)
-import Web.Storage.Storage (Storage)
 import Web.Internal.FFI (unsafeReadProtoTagged)
+import Web.Storage.Storage (Storage)
 
 foreign import data Window :: Type
 

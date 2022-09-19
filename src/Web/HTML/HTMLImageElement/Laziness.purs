@@ -9,7 +9,7 @@ import Prelude (class Eq, class Ord, class Show)
 
 data Laziness
   = Eager
-  | Lazy 
+  | Lazy
 
 derive instance eqDecodingHint :: Eq Laziness
 derive instance ordDecodingHint :: Ord Laziness
@@ -25,7 +25,6 @@ parse = case _ of
   "eager" -> Just Eager
   "lazy" -> Just Lazy
   _ -> Nothing
-
 
 print :: Laziness -> String
 print = case _ of

@@ -25,6 +25,7 @@ module Web.HTML.Location
   ) where
 
 import Prelude
+
 import Effect (Effect)
 
 foreign import data Location :: Type

@@ -53,7 +53,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLOptGroupElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import disabled :: HTMLOptGroupElement -> Effect Boolean
 foreign import setDisabled :: Boolean -> HTMLOptGroupElement -> Effect Unit
 

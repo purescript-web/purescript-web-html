@@ -171,7 +171,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLInputElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import accept :: HTMLInputElement -> Effect String
 foreign import setAccept :: String -> HTMLInputElement -> Effect Unit
 

@@ -53,7 +53,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLEmbedElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import src :: HTMLEmbedElement -> Effect String
 foreign import setSrc :: String -> HTMLEmbedElement -> Effect Unit
 

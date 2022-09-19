@@ -53,7 +53,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLCanvasElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 -- typedef (CanvasRenderingContext2D or WebGLRenderingContext) RenderingContext;
 
 foreign import width :: HTMLCanvasElement -> Effect Int
