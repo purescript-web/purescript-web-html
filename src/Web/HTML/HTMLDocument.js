@@ -1,61 +1,39 @@
 export function _documentElement(doc) {
-  return function () {
-    return doc.documentElement;
-  };
+  return doc.documentElement;
 }
 
 export function _head(doc) {
-  return function () {
-    return doc.head;
-  };
+  return doc.head;
 }
 
 export function _body(doc) {
-  return function () {
-    return doc.body;
-  };
+  return doc.body;
 }
 
 export function _readyState(doc) {
-  return function () {
-    return doc.readyState;
-  };
+  return doc.readyState;
 }
 
 export function _visibilityState(doc) {
-  return function () {
-    return doc.readyState;
-  };
+  return doc.readyState;
 }
 
 export function _activeElement(doc) {
-  return function () {
-    return doc.activeElement;
-  };
+  return doc.activeElement;
 }
 
 export function _currentScript(doc) {
-  return function () {
-    return doc.currentScript;
-  };
+  return doc.currentScript;
 }
 
-export function referrer(doc) {
-  return function () {
-    return doc.referrer;
-  };
+export function _referrer(doc) {
+  return doc.referrer;
 }
 
-export function title(doc) {
-  return function () {
-    return doc.title;
-  };
+export function _title(doc) {
+  return doc.title;
 }
 
-export function setTitle(title) {
-  return function (doc) {
-    return function () {
-      doc.title = title;
-    };
-  };
+export function _setTitle(title, doc) {
+  doc.title = title;
 }
