@@ -7,10 +7,16 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
-- Added `close` function for `Window` (#78 by @jmp-0x7C0)
-- Added `visibilityState` for `HTMLDocument` (#79 by @garyb)
 
 Bugfixes:
+
+Other improvements:
+
+## [v4.1.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.1.0) - 2022-09-19
+
+New features:
+- Added `close` function for `Window` (#78 by @jmp-0x7C0)
+- Added `visibilityState` for `HTMLDocument` (#79 by @garyb)
 
 Other improvements:
 - Added `purs-tidy` config and format checking (#79 by @garyb)
