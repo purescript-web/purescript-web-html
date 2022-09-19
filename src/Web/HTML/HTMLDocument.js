@@ -22,6 +22,12 @@ export function _readyState(doc) {
   };
 }
 
+export function _visibilityState(doc) {
+  return function () {
+    return doc.readyState;
+  };
+}
+
 export function _activeElement(doc) {
   return function () {
     return doc.activeElement;

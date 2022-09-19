@@ -14,6 +14,7 @@ module Web.HTML.HTMLDocument
   , head
   , body
   , readyState
+  , visibilityState
   , activeElement
   , currentScript
   , referrer
@@ -34,6 +35,8 @@ import Web.DOM.ParentNode (ParentNode)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLDocument.ReadyState (ReadyState)
 import Web.HTML.HTMLDocument.ReadyState as ReadyState
+import Web.HTML.HTMLDocument.VisibilityState (VisibilityState)
+import Web.HTML.HTMLDocument.VisibilityState as VisibilityState
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLHtmlElement (HTMLHtmlElement)
 import Web.HTML.HTMLScriptElement (HTMLScriptElement)
@@ -90,6 +93,11 @@ foreign import _readyState :: HTMLDocument -> Effect String
 
 readyState :: HTMLDocument -> Effect ReadyState
 readyState = map (fromMaybe ReadyState.Loading <<< ReadyState.parse) <<< _readyState
+
+foreign import _visibilityState :: HTMLDocument -> Effect String
+
+visibilityState :: HTMLDocument -> Effect VisibilityState
+visibilityState = map (fromMaybe VisibilityState.Visible <<< VisibilityState.parse) <<< _visibilityState
 
 foreign import _activeElement :: HTMLDocument -> Effect (Nullable HTMLElement)
 
