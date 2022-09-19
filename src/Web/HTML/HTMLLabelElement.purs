@@ -76,7 +76,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLLabelElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 form :: HTMLLabelElement -> Effect (Maybe HTMLFormElement)
 form = map toMaybe <<< _form
 

@@ -1,6 +1,7 @@
 module Web.HTML.HTMLDocument.VisibilityState where
 
 import Prelude
+
 import Data.Maybe (Maybe(..))
 
 data VisibilityState

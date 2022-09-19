@@ -53,7 +53,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLBaseElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import href :: HTMLBaseElement -> Effect String
 foreign import setHref :: String -> HTMLBaseElement -> Effect Unit
 

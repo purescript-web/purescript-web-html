@@ -46,9 +46,9 @@ module Web.HTML.HTMLImageElement
   , complete
   ) where
 
+import Data.Maybe (Maybe, fromMaybe)
 import Data.Nullable (Nullable)
 import Data.Nullable as Nullable
-import Data.Maybe (Maybe, fromMaybe)
 import Effect (Effect)
 import Effect.Uncurried (EffectFn1, EffectFn2, runEffectFn1, runEffectFn2)
 import Prelude (Unit, map, (<<<), (<=<))

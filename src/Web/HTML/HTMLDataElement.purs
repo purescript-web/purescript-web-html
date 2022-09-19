@@ -53,6 +53,5 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLDataElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import value :: HTMLDataElement -> Effect String
 foreign import setValue :: String -> HTMLDataElement -> Effect Unit

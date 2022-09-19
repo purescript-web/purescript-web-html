@@ -9,7 +9,7 @@ import Prelude (class Eq, class Ord, class Show)
 
 data CORSMode
   = Anonymous
-  | UseCredentials 
+  | UseCredentials
 
 derive instance eqCORSMode :: Eq CORSMode
 derive instance ordCORSMode :: Ord CORSMode

@@ -1,6 +1,7 @@
 module Web.HTML.HTMLDocument.ReadyState where
 
 import Prelude
+
 import Data.Maybe (Maybe(..))
 
 data ReadyState

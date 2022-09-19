@@ -72,6 +72,7 @@ foreign import _setDragImage :: DataTransfer -> Element -> Int -> Int -> Effect 
 -- | The x and y coordinates define where the image appears relative to the mouse.
 setDragImage :: DataTransfer -> Element -> Int -> Int -> Effect Unit
 setDragImage = _setDragImage
+
 foreign import _dropEffect :: DataTransfer -> Effect String
 
 data DropEffect = Copy | Link | Move | None

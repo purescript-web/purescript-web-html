@@ -93,7 +93,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLKeygenElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import autofocus :: HTMLKeygenElement -> Effect Boolean
 foreign import setAutofocus :: Boolean -> HTMLKeygenElement -> Effect Unit
 

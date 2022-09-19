@@ -8,8 +8,8 @@ import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.DOM.DOMTokenList (DOMTokenList)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
-import Web.Internal.FFI (unsafeReadProtoTagged)
 import Web.HTML.HTMLHyperlinkElementUtils (HTMLHyperlinkElementUtils)
+import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLAnchorElement :: Type
 

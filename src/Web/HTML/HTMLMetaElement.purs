@@ -53,7 +53,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLMetaElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import name :: HTMLMetaElement -> Effect String
 foreign import setName :: String -> HTMLMetaElement -> Effect Unit
 

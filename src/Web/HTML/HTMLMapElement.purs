@@ -54,7 +54,6 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLMapElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import name :: HTMLMapElement -> Effect String
 foreign import setName :: String -> HTMLMapElement -> Effect Unit
 

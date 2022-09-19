@@ -53,5 +53,4 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLDataListElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import options :: HTMLDataListElement -> Effect HTMLCollection

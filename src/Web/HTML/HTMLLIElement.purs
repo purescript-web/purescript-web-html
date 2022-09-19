@@ -53,6 +53,5 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLLIElement -> EventTarget
 toEventTarget = unsafeCoerce
 
-
 foreign import value :: HTMLLIElement -> Effect Int
 foreign import setValue :: Int -> HTMLLIElement -> Effect Unit
