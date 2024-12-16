@@ -131,7 +131,7 @@ newtype RequestAnimationFrameId = RequestAnimationFrameId Int
 derive instance eqRequestAnimationFrameId :: Eq RequestAnimationFrameId
 derive instance ordRequestAnimationFrameId :: Ord RequestAnimationFrameId
 
-foreign import requestAnimationFrame :: Effect Unit -> Window -> Effect RequestAnimationFrameId
+foreign import requestAnimationFrame :: (Int -> Effect Unit) -> Window -> Effect RequestAnimationFrameId
 
 foreign import cancelAnimationFrame :: RequestAnimationFrameId -> Window -> Effect Unit
 
