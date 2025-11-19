@@ -9,6 +9,7 @@ Breaking changes:
 New features:
 
 Bugfixes:
+- Fixed `visibilityState` for `HTMLDocument` (#86 by @cwinebr)
 
 Other improvements:
 
