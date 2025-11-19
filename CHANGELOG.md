@@ -7,7 +7,6 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
-- Added `HTMLDialogElement` module (#77 by @kgmt0)
 
 Bugfixes:
 
