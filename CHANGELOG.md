@@ -13,6 +13,11 @@ Bugfixes:
 
 Other improvements:
 
+## [v4.1.1](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.1.1) - 2025-11-18
+
+New features:
+- Added `HTMLDialogElement` module (#77 by @kgmt0)
+
 ## [v4.1.0](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.1.0) - 2022-09-19
 
 New features:
