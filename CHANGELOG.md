@@ -11,6 +11,7 @@ New features:
 Bugfixes:
 
 Other improvements:
+- `AttrName`, `ClassName`, and `PropName` types have been migrated to [web-dom](https://github.com/purescript-web/purescript-web-dom) but are re-exported to avoid breaking compatibility. See also purescript-web/purescript-web-dom#58. (#82 by @nsaunders)
 
 ## [v4.1.1](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.1.1) - 2025-11-18
 
