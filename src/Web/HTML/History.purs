@@ -1,9 +1,26 @@
-module Web.HTML.History where
+module Web.HTML.History
+  ( History
+  , DocumentTitle(..)
+  , Delta(..)
+  , URL(..)
+  , back
+  , forward
+  , go
+  , pushState
+  , replaceState
+  , state
+  , length
+  , scrollRestoration
+  , setScrollRestoration
+  ) where
 
+import Prelude
+
+import Data.Maybe (fromMaybe)
 import Data.Newtype (class Newtype)
 import Effect (Effect)
 import Foreign (Foreign)
-import Prelude (class Eq, class Ord, Unit)
+import Web.HTML.ScrollRestoration (ScrollRestoration(..), parse, print)
 
 foreign import data History :: Type
 
@@ -32,3 +49,13 @@ foreign import go :: Delta -> History -> Effect Unit
 foreign import pushState :: Foreign -> DocumentTitle -> URL -> History -> Effect Unit
 foreign import replaceState :: Foreign -> DocumentTitle -> URL -> History -> Effect Unit
 foreign import state :: History -> Effect Foreign
+foreign import length :: History -> Effect Int
+
+foreign import _scrollRestoration :: History -> Effect String
+foreign import _setScrollRestoration :: String -> History -> Effect Unit
+
+scrollRestoration :: History -> Effect ScrollRestoration
+scrollRestoration = map (fromMaybe Auto <<< parse) <<< _scrollRestoration
+
+setScrollRestoration :: ScrollRestoration -> History -> Effect Unit
+setScrollRestoration = _setScrollRestoration <<< print

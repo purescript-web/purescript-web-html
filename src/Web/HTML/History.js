@@ -47,3 +47,23 @@ export function state(history) {
     return history.state;
   };
 }
+
+export function length(history) {
+  return function() {
+    return history.length;
+  };
+}
+
+export function _scrollRestoration(history) {
+  return function() {
+    return history.scrollRestoration;
+  };
+}
+
+export function _setScrollRestoration(scrollRestoration) {
+  return function(history) {
+    return function() {
+      history.scrollRestoration = scrollRestoration;
+    };
+  };
+}
