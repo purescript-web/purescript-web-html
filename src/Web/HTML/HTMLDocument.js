@@ -15,7 +15,7 @@ export function _readyState(doc) {
 }
 
 export function _visibilityState(doc) {
-  return doc.readyState;
+  return doc.visibilityState;
 }
 
 export function _activeElement(doc) {

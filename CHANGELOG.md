@@ -10,6 +10,7 @@ New features:
 - Added `length`, `scrollRestoration` and `setScrollRestoration` for `History` (#87 by @acple)
 
 Bugfixes:
+- Fixed `visibilityState` for `HTMLDocument` (#86 by @cwinebr)
 
 Other improvements:
 
