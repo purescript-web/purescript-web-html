@@ -16,8 +16,11 @@
   ],
   "dependencies": {
     "purescript-js-date": "^8.0.0",
-    "purescript-web-dom": "^6.0.0",
+    "purescript-web-dom": "https://github.com/nsaunders/purescript-web-dom.git#8b1dfaa5cd",
     "purescript-web-file": "^4.0.0",
     "purescript-web-storage": "^5.0.0"
+  },
+  "resolutions": {
+    "purescript-web-dom": "8b1dfaa5cd"
   }
 }
