@@ -1,6 +1,6 @@
 /.*
 !/.gitignore
-!/.eslintrc.json
+!/.oxfmtrc.json
 !/.github/
 /node_modules/
 /output/
