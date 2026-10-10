@@ -17,7 +17,7 @@ export function location(window) {
 }
 
 export function history(window) {
-  return function() {
+  return function () {
     return window.history;
   };
 }
@@ -193,25 +193,25 @@ export function sessionStorage(window) {
 }
 
 export function requestAnimationFrame(fn) {
-  return function(window) {
-    return function() {
+  return function (window) {
+    return function () {
       return window.requestAnimationFrame(fn);
     };
   };
 }
 
 export function cancelAnimationFrame(id) {
-  return function(window) {
-    return function() {
+  return function (window) {
+    return function () {
       return window.cancelAnimationFrame(id);
     };
   };
 }
 
 export function requestIdleCallback(opts) {
-  return function(fn) {
-    return function(window) {
-      return function() {
+  return function (fn) {
+    return function (window) {
+      return function () {
         return window.requestIdleCallback(fn, opts);
       };
     };
@@ -219,21 +219,21 @@ export function requestIdleCallback(opts) {
 }
 
 export function cancelIdleCallback(id) {
-  return function(window) {
-    return function() {
+  return function (window) {
+    return function () {
       return window.cancelIdleCallback(id);
     };
   };
 }
 
 export function parent(window) {
-  return function() {
+  return function () {
     return window.parent;
   };
 }
 
 export function _opener(window) {
-  return function() {
+  return function () {
     return window.opener;
   };
 }
