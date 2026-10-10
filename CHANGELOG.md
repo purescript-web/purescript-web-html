@@ -7,12 +7,21 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
+
+Bugfixes:
+
+Other improvements:
+
+## [v4.1.2](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.1.2) - 2026-10-10
+
+New features:
 - Added `length`, `scrollRestoration` and `setScrollRestoration` for `History` (#87 by @acple)
 
 Bugfixes:
 - Fixed `visibilityState` for `HTMLDocument` (#86 by @cwinebr)
 
 Other improvements:
+- Migrated from Bower/Pulp to registry-backed Spago, preserving published dependency bounds, and modernized npm-based CI and development tooling with Node 24, Oxlint, Oxfmt, and purs-tidy (#88 by @thomashoneyman)
 
 ## [v4.1.1](https://github.com/purescript-web/purescript-web-html/releases/tag/v4.1.1) - 2025-11-18
 
